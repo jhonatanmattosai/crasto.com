@@ -1,0 +1,171 @@
+/* ═══════════════════════════════════════
+   CRASTO.COM — Dados Cadastrais
+   Page-specific styles
+═══════════════════════════════════════ */
+
+/* ═══ MAIN ═══ */
+.main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 140px 48px 80px;
+}
+
+/* ═══ PAGE TITLE ═══ */
+.page-title {
+  text-align: center;
+  margin-bottom: 64px;
+  opacity: 0;
+  animation: emerge 1.6s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+}
+
+.page-title-line {
+  width: 28px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  margin: 0 auto 20px;
+}
+
+.page-title h1 {
+  font-family: 'Cormorant', serif;
+  font-weight: 300;
+  font-size: 36px;
+  color: var(--white);
+  letter-spacing: 1px;
+}
+
+/* ═══ SECTIONS GRID ═══ */
+.sections {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px 64px;
+  opacity: 0;
+  animation: emerge 1.8s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards;
+}
+
+.section { padding-bottom: 32px; }
+
+.section-label {
+  font-weight: 300;
+  font-size: 12px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--ghost-line);
+}
+
+.data-row { margin-bottom: 14px; }
+
+.data-key {
+  font-weight: 300;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--body-text);
+  margin-bottom: 4px;
+}
+
+.data-value {
+  font-weight: 300;
+  font-size: 17px;
+  color: var(--white-soft);
+  line-height: 1.6;
+}
+
+.data-value strong {
+  color: var(--white);
+  font-weight: 400;
+}
+
+.data-value a {
+  color: var(--body-text);
+  text-decoration: none;
+  transition: color 0.4s ease;
+  border-bottom: 1px solid var(--ghost-line);
+  padding-bottom: 1px;
+}
+
+.data-value a:hover {
+  color: var(--gold);
+  border-bottom-color: var(--gold-border);
+}
+
+.section.full { grid-column: 1 / -1; }
+
+/* ═══ TEAM ═══ */
+.team-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px 32px;
+}
+
+.team-member { display: flex; flex-direction: column; gap: 2px; }
+
+.team-name {
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--white);
+}
+
+.team-role {
+  font-weight: 300;
+  font-size: 14px;
+  color: var(--body-text);
+}
+
+/* ═══ EMAILS ═══ */
+.emails-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 32px;
+}
+
+.email-item { display: flex; flex-direction: column; gap: 2px; }
+
+.email-dept {
+  font-weight: 300;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--grey);
+}
+
+.email-addr a {
+  font-weight: 300;
+  font-size: 16px;
+  color: var(--body-text);
+  text-decoration: none;
+  transition: color 0.4s ease;
+}
+
+.email-addr a:hover { color: var(--gold); }
+
+/* ═══ RESPONSIVE — TABLET ═══ */
+@media (max-width: 1024px) {
+  .main { padding: 130px 32px 64px; }
+  .sections { gap: 36px 40px; }
+  .team-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* ═══ RESPONSIVE — MOBILE ═══ */
+@media (max-width: 768px) {
+  .main { padding: 110px 20px 60px; }
+
+  .sections {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .section.full { grid-column: 1; }
+  .team-grid { grid-template-columns: 1fr 1fr; }
+  .emails-grid { grid-template-columns: 1fr; }
+
+  .page-title h1 { font-size: 30px; }
+}
+
+/* ═══ RESPONSIVE — SMALL MOBILE ═══ */
+@media (max-width: 400px) {
+  .team-grid { grid-template-columns: 1fr; }
+  .page-title h1 { font-size: 26px; }
+}

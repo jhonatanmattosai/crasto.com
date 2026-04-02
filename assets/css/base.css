@@ -1,0 +1,115 @@
+/* ═══════════════════════════════════════
+   CRASTO.COM — Base Styles
+   Shared across all pages
+═══════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:wght@300;400;500&family=Karla:wght@200;300;400&display=swap');
+
+/* ═══ TOKENS ═══ */
+:root {
+  --black: #080808;
+  --gold: #c9a642;
+  --gold-light: #dfc062;
+  --gold-whisper: rgba(201, 166, 66, 0.04);
+  --gold-border: rgba(201, 166, 66, 0.10);
+  --gold-border-hover: rgba(201, 166, 66, 0.35);
+  --white: #f0ece3;
+  --white-soft: #d5cfc4;
+  --body-text: #a8a295;
+  --grey: #6b655b;
+  --ghost: #3a362f;
+  --ghost-line: #2a2722;
+}
+
+/* ═══ RESET ═══ */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { font-size: 20px; }
+
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: 'Karla', sans-serif;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ═══ NAV ═══ */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 32px 48px;
+  background: linear-gradient(180deg, var(--black) 60%, transparent);
+  opacity: 0;
+  animation: emerge 1.2s ease 0.1s forwards;
+}
+
+.nav-logo {
+  font-weight: 300;
+  font-size: 17px;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  color: var(--white);
+  text-decoration: none;
+  transition: color 0.4s ease;
+}
+
+.nav-logo:hover { color: var(--gold); }
+
+.nav-logo span {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 4px;
+  color: var(--grey);
+  margin-top: 3px;
+  text-align: center;
+}
+
+/* ═══ ANIMATIONS ═══ */
+@keyframes emerge {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ═══ FOOTER ═══ */
+.footer {
+  text-align: center;
+  padding: 32px 48px 48px;
+  opacity: 0;
+  animation: emerge 1.4s ease 1s forwards;
+}
+
+.footer-copy {
+  font-weight: 300;
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--grey);
+}
+
+.footer-copy span { color: var(--body-text); }
+
+/* ═══ RESPONSIVE — TABLET ═══ */
+@media (max-width: 1024px) {
+  .nav { padding: 28px 32px; }
+}
+
+/* ═══ RESPONSIVE — MOBILE ═══ */
+@media (max-width: 768px) {
+  .nav { padding: 20px 20px; }
+  .nav-logo { font-size: 15px; letter-spacing: 6px; }
+  .footer { padding: 24px 20px 36px; }
+  .footer-copy { font-size: 12px; letter-spacing: 2px; }
+}
+
+/* ═══ RESPONSIVE — SMALL MOBILE ═══ */
+@media (max-width: 400px) {
+  .nav-logo span { display: none; }
+  .footer-copy { font-size: 11px; letter-spacing: 1.5px; }
+}
