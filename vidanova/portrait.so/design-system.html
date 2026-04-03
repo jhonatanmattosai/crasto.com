@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html data-mode="light" style="color-scheme: light; scroll-behavior: auto;">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Portrait — Design System</title>
+    
+    <!-- Original Portrait Assets -->
+    <link data-n-g="" href="assets/413bcd76637eb7a1_7cede89324b5.css" rel="stylesheet"/>
+    <link data-n-p="" href="assets/5550b9da97aba13b_acf5234a64f7.css" rel="stylesheet"/>
+    <style id="_goober"> 
+        @keyframes go2264125279{from{transform:scale(0) rotate(45deg);opacity:0;}to{transform:scale(1) rotate(45deg);opacity:1;}}
+        @keyframes go3020080000{from{transform:scale(0);opacity:0;}to{transform:scale(1);opacity:1;}}
+        @keyframes go463499852{from{transform:scale(0) rotate(90deg);opacity:0;}to{transform:scale(1) rotate(90deg);opacity:1;}}
+        @keyframes go1268368563{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
+        @keyframes go1310225428{from{transform:scale(0) rotate(45deg);opacity:0;}to{transform:scale(1) rotate(45deg);opacity:1;}}
+        @keyframes go651618207{0%{height:0;width:0;opacity:0;}40%{height:0;width:6px;opacity:1;}100%{opacity:1;height:10px;}}
+        @keyframes go901347462{from{transform:scale(0.6);opacity:0.4;}to{transform:scale(1);opacity:1;}}
+        .go4109123758{z-index:9999;}.go4109123758 > *{pointer-events:auto;}
+    </style>
+    <style>
+        @import url("css2_0c6ec1a12c79.css");
+        
+        :root {
+            --font-basier-circle: '__basierCircle_9ca3f5', '__basierCircle_Fallback_9ca3f5';
+            --font-switzer: '__switzer_c2a0a8', '__switzer_Fallback_c2a0a8';
+            --font-open-runde: '__openRunde_7f842d', '__openRunde_Fallback_7f842d';
+            --font-jetbrains-mono: '__jetbrainsMono_7b1267', '__jetbrainsMono_Fallback_7b1267';
+            --wui-color-accent-base-100: hsla(231, 100%, 70%, 1);
+        }
+
+        /* Documentation UI Overrides - Integrated with Portrait Aesthetic */
+        .ds-section {
+            padding: 120px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.04);
+        }
+        .ds-label {
+            font-family: var(--font-jetbrains-mono);
+            font-size: 11px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #94A3B8;
+            margin-bottom: 16px;
+            display: block;
+        }
+        .ds-nav {
+            background: rgba(255,255,255,0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+            height: 64px;
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 2000;
+        }
+        .ds-nav-inner {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 32px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .ds-badge {
+            background: #F1F5F9;
+            color: #64748B;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 10px;
+            font-weight: 700;
+            font-family: var(--font-jetbrains-mono);
+        }
+        .ds-spec-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 24px;
+        }
+        .ds-spec-row td {
+            padding: 24px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.03);
+            vertical-align: top;
+        }
+        .ds-color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 24px;
+        }
+        .ds-swatch {
+            border-radius: 16px;
+            height: 80px;
+            border: 1px solid rgba(0,0,0,0.05);
+            margin-bottom: 12px;
+        }
+        
+        /* Ensure animations from index.html are active */
+        .ds-hero-scale {
+            transform: scale(0.95);
+            transform-origin: top center;
+        }
+
+        .perspective-1000 { perspective: 1000px; }
+        .preserve-3d { transform-style: preserve-3d; }
+        .rotate-x-12 { transform: rotateX(12deg); }
+        .-rotate-y-12 { transform: rotateY(-12deg); }
+        .rotate-360 { transform: rotate(360deg); }
+        
+        @keyframes slide-infinite {
+            from { transform: translateX(-100%); }
+            to { transform: translateX(100%); }
+        }
+    </style>
+</head>
+<body class="bg-white dark:bg-gray-1000 overflow-x-hidden selection:bg-brand-blue-100">
+    <div id="__next">
+        <!-- Documentation Header -->
+        <header class="ds-nav">
+            <div class="ds-nav-inner">
+                <div class="flex items-center gap-4">
+                    <svg fill="none" height="24" viewbox="0 0 58 58" width="24" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M40 8.5H18A9.5 9.5 0 0 0 8.5 18v22a9.5 9.5 0 0 0 9.5 9.5h22a9.5 9.5 0 0 0 9.5-9.5V18A9.5 9.5 0 0 0 40 8.5ZM18 0C8.059 0 0 8.059 0 18v22c0 9.941 8.059 18 18 18h22c9.941 0 18-8.059 18-18V18c0-9.941-8.059-18-18-18H18Z" fill="currentColor" fill-rule="evenodd"></path></svg>
+                    <span class="font-semibold text-sm tracking-tight">Portrait Design System</span>
+                </div>
+                <nav class="hidden md:flex items-center gap-8">
+                    <a href="#typography" class="text-xs font-medium text-gray-500 hover:text-gray-900 transition">Typography</a>
+                    <a href="#colors" class="text-xs font-medium text-gray-500 hover:text-gray-900 transition">Colors</a>
+                    <a href="#components" class="text-xs font-medium text-gray-500 hover:text-gray-900 transition">Components</a>
+                    <a href="#layout" class="text-xs font-medium text-gray-500 hover:text-gray-900 transition">Layout</a>
+                    <a href="#motion" class="text-xs font-medium text-gray-500 hover:text-gray-900 transition">Motion</a>
+                </nav>
+                <div class="ds-badge">VER 2.15.0</div>
+            </div>
+        </header>
+
+        <main class="isolate pt-16">
+            
+            <!-- 01 Hero Pattern Showcase -->
+            <section id="hero" class="ds-hero-scale">
+                <section class="relative overflow-hidden text-center __variable_353c7d">
+                    <div class="from-brand-blue-700/6 absolute inset-y-3 top-3 left-1/2 max-h-[calc(100dvh-40px)] w-[calc(100%-24px)] max-w-(--breakpoint-2xl) -translate-x-1/2 overflow-hidden rounded-4xl bg-linear-to-b to-white sm:inset-y-5 sm:w-[calc(100%-40px)]">
+                        <img alt="" class="ease-out-smooth transition-opacity duration-300 pointer-events-none max-w-none absolute top-0 left-1/2 -translate-x-1/2" src="assets/rainbow-beams_777126e8370d.webp" width="1416"/>
+                    </div>
+                    <div class="border-brand-blue-800/10 absolute inset-y-3 top-3 left-1/2 max-h-[calc(100dvh-40px)] w-[calc(100%-24px)] max-w-(--breakpoint-2xl) -translate-x-1/2 rounded-4xl border sm:inset-y-5 sm:w-[calc(100%-40px)]"></div>
+                    <div class="max-w-(--breakpoint-xl) mx-auto px-8 md:px-12 xl:px-16 relative z-10 flex min-h-[70vh] flex-col items-center justify-center gap-8 pt-32 pb-16">
+                        <div class="flex flex-col items-center gap-8">
+                            <h1 class="text-h1-lg-fluid text-brand-blue-1000 max-w-[10em] font-medium tracking-tight">Designing for the <span class="bg-rainbow-highlights font-junicode text-junicode-with-basier -mx-[0.25em] px-[0.25em] font-semibold italic">Forever Space.</span></h1>
+                            <p class="text-brand-blue-1000/65 mx-auto max-w-md text-lg text-balance">The technical specification and pattern library for Portrait.so.</p>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <div class="max-w-(--breakpoint-xl) mx-auto px-8 md:px-12 xl:px-16">
+                
+                <!-- 02 Typography Section -->
+                <section id="typography" class="ds-section">
+                    <span class="ds-label">01 // Typography System</span>
+                    <table class="ds-spec-table">
+                        <tr class="ds-spec-row">
+                            <td class="w-1/4"><div class="flex flex-col gap-1"><span class="text-xs font-semibold">Heading L</span><span class="text-[10px] font-mono text-gray-400">text-h1-lg-fluid</span></div></td>
+                            <td><h1 class="text-h1-lg-fluid text-brand-blue-1000 font-medium">Portrait Everywhere.</h1></td>
+                        </tr>
+                        <tr class="ds-spec-row">
+                            <td><div class="flex flex-col gap-1"><span class="text-xs font-semibold">Heading M</span><span class="text-[10px] font-mono text-gray-400">text-h3-fluid</span></div></td>
+                            <td><h3 class="text-h3-fluid text-brand-blue-1000 font-medium">Everything you need, in one link.</h3></td>
+                        </tr>
+                        <tr class="ds-spec-row">
+                            <td><div class="flex flex-col gap-1"><span class="text-xs font-semibold">Accent Serif</span><span class="text-[10px] font-mono text-gray-400">font-junicode italic</span></div></td>
+                            <td><span class="bg-rainbow-highlights font-junicode text-junicode-with-basier font-semibold italic text-5xl">Digital Identity</span></td>
+                        </tr>
+                        <tr class="ds-spec-row">
+                            <td><div class="flex flex-col gap-1"><span class="text-xs font-semibold">Body Copy</span><span class="text-[10px] font-mono text-gray-400">text-lg leading-relaxed</span></div></td>
+                            <td><p class="text-lg text-gray-300 max-w-xl">Your Portrait is your onchain identity with a built-in bank account. Send and receive money with a username. No wallet addresses to copy, no mistakes.</p></td>
+                        </tr>
+                        <tr class="ds-spec-row">
+                            <td><div class="flex flex-col gap-1"><span class="text-xs font-semibold">Metadata / Mono</span><span class="text-[10px] font-mono text-gray-400">font-basier-circle</span></div></td>
+                            <td><p class="font-basier-circle text-xs tracking-widest text-gray-400 uppercase">Confirm with Face ID to send</p></td>
+                        </tr>
+                    </table>
+                </section>
+
+                <!-- 03 Color & Environment -->
+                <section id="colors" class="ds-section">
+                    <span class="ds-label">02 // Color Palette</span>
+                    <div class="ds-color-grid">
+                        <div class="flex flex-col">
+                            <div class="ds-swatch bg-white ring-1 ring-black/5"></div>
+                            <span class="text-[11px] font-bold">Surface White</span>
+                            <span class="text-[10px] font-mono text-gray-400">#FFFFFF</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <div class="ds-swatch bg-gray-10"></div>
+                            <span class="text-[11px] font-bold">Surface Gray</span>
+                            <span class="text-[10px] font-mono text-gray-400">#F8FAFC</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <div class="ds-swatch bg-brand-blue-1000"></div>
+                            <span class="text-[11px] font-bold">Brand Blue</span>
+                            <span class="text-[10px] font-mono text-gray-400">#000000 / Dynamic</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <div class="ds-swatch bg-rainbow-gradient"></div>
+                            <span class="text-[11px] font-bold">Rainbow Accent</span>
+                            <span class="text-[10px] font-mono text-gray-400">Linear Variable</span>
+                        </div>
+                    </div>
+
+                    <div class="mt-16 ds-color-grid">
+                        <div class="flex flex-col">
+                            <div class="ds-swatch bg-brand-orange-50 border border-brand-orange-100"></div>
+                            <span class="text-[11px] font-bold">Tint: Orange</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <div class="ds-swatch bg-brand-blue-50 border border-brand-blue-100"></div>
+                            <span class="text-[11px] font-bold">Tint: Blue</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <div class="ds-swatch bg-brand-green-50 border border-brand-green-100"></div>
+                            <span class="text-[11px] font-bold">Tint: Green</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <div class="ds-swatch bg-brand-red-50 border border-brand-red-100"></div>
+                            <span class="text-[11px] font-bold">Tint: Red</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 04 Components Gallery -->
+                <section id="components" class="ds-section">
+                    <span class="ds-label">03 // Components Gallery</span>
+                    
+                    <div class="grid md:grid-cols-2 gap-12 mt-12">
+                        <!-- Buttons -->
+                        <div class="bg-gray-10 rounded-[32px] p-12 flex flex-col items-center gap-8">
+                            <span class="ds-label !mb-0">Interactive States</span>
+                            
+                            <!-- Primary -->
+                            <button class="group/button inline-flex outline-hidden rounded-full">
+                                <span class="relative w-full overflow-hidden rounded-full h-11 p-1">
+                                    <span class="bg-rainbow-gradient group-hocus/button:rotate-360 pointer-events-none absolute inset-x-0 top-1/2 aspect-square -translate-y-1/2 opacity-100 transition-[opacity,rotate,translate] duration-700"></span>
+                                    <span class="pointer-events-auto relative flex w-full items-center justify-center font-[540] bg-white text-gray-700 shadow-sm border border-black/5 px-6 h-full rounded-full group-hover:shadow-md transition">Rainbow Primary</span>
+                                </span>
+                            </button>
+
+                            <!-- Social -->
+                            <button class="flex h-11 items-center justify-center gap-2.5 rounded-full bg-gray-700 px-6 font-[540] text-white hover:bg-gray-1000 transition shadow-sm">
+                                <svg class="tabler-icon tabler-icon-brand-apple-filled" fill="currentColor" height="18" viewbox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M15.079 5.999l.239 .012c1.43 .097 3.434 1.013 4.508 2.586a1 1 0 0 1 -.344 1.44c-.05 .028 -.372 .158 -.497 .217a4.15 4.15 0 0 0 -.722 .431c-.614 .461 -.948 1.009 -.942 1.694c.01 .885 .339 1.454 .907 1.846c.208 .143 .436 .253 .666 .33c.126 .043 .426 .116 .444 .122a1 1 0 0 1 .662 .942c0 2.621 -3.04 6.381 -5.286 6.381c-.79 0 -1.272 -.091 -1.983 -.315l-.098 -.031c-.463 -.146 -.702 -.192 -1.133 -.192c-.52 0 -.863 .06 -1.518 .237l-.197 .053c-.575 .153 -.964 .226 -1.5 .248c-2.749 0 -5.285 -5.093 -5.285 -9.072c0 -3.87 1.786 -6.92 5.286 -6.92c.297 0 .598 .045 .909 .128c.403 .107 .774 .26 1.296 .508c.787 .374 .948 .44 1.009 .44h.016c.03 -.003 .128 -.047 1.056 -.457c1.061 -.467 1.864 -.685 2.746 -.616l-.24 -.012z"></path><path d="M14 1a1 1 0 0 1 1 1a3 3 0 0 1 -3 3a1 1 0 0 1 -1 -1a3 3 0 0 1 3 -3z"></path></svg>
+                                Continue with Apple
+                            </button>
+
+                            <!-- Ghost -->
+                            <button class="px-6 py-2 text-sm font-medium text-gray-400 hover:text-gray-900 transition">Log in</button>
+                        </div>
+
+                        <!-- Card UI -->
+                        <div class="bg-brand-orange-50 rounded-[32px] p-8 ring-1 ring-brand-orange-100 flex flex-col items-center">
+                             <div class="relative w-full max-w-[280px] overflow-hidden rounded-3xl bg-white p-5 shadow-lg border border-black/5">
+                                <div class="mb-4 flex items-center justify-between">
+                                    <span class="text-xs font-medium text-gray-400">Activity</span>
+                                    <span class="bg-brand-orange-50 text-brand-orange-700 flex items-center gap-1.5 rounded-full px-2 py-0.5 text-[10px] font-bold ring-1 ring-brand-orange-200">
+                                        <span class="bg-brand-orange-600 size-1 animate-pulse rounded-full"></span>LIVE
+                                    </span>
+                                </div>
+                                <div class="space-y-3">
+                                    <div class="flex items-center gap-3">
+                                        <div class="size-8 rounded-full bg-gray-100 border border-black/5 flex items-center justify-center font-bold text-[10px]">RB</div>
+                                        <div class="flex flex-col"><span class="text-xs font-semibold">@ryan</span><span class="text-[10px] text-gray-300">Coffee ☕</span></div>
+                                        <span class="ml-auto text-xs font-bold text-brand-blue-1000">$12.00</span>
+                                    </div>
+                                </div>
+                             </div>
+                             <p class="mt-6 text-[11px] font-mono text-brand-orange-700">Pattern: Dashboard Widget</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 04 Layout Patterns Section -->
+                <section id="layout" class="ds-section">
+                    <span class="ds-label">04 // Layout Systems</span>
+                    
+                    <div class="space-y-24 mt-12">
+                        <!-- Pattern: 2-Column Feature -->
+                        <div class="flex flex-col gap-6">
+                            <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest">A. 2-Column Feature Pattern</h4>
+                            <div class="border border-black/5 rounded-4xl bg-gray-50/50 p-4">
+                                <div class="grid lg:grid-cols-2 gap-8 items-center bg-white rounded-[2rem] border border-black/5 p-8 lg:p-16">
+                                    <div class="flex flex-col gap-6">
+                                        <span class="bg-brand-blue-50 text-brand-blue-700 ring-1 ring-brand-blue-200 w-fit px-3 py-1 rounded-full text-xs font-medium uppercase">Label</span>
+                                        <h2 class="text-h3-fluid text-brand-blue-1000 font-medium">Fluid Headline Pattern.</h2>
+                                        <p class="text-gray-300 text-lg leading-relaxed max-w-sm">Responsive content that balances with a visual asset on desktop.</p>
+                                    </div>
+                                    <div class="bg-brand-blue-50 h-64 rounded-3xl border border-dashed border-brand-blue-200 flex items-center justify-center">
+                                        <span class="text-xs font-mono text-brand-blue-300 italic">Visual Component</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pattern: Responsive Grid -->
+                        <div class="flex flex-col gap-6">
+                            <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest">B. Feature Grid (3-Up)</h4>
+                            <div class="grid md:grid-cols-3 gap-6">
+                                <div class="p-8 bg-brand-orange-50 rounded-4xl border border-brand-orange-100 h-48 flex flex-col justify-between">
+                                    <div class="size-8 bg-white rounded-xl shadow-sm"></div>
+                                    <span class="text-xs font-bold text-brand-orange-700">Orange Feature Surface</span>
+                                </div>
+                                <div class="p-8 bg-brand-green-50 rounded-4xl border border-brand-green-100 h-48 flex flex-col justify-between">
+                                    <div class="size-8 bg-white rounded-xl shadow-sm"></div>
+                                    <span class="text-xs font-bold text-brand-green-700">Green Feature Surface</span>
+                                </div>
+                                <div class="p-8 bg-brand-red-50 rounded-4xl border border-brand-red-100 h-48 flex flex-col justify-between">
+                                    <div class="size-8 bg-white rounded-xl shadow-sm"></div>
+                                    <span class="text-xs font-bold text-brand-red-700">Red Feature Surface</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 05 Motion & Interaction behaviours -->
+                <section id="motion" class="ds-section mb-32">
+                    <span class="ds-label">05 // Motion & Interaction behaviors</span>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12">
+                        <!-- Entrance Animations -->
+                        <div class="bg-gray-10 rounded-[32px] p-10 flex flex-col gap-8">
+                             <h5 class="text-sm font-bold text-gray-400 uppercase tracking-widest">Entrance Sequences</h5>
+                             <div class="space-y-6">
+                                 <div class="flex items-center justify-between p-4 bg-white rounded-xl border border-black/5" style="animation: go901347462 0.8s cubic-bezier(0,0,0.22,1)">
+                                     <span class="text-xs font-medium text-gray-600">Standard Fade-Up</span>
+                                     <span class="ds-badge">go901347462</span>
+                                 </div>
+                                 <div class="flex items-center justify-between p-4 bg-white rounded-xl border border-black/5" style="animation: go3020080000 0.5s cubic-bezier(0.34,1.56,0.64,1)">
+                                     <span class="text-xs font-medium text-gray-600">Scale-In Pop</span>
+                                     <span class="ds-badge">go3020080000</span>
+                                 </div>
+                             </div>
+                        </div>
+
+                        <!-- Micro-interactions -->
+                        <div class="bg-gray-10 rounded-[32px] p-10 flex flex-col gap-8">
+                             <h5 class="text-sm font-bold text-gray-400 uppercase tracking-widest">Hover Micro-states</h5>
+                             <div class="grid grid-cols-2 gap-4">
+                                 <div class="h-24 bg-white rounded-2xl border border-black/5 flex items-center justify-center group cursor-pointer">
+                                     <div class="size-6 bg-brand-blue-500 rounded-lg group-hover:rotate-180 transition-transform duration-700"></div>
+                                 </div>
+                                 <div class="h-24 bg-white rounded-2xl border border-black/5 flex items-center justify-center group cursor-pointer">
+                                     <div class="size-6 bg-brand-orange-500 rounded-full group-hover:scale-125 transition-transform duration-300"></div>
+                                 </div>
+                             </div>
+                        </div>
+                    </div>
+
+                    <!-- Complex Motion -->
+                    <div class="mt-12 bg-black rounded-[32px] p-16 overflow-hidden relative group">
+                        <div class="absolute inset-x-0 bottom-0 h-1/2 bg-rainbow-gradient opacity-20 blur-3xl pointer-events-none group-hover:opacity-40 transition duration-1000"></div>
+                        <div class="relative z-10 flex flex-col items-center gap-12">
+                             <h5 class="text-xs font-bold text-gray-500 uppercase tracking-widest">Complex: 3D Depth Pattern</h5>
+                             
+                             <div class="relative w-full max-w-sm aspect-[1.58] perspective-1000">
+                                 <div class="w-full h-full bg-linear-to-br from-white/10 to-white/5 backdrop-blur-2xl rounded-3xl border border-white/10 shadow-2xl transition-all duration-700 preserve-3d group-hover:rotate-x-12 group-hover:-rotate-y-12 flex items-center justify-center">
+                                     <div class="flex flex-col items-center gap-4">
+                                         <div class="size-16 bg-white/10 rounded-full border border-white/20 animate-pulse"></div>
+                                         <div class="h-1 w-32 bg-white/5 rounded-full overflow-hidden">
+                                             <div class="h-full bg-rainbow-gradient animate-[slide-infinite_3s_infinite_linear]" style="width: 200%;"></div>
+                                         </div>
+                                     </div>
+                                 </div>
+                             </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+
+        <!-- Footer Documentation Info -->
+        <footer class="bg-gray-10 border-t border-black/5 py-32">
+            <div class="max-w-(--breakpoint-xl) mx-auto px-8 md:px-12 xl:px-16 text-center">
+                <div class="flex flex-col items-center gap-6">
+                    <span class="ds-badge">INTERNAL SPECIFICATION ONLY</span>
+                    <p class="text-xs text-gray-300 font-mono tracking-widest uppercase">Proprietary Assets & Guidelines © 2024 Portrait.so</p>
+                    <div class="flex gap-4">
+                        <div class="size-1 rounded-full bg-black/10"></div>
+                        <div class="size-1 rounded-full bg-black/10"></div>
+                        <div class="size-1 rounded-full bg-black/10"></div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+</body>
+</html>

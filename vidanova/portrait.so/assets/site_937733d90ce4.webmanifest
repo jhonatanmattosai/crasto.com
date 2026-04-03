@@ -1,0 +1,37 @@
+{
+  "background_color": "#f7f7f7",
+  "description": "Your forever space for everything you are.",
+  "display": "standalone",
+  "icons": [
+    {
+      "sizes": "192x192",
+      "src": "/icon-container-192x192.png?v=2.2",
+      "type": "image/png"
+    },
+    {
+      "sizes": "256x256",
+      "src": "/icon-container-256x256.png?v=2.2",
+      "type": "image/png"
+    },
+    {
+      "sizes": "384x384",
+      "src": "/icon-container-384x384.png?v=2.2",
+      "type": "image/png"
+    },
+    {
+      "sizes": "512x512",
+      "src": "/icon-container-512x512.png?v=2.2",
+      "type": "image/png"
+    },
+    {
+      "sizes": "1024x1024",
+      "src": "/icon-container-1024x1024.png?v=2.2",
+      "type": "image/png"
+    }
+  ],
+  "name": "Portrait",
+  "orientation": "portrait",
+  "short_name": "Portrait",
+  "start_url": "/editor",
+  "theme_color": "#f7f7f7"
+}
