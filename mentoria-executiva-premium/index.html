@@ -1,0 +1,1781 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mentoria Executiva Premium — CRASTO Inteligência Comportamental</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black: #0D0D0C;
+  --black-warm: #111110;
+  --accent: #d4b044;
+  --accent-light: #e8c94e;
+  --accent-deep: #b8942a;
+  --gold-whisper: rgba(212,176,68,.04);
+  --gold-glow: rgba(212,176,68,.08);
+  --white: #f5f2ea;
+  --white-soft: #e0dbd0;
+  --body-text: #c4bdb3;
+  --grey: #a8a099;
+  --ghost: #7a7268;
+  --ghost-line: #332f2a;
+  --red-alert: #c44;
+  --green-ok: #6a9;
+  --blue-info: #6899bb;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+html { font-size:17px; scroll-behavior:smooth; }
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: 'Inter', -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ═══════════════════════════════════════
+   GLOBAL UTILITIES
+   ═══════════════════════════════════════ */
+.section {
+  position: relative;
+  padding: 140px 64px;
+  border-bottom: 1px solid var(--ghost-line);
+  overflow: hidden;
+}
+.section-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+.section-eyebrow {
+  font-size: 9px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--ghost);
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.section-eyebrow::before {
+  content: '';
+  width: 32px;
+  height: 1px;
+  background: var(--accent);
+  opacity: .4;
+}
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 52px;
+  font-weight: 500;
+  line-height: 1.12;
+  margin-bottom: 20px;
+  color: var(--white);
+  letter-spacing: -.5px;
+}
+.section-title em {
+  font-style: italic;
+  color: var(--accent-light);
+}
+.section-desc {
+  font-size: 16px;
+  line-height: 1.85;
+  color: var(--body-text);
+  max-width: 720px;
+  margin-bottom: 56px;
+}
+.gold-line {
+  width: 48px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  margin-bottom: 32px;
+}
+
+/* ═══════════════════════════════════════
+   AMBIENT LIGHT EFFECTS
+   ═══════════════════════════════════════ */
+.ambient-orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(120px);
+  opacity: .035;
+  background: var(--accent);
+}
+.ambient-orb-1 { width: 600px; height: 600px; top: -200px; left: -200px; }
+.ambient-orb-2 { width: 500px; height: 500px; bottom: -150px; right: -150px; }
+.ambient-orb-3 { width: 400px; height: 400px; top: 50%; left: 50%; transform: translate(-50%,-50%); }
+
+/* ═══════════════════════════════════════
+   NAVIGATION
+   ═══════════════════════════════════════ */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 56px;
+  background: linear-gradient(180deg, rgba(13,13,12,.97) 0%, rgba(13,13,12,.85) 70%, transparent 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(42,39,34,.2);
+  opacity: 0;
+  animation: slideDown .8s cubic-bezier(.16,1,.3,1) .2s forwards;
+}
+.nav-logo {
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  color: var(--white);
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  transition: color .4s;
+}
+.nav-logo:hover { color: var(--accent); }
+.nav-logo-sub {
+  font-size: 7px;
+  letter-spacing: 4px;
+  color: var(--ghost);
+  font-weight: 200;
+}
+.nav-cta {
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent);
+  text-decoration: none;
+  padding: 10px 24px;
+  border: 1px solid rgba(212,176,68,.3);
+  border-radius: 2px;
+  transition: all .5s;
+  font-weight: 400;
+}
+.nav-cta:hover {
+  background: var(--accent);
+  color: var(--black);
+  box-shadow: 0 4px 24px rgba(212,176,68,.15);
+}
+
+/* ═══════════════════════════════════════
+   HERO
+   ═══════════════════════════════════════ */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+/* Stoic statue silhouettes as CSS art */
+.hero-statue-left,
+.hero-statue-right {
+  position: absolute;
+  bottom: 0;
+  width: 380px;
+  height: 85%;
+  opacity: .04;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  filter: grayscale(1) brightness(.6);
+}
+.hero-statue-left {
+  left: -40px;
+  background-position: bottom left;
+}
+.hero-statue-right {
+  right: -40px;
+  background-position: bottom right;
+}
+.hero-gradient {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 40%, rgba(212,176,68,.03) 0%, transparent 60%),
+    radial-gradient(circle at 20% 80%, rgba(212,176,68,.02) 0%, transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(212,176,68,.02) 0%, transparent 40%);
+}
+/* Greek pattern border */
+.hero-border-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, 
+    transparent,
+    rgba(212,176,68,.1) 15%,
+    rgba(212,176,68,.3) 30%,
+    var(--accent) 50%,
+    rgba(212,176,68,.3) 70%,
+    rgba(212,176,68,.1) 85%,
+    transparent
+  );
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 920px;
+  padding: 0 32px;
+  opacity: 0;
+  animation: fadeInUp 1.4s cubic-bezier(.16,1,.3,1) .5s forwards;
+}
+.hero-eyebrow {
+  font-size: 9px;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: var(--ghost);
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.hero-eyebrow::before,
+.hero-eyebrow::after {
+  content: '';
+  width: 48px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--ghost-line), transparent);
+}
+.hero-headline {
+  font-family: 'Playfair Display', serif;
+  font-size: 76px;
+  font-weight: 500;
+  line-height: 1.06;
+  margin-bottom: 36px;
+  letter-spacing: -1px;
+}
+.hero-headline-main {
+  display: block;
+  color: var(--white);
+}
+.hero-headline-accent {
+  display: block;
+  font-style: italic;
+  color: var(--accent-light);
+  font-size: 80px;
+  margin-top: 4px;
+}
+.hero-divider {
+  width: 64px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  margin: 0 auto 36px;
+}
+.hero-subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--body-text);
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+.hero-description {
+  font-size: 15px;
+  line-height: 1.9;
+  color: var(--grey);
+  max-width: 640px;
+  margin: 0 auto 48px;
+}
+.hero-cta {
+  display: inline-block;
+  padding: 18px 48px;
+  background: transparent;
+  border: 1.5px solid rgba(212,176,68,.4);
+  color: var(--accent);
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all .6s;
+  position: relative;
+  overflow: hidden;
+}
+.hero-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .6s cubic-bezier(.23,1,.32,1);
+  z-index: -1;
+}
+.hero-cta:hover::before { transform: scaleX(1); }
+.hero-cta:hover {
+  color: var(--black);
+  border-color: var(--accent);
+  box-shadow: 0 8px 40px rgba(212,176,68,.15);
+}
+/* Socrates watermark quote */
+.hero-watermark {
+  position: absolute;
+  bottom: 48px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px;
+  font-style: italic;
+  color: rgba(212,176,68,.12);
+  letter-spacing: 2px;
+  white-space: nowrap;
+}
+
+/* ═══════════════════════════════════════
+   PROBLEMA SECTION
+   ═══════════════════════════════════════ */
+.problema-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+  background: var(--ghost-line);
+  padding: 2px;
+  margin-top: 48px;
+}
+.problema-card {
+  background: var(--black);
+  padding: 48px 40px;
+  border: 1px solid transparent;
+  transition: all .6s cubic-bezier(.23,1,.32,1);
+  position: relative;
+  overflow: hidden;
+}
+.problema-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 3px;
+  height: 0;
+  background: var(--accent);
+  transition: height .6s;
+}
+.problema-card:hover::after { height: 100%; }
+.problema-card:hover {
+  border-color: rgba(212,176,68,.12);
+  background: rgba(212,176,68,.015);
+}
+.problema-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 14px;
+  color: var(--white);
+  transition: color .4s;
+}
+.problema-card:hover h3 { color: var(--accent-light); }
+.problema-card p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--body-text);
+}
+.problema-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  font-style: italic;
+  color: var(--accent-light);
+  text-align: center;
+  margin-top: 64px;
+  line-height: 1.5;
+  opacity: .8;
+}
+
+/* ═══════════════════════════════════════
+   SOLUTION BRIDGE
+   ═══════════════════════════════════════ */
+.solution-bridge {
+  text-align: center;
+  padding: 120px 64px;
+  position: relative;
+}
+.solution-bridge .section-inner { max-width: 800px; }
+
+/* ═══════════════════════════════════════
+   7 STEPS METHOD EVOLUTION
+   ═══════════════════════════════════════ */
+.steps-container {
+  position: relative;
+  margin-top: 56px;
+}
+/* Vertical golden line connecting steps */
+.steps-line {
+  position: absolute;
+  left: 32px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(180deg, var(--accent), rgba(212,176,68,.1));
+}
+.step-item {
+  display: flex;
+  gap: 40px;
+  padding: 32px 0;
+  position: relative;
+  opacity: 0;
+  animation: fadeInUp .8s cubic-bezier(.16,1,.3,1) forwards;
+}
+.step-item:nth-child(1) { animation-delay: .1s; }
+.step-item:nth-child(2) { animation-delay: .2s; }
+.step-item:nth-child(3) { animation-delay: .3s; }
+.step-item:nth-child(4) { animation-delay: .4s; }
+.step-item:nth-child(5) { animation-delay: .5s; }
+.step-item:nth-child(6) { animation-delay: .6s; }
+.step-item:nth-child(7) { animation-delay: .7s; }
+.step-number-circle {
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(212,176,68,.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--accent);
+  background: var(--black);
+  position: relative;
+  z-index: 2;
+  transition: all .5s;
+}
+.step-item:hover .step-number-circle {
+  background: var(--accent);
+  color: var(--black);
+  border-color: var(--accent);
+  box-shadow: 0 0 32px rgba(212,176,68,.15);
+}
+.step-body { padding-top: 8px; }
+.step-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--white);
+  margin-bottom: 8px;
+  transition: color .4s;
+}
+.step-item:hover .step-title { color: var(--accent-light); }
+.step-text {
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--body-text);
+  max-width: 600px;
+}
+
+/* ═══════════════════════════════════════
+   EVO-TALK SECTION with Socrates BG
+   ═══════════════════════════════════════ */
+.evotalk-section {
+  position: relative;
+  background: var(--black);
+}
+.evotalk-bg {
+  position: absolute;
+  inset: 0;
+  opacity: .03;
+  background:
+    radial-gradient(circle at 25% 50%, rgba(212,176,68,.06), transparent 50%),
+    radial-gradient(circle at 75% 50%, rgba(212,176,68,.04), transparent 50%);
+}
+/* Socrates quote overlay */
+.socrates-quote-block {
+  text-align: center;
+  margin-bottom: 64px;
+  padding: 48px;
+  position: relative;
+}
+.socrates-quote-block::before,
+.socrates-quote-block::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212,176,68,.3), transparent);
+}
+.socrates-quote-block::before { top: 0; }
+.socrates-quote-block::after { bottom: 0; }
+.socrates-origin {
+  font-size: 9px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--ghost);
+  margin-bottom: 20px;
+}
+.socrates-main-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--accent-light);
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto 20px;
+  opacity: .85;
+}
+.socrates-attr {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 15px;
+  font-style: italic;
+  color: var(--ghost);
+}
+
+/* TRIAD */
+.triad-container {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1fr;
+  gap: 3px;
+  background: var(--ghost-line);
+  padding: 3px;
+  margin-top: 48px;
+}
+.triad-pillar {
+  background: var(--black);
+  padding: 48px 32px;
+  text-align: center;
+  transition: all .6s;
+  position: relative;
+  overflow: hidden;
+}
+.triad-pillar::before {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transition: transform .6s;
+}
+.triad-pillar:hover::before { transform: scaleX(1); }
+.triad-pillar:hover {
+  background: rgba(212,176,68,.02);
+}
+.triad-pillar.triad-center {
+  background: rgba(212,176,68,.03);
+  border-left: 1px solid rgba(212,176,68,.15);
+  border-right: 1px solid rgba(212,176,68,.15);
+}
+.triad-icon {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 600;
+  transition: all .5s;
+}
+.triad-icon-default {
+  border: 1.5px solid rgba(212,176,68,.3);
+  color: var(--accent);
+  background: transparent;
+}
+.triad-icon-gold {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+  color: var(--black);
+  box-shadow: 0 4px 24px rgba(212,176,68,.2);
+}
+.triad-pillar:hover .triad-icon-default {
+  background: var(--accent);
+  color: var(--black);
+  border-color: var(--accent);
+}
+.triad-role {
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+.triad-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--white);
+  margin-bottom: 20px;
+}
+.triad-list {
+  list-style: none;
+  text-align: left;
+  padding: 0;
+}
+.triad-list li {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--body-text);
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(42,39,34,.3);
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.triad-list li:last-child { border-bottom: none; }
+.triad-list li::before {
+  content: '✓';
+  color: var(--accent);
+  font-size: 11px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.triad-explanation {
+  margin-top: 48px;
+  text-align: center;
+  padding: 32px;
+  border: 1px solid var(--ghost-line);
+  background: rgba(212,176,68,.01);
+}
+.triad-explanation p {
+  font-size: 15px;
+  line-height: 1.9;
+  color: var(--body-text);
+  max-width: 700px;
+  margin: 0 auto;
+}
+.triad-explanation strong {
+  color: var(--accent-light);
+  font-weight: 500;
+}
+
+/* ═══════════════════════════════════════
+   RADAR CHARTS - Competências & Valores
+   ═══════════════════════════════════════ */
+.dual-radar {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  margin-top: 56px;
+}
+.radar-block {
+  background: rgba(212,176,68,.015);
+  border: 1px solid var(--ghost-line);
+  padding: 40px;
+  text-align: center;
+  transition: all .5s;
+}
+.radar-block:hover {
+  border-color: rgba(212,176,68,.2);
+  box-shadow: 0 8px 48px rgba(212,176,68,.04);
+}
+.radar-label {
+  font-size: 9px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+.radar-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+.radar-subtitle {
+  font-size: 13px;
+  color: var(--body-text);
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+.radar-canvas {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+.radar-canvas svg {
+  width: 100%;
+  height: auto;
+}
+.radar-items {
+  margin-top: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+.radar-tag {
+  font-size: 11px;
+  padding: 6px 14px;
+  border: 1px solid var(--ghost-line);
+  color: var(--body-text);
+  border-radius: 2px;
+  transition: all .4s;
+}
+.radar-tag:hover {
+  border-color: var(--accent);
+  color: var(--accent-light);
+  background: rgba(212,176,68,.04);
+}
+
+/* ═══════════════════════════════════════
+   TRANSFORMATION CURVE
+   ═══════════════════════════════════════ */
+.curve-container {
+  margin-top: 56px;
+  position: relative;
+  padding: 40px;
+  background: rgba(212,176,68,.01);
+  border: 1px solid var(--ghost-line);
+}
+.curve-svg {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  display: block;
+}
+
+/* ═══════════════════════════════════════
+   ICEBERG MODEL
+   ═══════════════════════════════════════ */
+.iceberg-container {
+  margin-top: 56px;
+  position: relative;
+}
+.iceberg-visual {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.iceberg-half {
+  padding: 40px 48px;
+  position: relative;
+}
+.iceberg-visible {
+  background: linear-gradient(135deg, rgba(104,162,210,.06) 0%, rgba(104,162,210,.02) 100%);
+  border: 1px solid rgba(104,162,210,.15);
+  border-bottom: none;
+}
+.iceberg-hidden {
+  background: linear-gradient(135deg, rgba(20,60,100,.12) 0%, rgba(20,40,80,.06) 100%);
+  border: 1px solid rgba(104,162,210,.1);
+  border-top: none;
+}
+.iceberg-waterline {
+  height: 3px;
+  background: linear-gradient(90deg, transparent, rgba(104,162,210,.5), var(--accent), rgba(104,162,210,.5), transparent);
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+.iceberg-waterline-label {
+  position: absolute;
+  right: -120px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent);
+  white-space: nowrap;
+}
+.iceberg-zone-label {
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+.iceberg-zone-label.visible-label { color: rgba(104,162,210,.7); }
+.iceberg-zone-label.hidden-label { color: rgba(180,140,60,.6); }
+.iceberg-items {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.iceberg-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  background: rgba(0,0,0,.2);
+  border-radius: 3px;
+  transition: all .4s;
+}
+.iceberg-item:hover {
+  background: rgba(212,176,68,.04);
+}
+.iceberg-item-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.iceberg-item-dot.visible-dot { background: rgba(104,162,210,.6); }
+.iceberg-item-dot.hidden-dot { background: rgba(212,176,68,.5); }
+.iceberg-item span {
+  font-size: 13px;
+  color: var(--body-text);
+}
+.iceberg-credit {
+  text-align: center;
+  margin-top: 32px;
+  font-size: 12px;
+  color: var(--ghost);
+  font-style: italic;
+}
+.iceberg-credit strong {
+  color: var(--accent-light);
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* ═══════════════════════════════════════
+   16 COMPETÊNCIAS INTEGRADAS
+   ═══════════════════════════════════════ */
+.competencias-integrated {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 48px;
+}
+.comp-card {
+  padding: 28px 32px;
+  background: rgba(212,176,68,.015);
+  border: 1px solid var(--ghost-line);
+  border-left: 3px solid rgba(212,176,68,.2);
+  border-radius: 2px;
+  transition: all .5s cubic-bezier(.23,1,.32,1);
+}
+.comp-card:hover {
+  background: rgba(212,176,68,.035);
+  border-left-color: var(--accent);
+  transform: translateX(6px);
+  box-shadow: 0 4px 24px rgba(212,176,68,.06);
+}
+.comp-header {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin-bottom: 10px;
+}
+.comp-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 500;
+  color: var(--accent);
+  opacity: .25;
+  line-height: 1;
+  flex-shrink: 0;
+  min-width: 36px;
+  transition: opacity .4s;
+}
+.comp-card:hover .comp-num { opacity: .5; }
+.comp-title {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--white);
+  line-height: 1.3;
+  transition: color .4s;
+}
+.comp-card:hover .comp-title { color: var(--accent-light); }
+.comp-principle {
+  font-size: 13px;
+  line-height: 1.75;
+  color: var(--body-text);
+  padding-left: 50px;
+}
+
+/* ═══════════════════════════════════════
+   CTA FINAL
+   ═══════════════════════════════════════ */
+.cta-final {
+  text-align: center;
+  padding: 160px 64px;
+  position: relative;
+}
+.cta-final .section-inner { max-width: 800px; }
+.cta-button-large {
+  display: inline-block;
+  padding: 22px 56px;
+  background: transparent;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  font-size: 11px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all .6s;
+  margin-top: 40px;
+  position: relative;
+  overflow: hidden;
+}
+.cta-button-large::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .6s cubic-bezier(.23,1,.32,1);
+  z-index: -1;
+}
+.cta-button-large:hover::before { transform: scaleX(1); }
+.cta-button-large:hover {
+  color: var(--black);
+  box-shadow: 0 12px 48px rgba(212,176,68,.2);
+  transform: translateY(-2px);
+}
+
+/* ═══════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════ */
+.footer-minimal {
+  padding: 40px 64px;
+  text-align: center;
+  border-top: 1px solid var(--ghost-line);
+}
+.footer-copy {
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--ghost);
+}
+.footer-copy span { color: var(--white-soft); }
+
+/* ═══════════════════════════════════════
+   WHATSAPP FLOAT
+   ═══════════════════════════════════════ */
+.wa-float {
+  position: fixed;
+  bottom: 36px;
+  right: 40px;
+  z-index: 900;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  animation: fadeIn 1s ease 2s forwards;
+}
+.wa-label {
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--grey);
+  padding-right: 14px;
+  opacity: 0;
+  transform: translateX(8px);
+  transition: all .5s;
+  white-space: nowrap;
+  font-weight: 200;
+}
+.wa-float:hover .wa-label {
+  opacity: 1;
+  transform: translateX(0);
+}
+.wa-btn {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid var(--ghost-line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all .5s;
+  position: relative;
+}
+.wa-btn::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 1px solid rgba(212,176,68,.08);
+  animation: waPulse 3.5s ease-in-out infinite;
+}
+.wa-btn:hover {
+  border-color: rgba(212,176,68,.4);
+  background: rgba(212,176,68,.04);
+}
+.wa-btn svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--accent);
+  opacity: .6;
+  transition: opacity .4s;
+}
+.wa-btn:hover svg { opacity: 1; }
+
+/* ═══════════════════════════════════════
+   ANIMATIONS
+   ═══════════════════════════════════════ */
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes waPulse {
+  0%, 100% { transform: scale(1); opacity: .3; }
+  50% { transform: scale(1.3); opacity: 0; }
+}
+
+/* Intersection Observer animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity .9s cubic-bezier(.16,1,.3,1), transform .9s cubic-bezier(.16,1,.3,1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ═══════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════ */
+@media (max-width: 1024px) {
+  html { font-size: 16px; }
+  .section { padding: 100px 40px; }
+  .hero-headline { font-size: 56px; }
+  .hero-headline-accent { font-size: 60px; }
+  .section-title { font-size: 42px; }
+  .dual-radar { grid-template-columns: 1fr; }
+  .triad-container { grid-template-columns: 1fr; }
+  .competencias-integrated { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  .section { padding: 80px 24px; }
+  .nav { padding: 20px 24px; }
+  .hero-headline { font-size: 40px; }
+  .hero-headline-accent { font-size: 44px; }
+  .section-title { font-size: 34px; }
+  .problema-grid { grid-template-columns: 1fr; }
+  .competencias-integrated { grid-template-columns: 1fr; }
+  .comp-principle { padding-left: 0; }
+  .iceberg-items { grid-template-columns: 1fr; }
+  .hero-watermark { display: none; }
+  .iceberg-waterline-label { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════
+     NAVIGATION
+     ════════════════════════════════════════ -->
+<nav class="nav">
+  <a href="/" class="nav-logo">
+    CRASTO
+    <span class="nav-logo-sub">Inteligência Comportamental</span>
+  </a>
+  <a href="https://wa.me/5511981810002?text=Gostaria%20de%20agendar%20uma%20reunião%20sobre%20Mentoria%20Executiva%20Premium" class="nav-cta">Agendar Diagnóstico</a>
+</nav>
+
+<!-- ════════════════════════════════════════
+     HERO
+     ════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-bg">
+    <div class="hero-gradient"></div>
+    <div class="ambient-orb ambient-orb-1"></div>
+    <div class="ambient-orb ambient-orb-2"></div>
+  </div>
+  <div class="hero-border-bottom"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Mentoria Executiva Premium · 12 Meses</div>
+    <h1 class="hero-headline">
+      <span class="hero-headline-main">Excelente técnico.</span>
+      <span class="hero-headline-accent">Líder incompleto.</span>
+    </h1>
+    <div class="hero-divider"></div>
+    <p class="hero-subtitle">Transformando profissionais tecnicamente brilhantes<br>em líderes completos — com método, mensuração e profundidade.</p>
+    <p class="hero-description">Programa individualizado de 12 meses baseado no Método Evolution by Crasto. Não é treinamento pontual. É transformação comportamental contínua, mensurável e ancorada em neurociência, autorresponsabilidade radical e o sistema de crenças que sustenta mudanças permanentes.</p>
+    <a href="https://wa.me/5511981810002?text=Gostaria%20de%20agendar%20uma%20reunião%20sobre%20Mentoria%20Executiva%20Premium" class="hero-cta">Agendar Diagnóstico Corporativo</a>
+  </div>
+  <div class="hero-watermark">γνῶθι σεαυτόν — Conhece a ti mesmo</div>
+</section>
+
+<!-- ════════════════════════════════════════
+     O CENÁRIO EXECUTIVO
+     ════════════════════════════════════════ -->
+<section class="section">
+  <div class="ambient-orb ambient-orb-3"></div>
+  <div class="section-inner reveal">
+    <div class="section-eyebrow">O Cenário</div>
+    <h2 class="section-title">Profissionais brilhantes que a organização<br><em>não pode perder — e não pode promover.</em></h2>
+    <p class="section-desc">Eles dominam processos, entregas e resultados operacionais. Mas gestão de pessoas, métricas de liderança e inteligência relacional ainda não fazem parte do repertório. A empresa paga caro por essa lacuna — em turnover, conflitos e potencial desperdiçado.</p>
+    <div class="problema-grid">
+      <div class="problema-card">
+        <h3>Brilhante no técnico, frágil na gestão</h3>
+        <p>Domina a execução mas não consegue gerir pessoas, métricas e indicadores com a mesma excelência. Falta método, falta visão sistêmica, falta paciência com gente.</p>
+      </div>
+      <div class="problema-card">
+        <h3>Conflitos que drenam a organização</h3>
+        <p>Gera atrito com pares, subordinados e até clientes — não por má-fé, mas por falta de inteligência relacional. Cada conflito interno custa tempo, dinheiro e rotatividade.</p>
+      </div>
+      <div class="problema-card">
+        <h3>Equipe estagnada</h3>
+        <p>A equipe não cresce porque o líder não sabe desenvolver. Microgerencia ou abandona. O resultado é turnover alto, produtividade baixa e clima organizacional corrosivo.</p>
+      </div>
+      <div class="problema-card">
+        <h3>Potencial desperdiçado</h3>
+        <p>Líderes que já são bons mas podem ir muito além. Querem alta performance planejada e estratégica. Precisam de um processo estruturado para escalar o que já fazem.</p>
+      </div>
+    </div>
+    <p class="problema-quote">"Investir em desenvolver pessoas é o único investimento<br>que multiplica todos os outros."</p>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     SOLUÇÃO BRIDGE
+     ════════════════════════════════════════ -->
+<section class="section solution-bridge">
+  <div class="section-inner reveal" style="text-align:center">
+    <h2 class="section-title" style="max-width:800px;margin:0 auto 20px">Líderes técnicos brilhantes.<br><em>Gestores em construção.</em></h2>
+    <div class="gold-line" style="margin:0 auto 28px"></div>
+    <p class="section-desc" style="margin:0 auto;max-width:640px">Mentoria executiva de 12 meses para transformar profissionais tecnicamente excelentes em líderes completos — com competência comportamental, visão estratégica e resultados mensuráveis para a organização.</p>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     7 ETAPAS DO MÉTODO EVOLUTION
+     ════════════════════════════════════════ -->
+<section class="section">
+  <div class="ambient-orb ambient-orb-1" style="left:auto;right:-200px;top:50%"></div>
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-eyebrow">Método Evolution by Crasto</div>
+      <h2 class="section-title">As 7 Etapas da <em>Transformação</em></h2>
+      <p class="section-desc">O método opera de dentro para fora. A mudança real de comportamento nasce quando o líder assume autorresponsabilidade radical — para de terceirizar problemas, se compromete com datas específicas e ancora a transformação no seu próprio sistema de crenças, valores e referências pessoais.</p>
+    </div>
+    <div class="steps-container reveal">
+      <div class="steps-line"></div>
+      <div class="step-item">
+        <div class="step-number-circle">01</div>
+        <div class="step-body">
+          <div class="step-title">Descoberta</div>
+          <div class="step-text">Mapeamento comportamental profundo. DISC Premium. Entrevistas estratégicas. Identificação de padrões invisíveis que bloqueiam liderança — na camada biográfica, relacional e sistêmica.</div>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-number-circle">02</div>
+        <div class="step-body">
+          <div class="step-title">Conscientização</div>
+          <div class="step-text">Ampliação da percepção sobre padrões, crenças limitantes e impactos comportamentais no ambiente corporativo. O líder começa a ver o que estava invisível — a estrutura que sustenta o problema.</div>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-number-circle">03</div>
+        <div class="step-body">
+          <div class="step-title">Responsabilização</div>
+          <div class="step-text">Autorresponsabilidade radical. O líder deixa de culpar contexto, mercado, equipe — e assume protagonismo total sobre resultados e relacionamentos. Este é o ponto de virada do método.</div>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-number-circle">04</div>
+        <div class="step-body">
+          <div class="step-title">Possibilidades</div>
+          <div class="step-text">Identificação de novos caminhos, estratégias de ação e recursos internos não utilizados. Expansão de repertório comportamental e de liderança — enxergar o que antes não existia.</div>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-number-circle">05</div>
+        <div class="step-body">
+          <div class="step-title">Análise de Riscos</div>
+          <div class="step-text">Avaliação de cenários, blindagem de decisões críticas. Cada compromisso recebe data completa — dia, mês, ano, hora e minuto. A neurociência mostra: compromisso específico destrói procrastinação.</div>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-number-circle">06</div>
+        <div class="step-body">
+          <div class="step-title">Execução Guiada</div>
+          <div class="step-text">Implementação de planos de ação com acompanhamento próximo. Estímulo de dentro para fora — não pressão externa. A mudança se ancora no sistema de crenças e valores pessoais do líder.</div>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-number-circle">07</div>
+        <div class="step-body">
+          <div class="step-title">Acompanhamento & Mensuração</div>
+          <div class="step-text">Consolidação das mudanças. Indicadores objetivos de evolução. Relatórios mensais com métricas comportamentais. O líder permanece evoluindo porque a mudança está ancorada em quem ele realmente é.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     EVO-TALK® + TRÍADE DA LIDERANÇA
+     ════════════════════════════════════════ -->
+<section class="section evotalk-section">
+  <div class="evotalk-bg"></div>
+  <div class="section-inner">
+
+    <!-- Socrates Quote Block -->
+    <div class="socrates-quote-block reveal">
+      <div class="socrates-origin">Maiêutica Socrática · A arte de partejar o conhecimento</div>
+      <p class="socrates-main-quote">"A verdade está latente em todo ser humano, podendo aflorar aos poucos na medida em que se responde a uma série de perguntas simples, quase ingênuas, porém perspicazes."</p>
+      <p class="socrates-attr">Sócrates (470–399 a.C.) — Condenado por saber demais. Sabia apenas fazer as perguntas certas.</p>
+    </div>
+
+    <div class="reveal">
+      <div class="section-eyebrow">Framework EVO-TALK® · Inteligência Comportamental Evolutiva</div>
+      <h2 class="section-title">A Tríade da Liderança</h2>
+      <p class="section-desc">O Método Evolution faz um 360 na cabeça do líder. Ele precisa dominar três papéis simultâneos — e transitar entre eles com maestria. Cada papel exige competências diferentes, feedbacks diferentes e posturas completamente diferentes.</p>
+    </div>
+
+    <div class="triad-container reveal">
+      <!-- GESTOR -->
+      <div class="triad-pillar">
+        <div class="triad-icon triad-icon-default">G</div>
+        <div class="triad-role">Papel 01</div>
+        <div class="triad-name">Gestor</div>
+        <ul class="triad-list">
+          <li>Orienta regras e processos</li>
+          <li>Estabelece metas e objetivos</li>
+          <li>Define métricas</li>
+          <li>Declara prioridades</li>
+          <li>Especifica o "por quê"</li>
+          <li>Acompanha evolução</li>
+          <li>Feedback de correção</li>
+        </ul>
+      </div>
+      <!-- DESENVOLVEDOR EVO-TALK -->
+      <div class="triad-pillar triad-center">
+        <div class="triad-icon triad-icon-gold">D</div>
+        <div class="triad-role">Papel Central</div>
+        <div class="triad-name">Desenvolvedor EVO-TALK®</div>
+        <ul class="triad-list">
+          <li>Desenvolve competências comportamentais</li>
+          <li>Promove postura de autoliderança</li>
+          <li>Explora motivadores e estratégias</li>
+          <li>Avalia riscos e consequências</li>
+          <li>Gera atitudes e comprometimento</li>
+          <li>Provoca escuta ativa</li>
+          <li>Desperta engajamento</li>
+          <li>Acompanha a evolução</li>
+          <li>Feedback de desenvolvimento</li>
+        </ul>
+      </div>
+      <!-- EDUCADOR -->
+      <div class="triad-pillar">
+        <div class="triad-icon triad-icon-default">E</div>
+        <div class="triad-role">Papel 03</div>
+        <div class="triad-name">Educador</div>
+        <ul class="triad-list">
+          <li>Ensina técnicas e ferramentas</li>
+          <li>Entrega conhecimento</li>
+          <li>Faz mentoria e "shadow"</li>
+          <li>Providencia recursos</li>
+          <li>Aplica treinamentos</li>
+          <li>Aconselha e pratica junto</li>
+          <li>Acompanha evolução</li>
+          <li>Feedback de reconhecimento</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="triad-explanation reveal">
+      <p>O <strong>Evolution Leader</strong> não é apenas um gestor que cobra resultados, nem apenas um educador que ensina técnicas. Ele é, acima de tudo, um <strong>Desenvolvedor EVO-TALK®</strong> — alguém que domina a arte de fazer perguntas profundas e poderosas para provocar evolução real nas pessoas. Quando o líder transita entre os três papéis com consciência, a organização inteira se transforma.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     RODA DE COMPETÊNCIAS + VALORES/CULTURA
+     ════════════════════════════════════════ -->
+<section class="section">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-eyebrow">Diagnóstico & Mensuração</div>
+      <h2 class="section-title">Duas dimensões. <em>Uma evolução integrada.</em></h2>
+      <p class="section-desc">O programa mensura e desenvolve duas dimensões complementares: as competências comportamentais do líder (desenvolvidas individualmente com o Método Evolution) e os valores e cultura que ele instala na organização.</p>
+    </div>
+
+    <div class="dual-radar reveal">
+      <!-- COMPETÊNCIAS COMPORTAMENTAIS -->
+      <div class="radar-block">
+        <div class="radar-label">Método Evolution · Individual</div>
+        <div class="radar-title">Competências Comportamentais</div>
+        <div class="radar-subtitle">Desenvolvidas de dentro para fora na mentoria</div>
+        <div class="radar-canvas">
+          <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+            <!-- Grid rings -->
+            <g opacity=".15" fill="none" stroke="#d4b044">
+              <polygon points="200,40 310,100 340,220 260,330 140,330 60,220 90,100" stroke-width=".5"/>
+              <polygon points="200,80 280,120 300,210 250,290 150,290 100,210 120,120" stroke-width=".5"/>
+              <polygon points="200,120 250,145 265,200 240,250 160,250 135,200 150,145" stroke-width=".5"/>
+              <polygon points="200,160 225,172 232,200 222,218 178,218 168,200 175,172" stroke-width=".5"/>
+            </g>
+            <!-- Axis lines -->
+            <g stroke="rgba(212,176,68,.08)" stroke-width=".5">
+              <line x1="200" y1="200" x2="200" y2="40"/>
+              <line x1="200" y1="200" x2="310" y2="100"/>
+              <line x1="200" y1="200" x2="340" y2="220"/>
+              <line x1="200" y1="200" x2="260" y2="330"/>
+              <line x1="200" y1="200" x2="140" y2="330"/>
+              <line x1="200" y1="200" x2="60" y2="220"/>
+              <line x1="200" y1="200" x2="90" y2="100"/>
+            </g>
+            <!-- Target (outer) -->
+            <polygon points="200,40 310,100 340,220 260,330 140,330 60,220 90,100" fill="none" stroke="rgba(200,80,80,.4)" stroke-width="1.5" stroke-dasharray="4,4"/>
+            <!-- Current state -->
+            <polygon points="200,88 270,130 290,210 245,280 158,275 85,215 125,115" fill="rgba(212,176,68,.08)" stroke="var(--accent)" stroke-width="2"/>
+            <!-- Dots -->
+            <g fill="var(--accent)">
+              <circle cx="200" cy="88" r="4"/><circle cx="270" cy="130" r="4"/><circle cx="290" cy="210" r="4"/>
+              <circle cx="245" cy="280" r="4"/><circle cx="158" cy="275" r="4"/><circle cx="85" cy="215" r="4"/>
+              <circle cx="125" cy="115" r="4"/>
+            </g>
+            <!-- Labels -->
+            <g font-family="Inter,sans-serif" font-size="10" fill="#b0a99d" text-anchor="middle">
+              <text x="200" y="30">Resolução de Problemas</text>
+              <text x="325" y="95">Clareza de Metas</text>
+              <text x="358" y="225">Estratégia</text>
+              <text x="270" y="350">Análise de Riscos</text>
+              <text x="130" y="350">Aprendizado Contínuo</text>
+              <text x="42" y="225">Autorresponsabilidade</text>
+              <text x="75" y="95">Combate à Procrastinação</text>
+            </g>
+            <!-- Legend -->
+            <g transform="translate(20,375)">
+              <line x1="0" y1="0" x2="16" y2="0" stroke="var(--accent)" stroke-width="2"/>
+              <text x="22" y="4" font-family="Inter,sans-serif" font-size="9" fill="#918880">Situação Atual</text>
+              <line x1="120" y1="0" x2="136" y2="0" stroke="rgba(200,80,80,.5)" stroke-width="1.5" stroke-dasharray="4,4"/>
+              <text x="142" y="4" font-family="Inter,sans-serif" font-size="9" fill="#918880">Meta (10)</text>
+            </g>
+          </svg>
+        </div>
+      </div>
+
+      <!-- VALORES E CULTURA -->
+      <div class="radar-block">
+        <div class="radar-label">Evolution Advisory · Organizacional</div>
+        <div class="radar-title">Valores e Cultura</div>
+        <div class="radar-subtitle">Implementados na organização pelo líder transformado</div>
+        <div class="radar-canvas">
+          <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+            <!-- Grid rings -->
+            <g opacity=".15" fill="none" stroke="#d4b044">
+              <polygon points="200,40 310,100 340,220 260,330 140,330 60,220 90,100" stroke-width=".5"/>
+              <polygon points="200,80 280,120 300,210 250,290 150,290 100,210 120,120" stroke-width=".5"/>
+              <polygon points="200,120 250,145 265,200 240,250 160,250 135,200 150,145" stroke-width=".5"/>
+              <polygon points="200,160 225,172 232,200 222,218 178,218 168,200 175,172" stroke-width=".5"/>
+            </g>
+            <!-- Axis lines -->
+            <g stroke="rgba(212,176,68,.08)" stroke-width=".5">
+              <line x1="200" y1="200" x2="200" y2="40"/>
+              <line x1="200" y1="200" x2="310" y2="100"/>
+              <line x1="200" y1="200" x2="340" y2="220"/>
+              <line x1="200" y1="200" x2="260" y2="330"/>
+              <line x1="200" y1="200" x2="140" y2="330"/>
+              <line x1="200" y1="200" x2="60" y2="220"/>
+              <line x1="200" y1="200" x2="90" y2="100"/>
+            </g>
+            <!-- Target -->
+            <polygon points="200,40 310,100 340,220 260,330 140,330 60,220 90,100" fill="none" stroke="rgba(200,80,80,.4)" stroke-width="1.5" stroke-dasharray="4,4"/>
+            <!-- Current state -->
+            <polygon points="200,52 295,108 320,215 252,310 148,308 72,218 105,108" fill="rgba(106,153,119,.08)" stroke="#6a9977" stroke-width="2"/>
+            <!-- Dots -->
+            <g fill="#6a9977">
+              <circle cx="200" cy="52" r="4"/><circle cx="295" cy="108" r="4"/><circle cx="320" cy="215" r="4"/>
+              <circle cx="252" cy="310" r="4"/><circle cx="148" cy="308" r="4"/><circle cx="72" cy="218" r="4"/>
+              <circle cx="105" cy="108" r="4"/>
+            </g>
+            <!-- Labels -->
+            <g font-family="Inter,sans-serif" font-size="10" fill="#b0a99d" text-anchor="middle">
+              <text x="200" y="30">Dor de Dono</text>
+              <text x="325" y="95">Obcecado pelo Cliente</text>
+              <text x="358" y="225">Inconformismo</text>
+              <text x="270" y="350">Senso de Urgência</text>
+              <text x="130" y="350">Capacidade de Execução</text>
+              <text x="42" y="225">Cultura Colaborativa</text>
+              <text x="75" y="95">Proatividade Resolutiva</text>
+            </g>
+            <!-- Legend -->
+            <g transform="translate(20,375)">
+              <line x1="0" y1="0" x2="16" y2="0" stroke="#6a9977" stroke-width="2"/>
+              <text x="22" y="4" font-family="Inter,sans-serif" font-size="9" fill="#918880">Nível Atual</text>
+              <line x1="120" y1="0" x2="136" y2="0" stroke="rgba(200,80,80,.5)" stroke-width="1.5" stroke-dasharray="4,4"/>
+              <text x="142" y="4" font-family="Inter,sans-serif" font-size="9" fill="#918880">Meta (10)</text>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     CURVA DE TRANSFORMAÇÃO
+     ════════════════════════════════════════ -->
+<section class="section">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-eyebrow">Neurociência da Mudança</div>
+      <h2 class="section-title">A Curva de Transformação <em>Evolution</em></h2>
+      <p class="section-desc">O que acontece com profissionais e equipes quando o Método Evolution é aplicado na gestão. Baseado no modelo de Elizabeth Kübler-Ross (1969) adaptado ao contexto organizacional.</p>
+    </div>
+
+    <div class="curve-container reveal">
+      <svg viewBox="0 0 900 420" class="curve-svg" xmlns="http://www.w3.org/2000/svg">
+        <!-- Background grid -->
+        <g stroke="rgba(212,176,68,.05)" stroke-width=".5">
+          <line x1="80" y1="50" x2="80" y2="360"/><line x1="80" y1="360" x2="850" y2="360"/>
+        </g>
+        <!-- Axis labels -->
+        <text x="40" y="200" font-family="Inter,sans-serif" font-size="9" fill="#5e574c" text-anchor="middle" transform="rotate(-90,40,200)" letter-spacing="2">MORAL E COMPETÊNCIAS</text>
+        <text x="460" y="395" font-family="Inter,sans-serif" font-size="9" fill="#5e574c" text-anchor="middle" letter-spacing="2">TEMPO</text>
+
+        <!-- The curve -->
+        <path d="M100,280 C120,280 140,120 180,110 C220,100 240,108 280,180 C320,252 340,310 380,320 C420,330 440,310 480,260 C520,210 540,160 580,130 C620,100 660,80 700,70 C740,60 780,55 820,50" fill="none" stroke="url(#curveGradient)" stroke-width="3" stroke-linecap="round"/>
+        <defs>
+          <linearGradient id="curveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#c44"/>
+            <stop offset="30%" stop-color="#c84"/>
+            <stop offset="50%" stop-color="#cc4"/>
+            <stop offset="70%" stop-color="#6a9"/>
+            <stop offset="100%" stop-color="#4a8"/>
+          </linearGradient>
+        </defs>
+
+        <!-- Stage dots and labels -->
+        <!-- Choque -->
+        <circle cx="100" cy="280" r="6" fill="#c44"/>
+        <text x="100" y="300" font-family="Inter,sans-serif" font-size="10" fill="#c44" text-anchor="middle" font-weight="600">CHOQUE</text>
+        <text x="100" y="314" font-family="Inter,sans-serif" font-size="8" fill="#918880" text-anchor="middle">Surpresa com a mudança</text>
+
+        <!-- Negação -->
+        <circle cx="180" cy="110" r="6" fill="#d66"/>
+        <text x="180" y="90" font-family="Inter,sans-serif" font-size="10" fill="#d66" text-anchor="middle" font-weight="600">NEGAÇÃO</text>
+        <text x="180" y="76" font-family="Inter,sans-serif" font-size="8" fill="#918880" text-anchor="middle">Descrença e resistência</text>
+
+        <!-- Frustração -->
+        <circle cx="280" cy="180" r="6" fill="#d84"/>
+        <text x="280" y="170" font-family="Inter,sans-serif" font-size="10" fill="#d84" text-anchor="middle" font-weight="600">FRUSTRAÇÃO</text>
+        <text x="280" y="156" font-family="Inter,sans-serif" font-size="8" fill="#918880" text-anchor="middle">Reconhecimento da dificuldade</text>
+
+        <!-- Depressão -->
+        <circle cx="380" cy="320" r="6" fill="#cc4"/>
+        <text x="380" y="345" font-family="Inter,sans-serif" font-size="10" fill="#cc4" text-anchor="middle" font-weight="600">DEPRESSÃO</text>
+        <text x="380" y="359" font-family="Inter,sans-serif" font-size="8" fill="#918880" text-anchor="middle">Baixa energia. Conflitos</text>
+
+        <!-- Experimentação -->
+        <circle cx="480" cy="260" r="6" fill="#ba4"/>
+        <text x="480" y="252" font-family="Inter,sans-serif" font-size="10" fill="#ba4" text-anchor="middle" font-weight="600">EXPERIMENTAÇÃO</text>
+        <text x="480" y="238" font-family="Inter,sans-serif" font-size="8" fill="#918880" text-anchor="middle">Engajamento inicial</text>
+
+        <!-- Decisão -->
+        <circle cx="580" cy="130" r="6" fill="#6a9"/>
+        <text x="580" y="122" font-family="Inter,sans-serif" font-size="10" fill="#6a9" text-anchor="middle" font-weight="600">DECISÃO</text>
+        <text x="580" y="108" font-family="Inter,sans-serif" font-size="8" fill="#918880" text-anchor="middle">Sentimento positivo</text>
+
+        <!-- Integração -->
+        <circle cx="740" cy="62" r="6" fill="#4a8"/>
+        <text x="740" y="50" font-family="Inter,sans-serif" font-size="10" fill="#4a8" text-anchor="middle" font-weight="600">INTEGRAÇÃO</text>
+        <text x="740" y="36" font-family="Inter,sans-serif" font-size="8" fill="#918880" text-anchor="middle">Novo indivíduo. Novas habilidades</text>
+
+        <!-- Right side action labels -->
+        <g transform="translate(830,60)">
+          <rect x="0" y="0" width="10" height="10" rx="2" fill="#c44"/><text x="16" y="9" font-family="Inter,sans-serif" font-size="8" fill="#b0a99d">Mudar é necessário</text>
+          <rect x="0" y="20" width="10" height="10" rx="2" fill="#d66"/><text x="16" y="29" font-family="Inter,sans-serif" font-size="8" fill="#b0a99d">Alinhar e persistir</text>
+          <rect x="0" y="40" width="10" height="10" rx="2" fill="#d84"/><text x="16" y="49" font-family="Inter,sans-serif" font-size="8" fill="#b0a99d">Otimizar e comunicar</text>
+          <rect x="0" y="60" width="10" height="10" rx="2" fill="#cc4"/><text x="16" y="69" font-family="Inter,sans-serif" font-size="8" fill="#b0a99d">Reforçar e motivar</text>
+          <rect x="0" y="80" width="10" height="10" rx="2" fill="#ba4"/><text x="16" y="89" font-family="Inter,sans-serif" font-size="8" fill="#b0a99d">Desenvolver capacidades</text>
+          <rect x="0" y="100" width="10" height="10" rx="2" fill="#6a9"/><text x="16" y="109" font-family="Inter,sans-serif" font-size="8" fill="#b0a99d">Compartilhar experiências</text>
+          <rect x="0" y="120" width="10" height="10" rx="2" fill="#4a8"/><text x="16" y="129" font-family="Inter,sans-serif" font-size="8" fill="#b0a99d">Transformar e inovar</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     ICEBERG - Estrutura do Comportamento Humano
+     ════════════════════════════════════════ -->
+<section class="section">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-eyebrow">Modelo Exclusivo · Neurociência Aplicada</div>
+      <h2 class="section-title">A Estrutura do <em>Comportamento Humano</em></h2>
+      <p class="section-desc">O que a maioria dos programas de desenvolvimento trabalha é apenas a ponta do iceberg — resultados, habilidades e competências visíveis. O Método Evolution mergulha nas camadas invisíveis: emoções, personalidade, inteligência emocional, sistêmica e heranças emocionais.</p>
+    </div>
+
+    <div class="iceberg-container reveal">
+      <div class="iceberg-visual">
+        <!-- Visible portion -->
+        <div class="iceberg-half iceberg-visible">
+          <div class="iceberg-zone-label visible-label">▲ Comportamento Observável</div>
+          <div class="iceberg-items">
+            <div class="iceberg-item">
+              <div class="iceberg-item-dot visible-dot"></div>
+              <span>Resultados · Agir</span>
+            </div>
+            <div class="iceberg-item">
+              <div class="iceberg-item-dot visible-dot"></div>
+              <span>Inteligência Racional</span>
+            </div>
+            <div class="iceberg-item">
+              <div class="iceberg-item-dot visible-dot"></div>
+              <span>Habilidades · Hábitos</span>
+            </div>
+            <div class="iceberg-item">
+              <div class="iceberg-item-dot visible-dot"></div>
+              <span>Temperamento · DISC</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Waterline -->
+        <div class="iceberg-waterline">
+          <span class="iceberg-waterline-label">← Linha d'água · Competências</span>
+        </div>
+
+        <!-- Hidden portion -->
+        <div class="iceberg-half iceberg-hidden">
+          <div class="iceberg-zone-label hidden-label">▼ Comportamento Invisível</div>
+          <div class="iceberg-items">
+            <div class="iceberg-item">
+              <div class="iceberg-item-dot hidden-dot"></div>
+              <span>Emoções · Sentir</span>
+            </div>
+            <div class="iceberg-item">
+              <div class="iceberg-item-dot hidden-dot"></div>
+              <span>Inteligência Emocional</span>
+            </div>
+            <div class="iceberg-item">
+              <div class="iceberg-item-dot hidden-dot"></div>
+              <span>Personalidade · Pensar</span>
+            </div>
+            <div class="iceberg-item">
+              <div class="iceberg-item-dot hidden-dot"></div>
+              <span>Inteligência Sistêmica</span>
+            </div>
+            <div class="iceberg-item" style="grid-column:1/-1">
+              <div class="iceberg-item-dot hidden-dot"></div>
+              <span>Heranças Emocionais · Padrões Familiares e Sistêmicos</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="iceberg-credit">Modelo: <strong>A Estrutura do Comportamento Humano</strong> · Por Carlos Crasto · Método Evolution by Crasto<br>Publicação: <em>Maestria Comportamental — Como aplicar inteligência comportamental e atingir seu potencial máximo</em></p>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     16 COMPETÊNCIAS DO EVOLUTION LEADER
+     ════════════════════════════════════════ -->
+<section class="section">
+  <div class="ambient-orb ambient-orb-2"></div>
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-eyebrow">Pesquisa & Performance Global</div>
+      <h2 class="section-title">As 16 Competências do <em>Evolution Leader</em></h2>
+      <p class="section-desc">Mapeamos as competências mais presentes nos líderes de maior impacto global e as integramos ao Método Evolution. Cada competência, quando instalada, gera naturalmente um princípio de liderança — porque quando a habilidade está no corpo, o comportamento muda sozinho.</p>
+    </div>
+    <div class="competencias-integrated reveal">
+
+      <div class="comp-card">
+        <div class="comp-header">
+          <div class="comp-num">01</div>
+          <div class="comp-title">Resolução de Problemas Complexos</div>
+        </div>
+        <div class="comp-principle">O líder opera em todos os níveis. Mergulha nos detalhes e audita quando métricas divergem de narrativas. Não aceita sintomas — busca causas reais.</div>
+      </div>
+
+      <div class="comp-card">
+        <div class="comp-header">
+          <div class="comp-num">02</div>
+          <div class="comp-title">Pensamento Crítico</div>
+        </div>
+        <div class="comp-principle">Questiona decisões mesmo quando desconfortável. Não aceita conformismo por hierarquia. Obrigação de discordar quando necessário.</div>
+      </div>
+
+      <div class="comp-card">
+        <div class="comp-header">
+          <div class="comp-num">03</div>
+          <div class="comp-title">Negociação & Comunicação</div>
+        </div>
+        <div class="comp-principle">Constrói confiança genuína. Ouve atentamente e fala com franqueza. Discorda com respeito e conquista confiança através de ação consistente.</div>
+      </div>
+
+      <div class="comp-card">
+        <div class="comp-header">
+          <div class="comp-num">04</div>
+          <div class="comp-title">Liderança & Gestão de Pessoas</div>
+        </div>
+        <div class="comp-principle">Eleva o padrão a cada contratação. Desenvolve líderes e leva a sério seu papel de formar sucessores. Lidera pelo exemplo, não pelo título.</div>
+      </div>
+
+      <div class="comp-card">
+        <div class="comp-header">
+          <div class="comp-num">05</div>
+          <div class="comp-title">Julgamento e Tomada de Decisões</div>
+        </div>
+        <div class="comp-principle">Velocidade importa. Toma decisões calculadas sem paralisia por análise. Erros reversíveis não exigem consenso excessivo.</div>
+      </div>
+
+      <div class="comp-card">
+        <div class="comp-header">
+          <div class="comp-num">06</div>
+          <div class="comp-title">Inteligência Emocional</div>
+        </div>
+        <div class="comp-principle">Assume total responsabilidade por decisões, equipe e resultados. Não culpa contexto. Age como dono, não como funcionário. Autorresponsabilidade radical.</div>
+      </div>
+
+      <div class="comp-card">
+        <div class="comp-header">
+          <div class="comp-num">07</div>
+          <div class="comp-title">Criatividade & Inovação</div>
+        </div>
+        <div class="comp-principle">Espera e exige inovação. Simplifica processos. Busca referências fora da empresa e fora da zona de conforto. Restrições geram criatividade.</div>
+      </div>
+
+      <div class="comp-card">
+        <div class="comp-header">
+          <div class="comp-num">08</div>
+          <div class="comp-title">Orientação a Serviço</div>
+        </div>
+        <div class="comp-principle">Começa pelo resultado desejado e trabalha de trás para frente. Não se contenta com esforço — exige impacto mensurável para clientes e organização.</div>
+      </div>
+
+      <div class="comp-card">
+        <div class="comp-header">
+          <div class="comp-num">09</div>
+          <div class="comp-title">Trabalho em Equipe</div>
+        </div>
+        <div class="comp-principle">Uma vez decidido, compromete-se completamente. Não revisita decisões por insegurança social. Gera comprometimento coletivo através do próprio exemplo.</div>
+      </div>
+
+      <div class="comp-card">
+        <div class="comp-header">
+          <div class="comp-num">10</div>
+          <div class="comp-title">Flexibilidade Cognitiva</div>
+        </div>
+        <div class="comp-principle">Pensa grande e comunica direção inspiradora. Pensa além do trimestre. Nunca sacrifica visão de longo prazo por ganhos de curto prazo.</div>
+      </div>
+
+      <div class="comp-card">
+        <div class="comp-header">
+          <div class="comp-num">11</div>
+          <div class="comp-title">Aprendizado Contínuo</div>
+        </div>
+        <div class="comp-principle">Curioso e humilde. Busca aprender constantemente. Inova explorando novos caminhos e questionando o status quo. Aprende algo novo todo dia.</div>
+      </div>
+
+      <div class="comp-card">
+        <div class="comp-header">
+          <div class="comp-num">12</div>
+          <div class="comp-title">Adaptabilidade</div>
+        </div>
+        <div class="comp-principle">Faz mais com menos. Não confunde recursos com resultados. Adapta-se ao cenário sem perder o padrão de excelência.</div>
+      </div>
+
+      <div class="comp-card">
+        <div class="comp-header">
+          <div class="comp-num">13</div>
+          <div class="comp-title">Motivação & Autogestão</div>
+        </div>
+        <div class="comp-principle">Foca em indicadores críticos. Entrega com qualidade e no prazo. Nunca desiste diante de reveses. A motivação vem de dentro, não de pressão externa.</div>
+      </div>
+
+      <div class="comp-card">
+        <div class="comp-header">
+          <div class="comp-num">14</div>
+          <div class="comp-title">Empatia & Escuta Ativa</div>
+        </div>
+        <div class="comp-principle">Escuta, fala com franqueza e trata todos com respeito. É autocrítico e constrói confiança no ambiente. A escuta transforma mais do que qualquer orientação.</div>
+      </div>
+
+      <div class="comp-card">
+        <div class="comp-header">
+          <div class="comp-num">15</div>
+          <div class="comp-title">Ética & Integridade</div>
+        </div>
+        <div class="comp-principle">Exige padrões altos que podem parecer inalcançáveis. Refina continuamente e não aceita mediocridade. A ética é o padrão inegociável.</div>
+      </div>
+
+      <div class="comp-card">
+        <div class="comp-header">
+          <div class="comp-num">16</div>
+          <div class="comp-title">Prudência & Visão Estratégica</div>
+        </div>
+        <div class="comp-principle">Pensa além de sua área de atuação. Avalia consequências de curto e longo prazo. A prudência não é lentidão — é inteligência de decisão.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     CTA FINAL
+     ════════════════════════════════════════ -->
+<section class="section cta-final">
+  <div class="ambient-orb ambient-orb-3"></div>
+  <div class="section-inner reveal">
+    <div class="section-eyebrow" style="justify-content:center">O Próximo Passo</div>
+    <h2 class="section-title" style="text-align:center;max-width:700px;margin:0 auto 20px">O investimento não é financeiro.<br><em>É compromisso com evolução real.</em></h2>
+    <div class="gold-line" style="margin:0 auto 32px"></div>
+    <p class="section-desc" style="text-align:center;margin:0 auto 16px">Executivos com maturidade sabem: investir em desenvolver pessoas é o único investimento que multiplica todos os outros. Líderes incompletos tornam-se gestores extraordinários quando encontram o método certo.</p>
+    <p style="font-family:'Cormorant Garamond',serif;font-size:18px;font-style:italic;color:var(--ghost);text-align:center;margin-bottom:48px">"Só sei que nada sei." — E essa consciência é o início de toda sabedoria real.</p>
+    <div style="text-align:center">
+      <a href="https://wa.me/5511981810002?text=Gostaria%20de%20agendar%20uma%20reunião%20sobre%20Mentoria%20Executiva%20Premium" class="cta-button-large">Agendar Diagnóstico Corporativo</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer-minimal">
+  <div class="footer-copy">© <span>CRASTO.COM</span> · Inteligência Comportamental · Método Evolution · Est. 2015</div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<div class="wa-float">
+  <span class="wa-label">Fale conosco</span>
+  <a href="https://wa.me/5511981810002?text=Olá%2C%20gostaria%20de%20saber%20mais%20sobre%20Mentoria%20Executiva%20Premium." class="wa-btn" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+</div>
+
+<!-- ════════════════════════════════════════
+     SCROLL REVEAL SCRIPT
+     ════════════════════════════════════════ -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(function(el) { observer.observe(el); });
+});
+</script>
+
+</body>
+</html>
