@@ -1089,71 +1089,73 @@ input,select,textarea{font-family:inherit;outline:none}
 /* ═══════════════════════════════════════════════════════
    DEPOIMENTOS
    ═══════════════════════════════════════════════════════ */
-.depo-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:16px;
+.carousel-wrapper{
+  position:relative;
   margin-top:50px;
+  max-width:1000px;
+  margin-left:auto;margin-right:auto;
 }
-@media(max-width:780px){.depo-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:560px){.depo-grid{grid-template-columns:1fr}}
-.depo-video{
-  aspect-ratio:9/14;
-  background:linear-gradient(180deg,var(--bg-warm),var(--bg));
+.carousel-track{
+  display:flex;
+  gap:16px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  scrollbar-width:none;
+  -ms-overflow-style:none;
+  padding-bottom:10px;
+}
+.carousel-track::-webkit-scrollbar{display:none}
+.carousel-slide{
+  flex:0 0 calc(33.333% - 10.66px);
+  scroll-snap-align:start;
+  aspect-ratio:16/9;
   border:1px solid var(--ghost-line);
   border-radius:3px;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  cursor:none;
-  transition:all .5s var(--ease);
-  position:relative;
   overflow:hidden;
+  position:relative;
+  background:var(--bg-warm);
+  transition:all .5s var(--ease);
 }
-.depo-video::before{
-  content:'';position:absolute;inset:0;
-  background:radial-gradient(circle at center,var(--accent-glow),transparent 60%);
-  opacity:0;
-  transition:opacity .5s;
-}
-.depo-video:hover{
+.carousel-slide:hover{
   border-color:var(--accent-soft);
-  transform:scale(1.02);
+  transform:translateY(-3px);
 }
-.depo-video:hover::before{opacity:1}
-.depo-play{
-  width:64px;height:64px;
-  border:1px solid var(--accent-soft);
+.carousel-slide iframe{
+  width:100%;height:100%;
+  border:none;
+}
+.carousel-btn{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  width:48px;height:48px;
   border-radius:50%;
+  background:rgba(13,13,12,.8);
+  border:1px solid var(--accent-soft);
+  color:var(--accent);
   display:flex;align-items:center;justify-content:center;
-  margin-bottom:18px;
+  cursor:none;
+  z-index:10;
   transition:all .4s var(--ease);
-  background:var(--accent-whisper);
-  position:relative;z-index:2;
+  backdrop-filter:blur(8px);
 }
-.depo-video:hover .depo-play{
+.carousel-btn:hover{
   background:var(--accent);
-  border-color:var(--accent);
-  transform:scale(1.1);
+  color:var(--bg);
+  transform:translateY(-50%) scale(1.1);
 }
-.depo-play svg{
-  width:18px;height:18px;
-  fill:var(--accent);
-  transition:fill .3s;
-  margin-left:3px;
+.carousel-btn svg{width:24px;height:24px;fill:currentColor}
+.carousel-btn-prev{left:-24px}
+.carousel-btn-next{right:-24px}
+
+@media(max-width:880px){
+  .carousel-slide{flex:0 0 calc(50% - 8px)}
+  .carousel-btn-prev{left:0}
+  .carousel-btn-next{right:0}
 }
-.depo-video:hover .depo-play svg{fill:var(--bg)}
-.depo-name{
-  font-family:'Playfair Display',serif;
-  font-weight:500;
-  font-size:.95rem;
-  color:var(--white);
-  margin-bottom:4px;
-  position:relative;z-index:2;
-}
-.depo-role{
-  font-size:.7rem;font-weight:300;
-  letter-spacing:1px;
-  color:var(--ghost);
-  position:relative;z-index:2;
+@media(max-width:600px){
+  .carousel-slide{flex:0 0 100%}
+  .carousel-btn{display:none}
 }
 
 /* ═══════════════════════════════════════════════════════
@@ -1595,7 +1597,7 @@ input,select,textarea{font-family:inherit;outline:none}
     <a href="#inteligencias" class="nav-link">4 Inteligências</a>
     <a href="#programa" class="nav-link">Programa</a>
     <a href="#investimento" class="nav-link">Investimento</a>
-    <a href="#inscricao" class="nav-cta">Inscrever-se</a>
+    <a href="https://wa.me/5511981810002?text=Ol%C3%A1!%20Tenho%20interesse%20na%20Maestria%20em%20Liderança%202026%20-%20Edição%20de%20Agosto." class="nav-cta">Inscrever-se</a>
   </div>
 </nav>
 
@@ -1632,7 +1634,7 @@ input,select,textarea{font-family:inherit;outline:none}
     </div>
 
     <div class="hero-ctas">
-      <a href="#inscricao" class="btn btn-primary">Garantir minha vaga</a>
+      <a href="https://wa.me/5511981810002?text=Ol%C3%A1!%20Tenho%20interesse%20na%20Maestria%20em%20Liderança%202026%20-%20Edição%20de%20Agosto." class="btn btn-primary">Garantir minha vaga</a>
       <a href="#metodo" class="btn btn-ghost">Conhecer o Método</a>
     </div>
   </div>
@@ -2143,48 +2145,32 @@ input,select,textarea{font-family:inherit;outline:none}
       <h2 class="section-title" style="text-align:center">Depoimentos de quem viveu a <em>transformação</em></h2>
     </div>
 
-    <div class="depo-grid">
-      <div class="depo-video reveal delay-1">
-        <div class="depo-play">
-          <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+    <div class="carousel-wrapper reveal delay-1">
+      <button class="carousel-btn carousel-btn-prev" onclick="scrollCarousel(-1)">
+        <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+      </button>
+      <button class="carousel-btn carousel-btn-next" onclick="scrollCarousel(1)">
+        <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+      </button>
+      <div class="carousel-track" id="depoCarousel">
+        <div class="carousel-slide">
+          <iframe src="https://www.youtube.com/embed/x4c0_rEUA2g?controls=1&rel=0&origin=https://crasto.com" allowfullscreen></iframe>
         </div>
-        <p class="depo-name">Pyong Lee</p>
-        <p class="depo-role">Empresário · Apresentador</p>
-      </div>
-      <div class="depo-video reveal delay-2">
-        <div class="depo-play">
-          <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        <div class="carousel-slide">
+          <iframe src="https://www.youtube.com/embed/RA1vHc9xvNU?controls=1&rel=0&origin=https://crasto.com" allowfullscreen></iframe>
         </div>
-        <p class="depo-name">Aluno · Aguardando</p>
-        <p class="depo-role">Vídeo em breve</p>
-      </div>
-      <div class="depo-video reveal delay-3">
-        <div class="depo-play">
-          <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        <div class="carousel-slide">
+          <iframe src="https://www.youtube.com/embed/0KUXsYZIKks?controls=1&rel=0&origin=https://crasto.com" allowfullscreen></iframe>
         </div>
-        <p class="depo-name">Aluno · Aguardando</p>
-        <p class="depo-role">Vídeo em breve</p>
-      </div>
-      <div class="depo-video reveal delay-4">
-        <div class="depo-play">
-          <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        <div class="carousel-slide">
+          <iframe src="https://www.youtube.com/embed/lZ2P1K5A5Oc?controls=1&rel=0&origin=https://crasto.com" allowfullscreen></iframe>
         </div>
-        <p class="depo-name">Aluno · Aguardando</p>
-        <p class="depo-role">Vídeo em breve</p>
-      </div>
-      <div class="depo-video reveal delay-1">
-        <div class="depo-play">
-          <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        <div class="carousel-slide">
+          <iframe src="https://www.youtube.com/embed/DG0lscenRDM?controls=1&rel=0&origin=https://crasto.com" allowfullscreen></iframe>
         </div>
-        <p class="depo-name">Aluno · Aguardando</p>
-        <p class="depo-role">Vídeo em breve</p>
-      </div>
-      <div class="depo-video reveal delay-2">
-        <div class="depo-play">
-          <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        <div class="carousel-slide">
+          <iframe src="https://www.youtube.com/embed/4DjqNemv1IA?controls=1&rel=0&origin=https://crasto.com" allowfullscreen></iframe>
         </div>
-        <p class="depo-name">Aluno · Aguardando</p>
-        <p class="depo-role">Vídeo em breve</p>
       </div>
     </div>
   </div>
@@ -2220,90 +2206,13 @@ input,select,textarea{font-family:inherit;outline:none}
           <p class="invest-includes-item">Certificação Internacional</p>
         </div>
 
-        <a href="#inscricao" class="btn btn-primary" style="display:flex;justify-content:center;width:100%">Garantir minha vaga</a>
+        <a href="https://wa.me/5511981810002?text=Ol%C3%A1!%20Tenho%20interesse%20na%20Maestria%20em%20Liderança%202026%20-%20Edição%20de%20Agosto." class="btn btn-primary" style="display:flex;justify-content:center;width:100%">Garantir minha vaga</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════
-     FORMULÁRIO DE INSCRIÇÃO
-     ═══════════════════════════════════════════════════════ -->
-<section class="section form-section" id="inscricao">
-  <div class="ambient-orb" style="width:600px;height:600px;top:-200px;left:-200px"></div>
-  <div class="ambient-orb" style="width:500px;height:500px;bottom:-200px;right:-200px"></div>
 
-  <div class="container-narrow">
-    <div class="reveal" style="text-align:center;max-width:680px;margin:0 auto">
-      <span class="eyebrow eyebrow-center">Inscrição · Maestria em Liderança 2026</span>
-      <h2 class="section-title" style="text-align:center">Garanta sua <em>vaga</em></h2>
-      <p class="section-desc section-desc-center">Preencha os dados abaixo. Após o envio, você será direcionado ao WhatsApp para finalizar a inscrição diretamente com nossa equipe.</p>
-    </div>
-
-    <form class="form-card reveal delay-1" id="inscriptionForm" onsubmit="return submitForm(event)">
-      <div class="form-row">
-        <div class="form-group">
-          <label class="form-label form-label-required">Nome completo</label>
-          <input type="text" class="form-input" id="f-nome" required placeholder="Seu nome">
-        </div>
-        <div class="form-group">
-          <label class="form-label form-label-required">WhatsApp</label>
-          <input type="tel" class="form-input" id="f-tel" required placeholder="(11) 98000-0000">
-        </div>
-      </div>
-
-      <div class="form-row">
-        <div class="form-group">
-          <label class="form-label form-label-required">E-mail</label>
-          <input type="email" class="form-input" id="f-email" required placeholder="email@empresa.com">
-        </div>
-        <div class="form-group">
-          <label class="form-label">Empresa</label>
-          <input type="text" class="form-input" id="f-empresa" placeholder="Onde você atua">
-        </div>
-      </div>
-
-      <div class="form-row">
-        <div class="form-group">
-          <label class="form-label">Cargo</label>
-          <input type="text" class="form-input" id="f-cargo" placeholder="Ex: Diretor Comercial">
-        </div>
-        <div class="form-group">
-          <label class="form-label">Senioridade</label>
-          <select class="form-select" id="f-senior">
-            <option value="">Selecione</option>
-            <option value="C-Level / Presidência">C-Level / Presidência</option>
-            <option value="Diretoria">Diretoria</option>
-            <option value="Gerência Sênior">Gerência Sênior</option>
-            <option value="Gerência">Gerência</option>
-            <option value="Coordenação">Coordenação</option>
-            <option value="Empresário / Sócio">Empresário / Sócio</option>
-            <option value="Outro">Outro</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label class="form-label">Forma de pagamento de preferência</label>
-        <select class="form-select" id="f-pag">
-          <option value="">Selecione</option>
-          <option value="À vista (R$ 9.500 com 5% desconto)">À vista (R$ 9.500 com 5% desconto)</option>
-          <option value="Parcelado em até 10x R$ 1.000 no cartão">Parcelado em até 10x R$ 1.000 no cartão</option>
-          <option value="Quero conversar sobre opções">Quero conversar sobre opções</option>
-        </select>
-      </div>
-
-      <div class="form-group">
-        <label class="form-label">Mensagem (opcional)</label>
-        <textarea class="form-textarea" id="f-msg" placeholder="Algo que devemos saber sobre você ou seu momento profissional?"></textarea>
-      </div>
-
-      <button type="submit" class="form-submit">Enviar e continuar no WhatsApp</button>
-
-      <p class="form-disclaimer">Ao enviar, você será direcionado ao <strong>WhatsApp da nossa equipe</strong> para finalizar a inscrição e tirar dúvidas. Seus dados são tratados com total confidencialidade.</p>
-    </form>
-  </div>
-</section>
 
 <!-- ═══════════════════════════════════════════════════════
      FAQ
@@ -2368,7 +2277,7 @@ input,select,textarea{font-family:inherit;outline:none}
       <span class="eyebrow eyebrow-center">A decisão é sua</span>
       <h2 class="cta-final-headline">Se você continuar sendo quem você é,<br><em>jamais será quem você quer ser.</em></h2>
       <p class="cta-final-sub">Renunciar a uma oportunidade como esta é como desistir de viver aquilo que foi reservado para você.</p>
-      <a href="#inscricao" class="btn btn-primary">Garantir minha vaga agora</a>
+      <a href="https://wa.me/5511981810002?text=Ol%C3%A1!%20Tenho%20interesse%20na%20Maestria%20em%20Liderança%202026%20-%20Edição%20de%20Agosto." class="btn btn-primary">Garantir minha vaga agora</a>
     </div>
   </div>
 </section>
@@ -2428,7 +2337,7 @@ function animateRing(){
 animateRing();
 
 // Cursor active em hovers
-document.querySelectorAll('a,button,.intel-card,.faq-q,.depo-video,.case-item,.bonus-card,input,select,textarea').forEach(el=>{
+document.querySelectorAll('a,button,.intel-card,.faq-q,.carousel-btn,.case-item,.bonus-card,input,select,textarea').forEach(el=>{
   el.addEventListener('mouseenter',()=>cursorRing.classList.add('active'));
   el.addEventListener('mouseleave',()=>cursorRing.classList.remove('active'));
 });
@@ -2528,38 +2437,19 @@ function updateCountdown(){
 updateCountdown();
 setInterval(updateCountdown,1000);
 
-// ─── FORMULÁRIO → WHATSAPP ───
-function submitForm(e){
-  e.preventDefault();
 
-  const nome=document.getElementById('f-nome').value.trim();
-  const tel=document.getElementById('f-tel').value.trim();
-  const email=document.getElementById('f-email').value.trim();
-  const empresa=document.getElementById('f-empresa').value.trim();
-  const cargo=document.getElementById('f-cargo').value.trim();
-  const senior=document.getElementById('f-senior').value;
-  const pag=document.getElementById('f-pag').value;
-  const msg=document.getElementById('f-msg').value.trim();
-
-  if(!nome||!tel||!email){
-    alert('Por favor, preencha nome, WhatsApp e e-mail.');
-    return false;
-  }
-
-  let texto=`*INSCRIÇÃO · MAESTRIA EM LIDERANÇA 2026*\n\n`;
-  texto+=`*Nome:* ${nome}\n`;
-  texto+=`*WhatsApp:* ${tel}\n`;
-  texto+=`*E-mail:* ${email}\n`;
-  if(empresa) texto+=`*Empresa:* ${empresa}\n`;
-  if(cargo) texto+=`*Cargo:* ${cargo}\n`;
-  if(senior) texto+=`*Senioridade:* ${senior}\n`;
-  if(pag) texto+=`*Pagamento:* ${pag}\n`;
-  if(msg) texto+=`\n*Mensagem:* ${msg}\n`;
-  texto+=`\nGostaria de garantir minha vaga na Maestria em Liderança 2026 (14, 15 e 16 de agosto).`;
-
-  const url=`https://wa.me/5511981810002?text=${encodeURIComponent(texto)}`;
-  window.open(url,'_blank');
-  return false;
+// ─── CAROUSEL DEPOIMENTOS ───
+function scrollCarousel(dir){
+  const track = document.getElementById('depoCarousel');
+  const slideWidth = track.querySelector('.carousel-slide').offsetWidth + 16;
+  const currentScroll = track.scrollLeft;
+  const currentIndex = Math.round(currentScroll / slideWidth);
+  const newIndex = currentIndex + dir;
+  
+  track.scrollTo({
+    left: newIndex * slideWidth,
+    behavior: 'smooth'
+  });
 }
 
 // ─── SMOOTH SCROLL ───
