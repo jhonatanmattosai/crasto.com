@@ -1,0 +1,2580 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maestria em Liderança 2026 — Método Evolution by Crasto · A formação dos executivos que lideram de verdade</title>
+<meta name="description" content="Maestria em Liderança · Método Evolution by Crasto. 14, 15 e 16 de agosto de 2026 em São Paulo. 36h presenciais + 100h online. Comunicacional, Relacional, Emocional e Sistêmica. Usado por executivos de Amazon, Google, IBM, Petrobras, XP. Vagas limitadas.">
+<meta name="theme-color" content="#0D0D0C">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Maestria em Liderança 2026 — Método Evolution by Crasto">
+<meta property="og:description" content="A formação que executivos de Amazon, Google, IBM e Petrobras fazem para liderar com Inteligência Comunicacional, Relacional, Emocional e Sistêmica.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+
+<!-- Fontes premium -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=Karla:wght@200;300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+<style>
+/* ═══════════════════════════════════════════════════════
+   VARIÁVEIS GLOBAIS — IDENTIDADE CRASTO
+   ═══════════════════════════════════════════════════════ */
+:root{
+  --bg:#0D0D0C;
+  --bg-warm:#131311;
+  --bg-elevated:#191815;
+  --accent:#d4b044;
+  --accent-light:#e8c94e;
+  --accent-deep:#b8942a;
+  --accent-soft:rgba(212,176,68,.22);
+  --accent-glow:rgba(212,176,68,.08);
+  --accent-whisper:rgba(212,176,68,.025);
+  --white:#f5f2ea;
+  --white-soft:#e0dbd0;
+  --text:#b0a99d;
+  --grey:#918880;
+  --ghost:#5e574c;
+  --ghost-line:#252219;
+  --green:#8BB39B;
+  --blue:#66A3FF;
+  --red:#c44;
+  --section-gap:130px;
+  --max-w:1200px;
+  --max-w-text:900px;
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+
+/* ═══════════════════════════════════════════════════════
+   RESET + BASE
+   ═══════════════════════════════════════════════════════ */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{font-size:18px;scroll-behavior:smooth;scroll-padding-top:80px}
+body{
+  background:var(--bg);
+  color:var(--white);
+  font-family:'Karla',-apple-system,sans-serif;
+  font-weight:300;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  overflow-x:hidden;
+  cursor:none;
+}
+@media(max-width:900px){body{cursor:auto}}
+
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:none}
+input,select,textarea{font-family:inherit;outline:none}
+
+/* ═══════════════════════════════════════════════════════
+   CURSOR GLOW CUSTOMIZADO
+   ═══════════════════════════════════════════════════════ */
+.cursor-dot,.cursor-ring{
+  position:fixed;top:0;left:0;
+  border-radius:50%;
+  pointer-events:none;
+  z-index:9999;
+  transform:translate(-50%,-50%);
+  transition:opacity .3s;
+}
+.cursor-dot{
+  width:6px;height:6px;
+  background:var(--accent);
+  box-shadow:0 0 12px var(--accent);
+}
+.cursor-ring{
+  width:36px;height:36px;
+  border:1px solid var(--accent-soft);
+  transition:transform .25s var(--ease),width .25s var(--ease),height .25s var(--ease),background .25s var(--ease);
+}
+.cursor-ring.active{
+  width:60px;height:60px;
+  background:var(--accent-glow);
+  border-color:var(--accent);
+}
+
+/* ═══════════════════════════════════════════════════════
+   SCROLL PROGRESS BAR
+   ═══════════════════════════════════════════════════════ */
+.scroll-progress{
+  position:fixed;top:0;left:0;
+  height:2px;
+  background:linear-gradient(90deg,var(--accent-deep),var(--accent-light),var(--accent));
+  z-index:9998;
+  width:0%;
+  box-shadow:0 0 12px var(--accent);
+  transition:width .12s ease;
+}
+
+/* ═══════════════════════════════════════════════════════
+   AMBIENT ORBS (luz ambiente)
+   ═══════════════════════════════════════════════════════ */
+.ambient-orb{
+  position:absolute;
+  border-radius:50%;
+  background:radial-gradient(circle,var(--accent-glow) 0%,transparent 65%);
+  filter:blur(60px);
+  pointer-events:none;
+  z-index:0;
+  animation:orbFloat 20s ease-in-out infinite;
+}
+@keyframes orbFloat{
+  0%,100%{transform:translate(0,0) scale(1)}
+  50%{transform:translate(40px,-30px) scale(1.1)}
+}
+
+/* ═══════════════════════════════════════════════════════
+   NAVBAR
+   ═══════════════════════════════════════════════════════ */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:18px 48px;
+  display:flex;justify-content:space-between;align-items:center;
+  background:rgba(13,13,12,.85);
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid transparent;
+  transform:translateY(-100%);
+  transition:transform .6s var(--ease),border-color .6s,background .6s;
+}
+.nav.show{transform:translateY(0);border-bottom-color:var(--ghost-line)}
+.nav-logo{
+  display:flex;flex-direction:column;align-items:flex-start;
+  font-family:'Playfair Display',serif;
+  font-weight:600;font-size:18px;
+  letter-spacing:6px;text-transform:uppercase;
+  color:var(--white);
+  line-height:1;
+  transition:color .4s;
+}
+.nav-logo:hover{color:var(--accent)}
+.nav-logo-tag{
+  font-family:'Karla',sans-serif;
+  font-weight:300;font-size:9px;
+  letter-spacing:3px;
+  color:var(--accent);
+  margin-top:5px;
+}
+.nav-right{display:flex;align-items:center;gap:32px}
+.nav-link{
+  font-size:11px;font-weight:300;
+  letter-spacing:2.5px;text-transform:uppercase;
+  color:var(--text);
+  transition:color .3s;
+}
+.nav-link:hover{color:var(--accent)}
+.nav-cta{
+  font-size:10px;font-weight:400;
+  letter-spacing:2.5px;text-transform:uppercase;
+  color:var(--accent);
+  padding:10px 22px;
+  border:1px solid var(--accent-soft);
+  border-radius:2px;
+  transition:all .4s var(--ease);
+  position:relative;overflow:hidden;
+}
+.nav-cta::before{
+  content:'';position:absolute;inset:0;
+  background:var(--accent);
+  transform:translateX(-101%);
+  transition:transform .5s var(--ease);
+  z-index:-1;
+}
+.nav-cta:hover{color:var(--bg);border-color:var(--accent)}
+.nav-cta:hover::before{transform:translateX(0)}
+@media(max-width:900px){
+  .nav{padding:14px 20px}
+  .nav-link{display:none}
+}
+
+/* ═══════════════════════════════════════════════════════
+   UTILITIES
+   ═══════════════════════════════════════════════════════ */
+.container{max-width:var(--max-w);margin:0 auto;padding:0 48px;position:relative;z-index:2}
+.container-narrow{max-width:var(--max-w-text);margin:0 auto;padding:0 48px;position:relative;z-index:2}
+.section{padding:var(--section-gap) 0;position:relative;overflow:hidden}
+.section-alt{background:var(--bg-warm);border-top:1px solid var(--ghost-line);border-bottom:1px solid var(--ghost-line)}
+
+.eyebrow{
+  font-family:'Karla',sans-serif;
+  font-weight:300;font-size:11px;
+  letter-spacing:5px;text-transform:uppercase;
+  color:var(--accent);
+  display:inline-flex;align-items:center;gap:14px;
+  margin-bottom:24px;
+}
+.eyebrow::before,.eyebrow::after{
+  content:'';
+  width:32px;height:1px;
+  background:linear-gradient(90deg,transparent,var(--accent));
+}
+.eyebrow::after{background:linear-gradient(90deg,var(--accent),transparent)}
+.eyebrow-center{justify-content:center}
+
+.section-title{
+  font-family:'Playfair Display',serif;
+  font-weight:500;
+  font-size:clamp(2rem,4vw,3.2rem);
+  line-height:1.1;
+  color:var(--white);
+  letter-spacing:-.5px;
+  margin-bottom:20px;
+}
+.section-title em{
+  font-style:italic;
+  color:var(--accent-light);
+  font-weight:500;
+}
+.section-desc{
+  font-weight:300;font-size:1.05rem;
+  line-height:1.85;color:var(--text);
+  max-width:680px;
+}
+.section-desc-center{margin:0 auto;text-align:center}
+
+.tc{text-align:center}
+.gold-line{
+  width:48px;height:1px;
+  background:linear-gradient(90deg,transparent,var(--accent),transparent);
+  margin:18px 0;
+}
+.gold-line-center{margin:18px auto}
+
+/* ═══════════════════════════════════════════════════════
+   REVEAL ANIMATIONS
+   ═══════════════════════════════════════════════════════ */
+.reveal{
+  opacity:0;
+  transform:translateY(30px);
+  transition:opacity 1.2s var(--ease),transform 1.2s var(--ease);
+}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.delay-1{transition-delay:.15s}
+.delay-2{transition-delay:.3s}
+.delay-3{transition-delay:.45s}
+.delay-4{transition-delay:.6s}
+.delay-5{transition-delay:.75s}
+.delay-6{transition-delay:.9s}
+
+/* ═══════════════════════════════════════════════════════
+   HERO
+   ═══════════════════════════════════════════════════════ */
+.hero{
+  min-height:100vh;
+  position:relative;
+  display:flex;align-items:center;justify-content:center;
+  padding:140px 0 100px;
+  overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background-image:
+    radial-gradient(ellipse at center,rgba(212,176,68,.06) 0%,transparent 60%),
+    linear-gradient(180deg,var(--bg) 0%,#1a1612 50%,var(--bg) 100%);
+  z-index:0;
+}
+.hero-socrates{
+  position:absolute;inset:0;
+  background-image:url('https://upload.wikimedia.org/wikipedia/commons/c/cd/David_-_The_Death_of_Socrates.jpg');
+  background-size:cover;
+  background-position:center 30%;
+  opacity:.10;
+  filter:sepia(.4) brightness(.5) contrast(1.1);
+  z-index:1;
+  transform:scale(1.05);
+  transition:transform 25s var(--ease);
+}
+.hero.loaded .hero-socrates{transform:scale(1.1)}
+.hero-vignette{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse at center,transparent 30%,var(--bg) 90%),
+    linear-gradient(180deg,var(--bg) 0%,transparent 20%,transparent 80%,var(--bg) 100%);
+  z-index:2;pointer-events:none;
+}
+.particles{
+  position:absolute;inset:0;
+  z-index:3;pointer-events:none;
+  overflow:hidden;
+}
+.particle{
+  position:absolute;
+  width:2px;height:2px;
+  background:var(--accent);
+  border-radius:50%;
+  box-shadow:0 0 8px var(--accent);
+  opacity:0;
+  animation:particleFloat 12s linear infinite;
+}
+@keyframes particleFloat{
+  0%{opacity:0;transform:translateY(100vh) translateX(0)}
+  10%{opacity:.6}
+  90%{opacity:.4}
+  100%{opacity:0;transform:translateY(-100px) translateX(40px)}
+}
+
+.hero-content{
+  position:relative;z-index:5;
+  text-align:center;
+  max-width:920px;
+  padding:0 32px;
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:8px 18px;
+  border:1px solid var(--accent-soft);
+  border-radius:100px;
+  background:var(--accent-whisper);
+  font-size:10px;font-weight:400;
+  letter-spacing:3px;text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:32px;
+  animation:badgePulse 3s ease-in-out infinite;
+  opacity:0;
+  animation:fadeInUp 1.2s var(--ease) .3s forwards,badgePulse 3s ease-in-out 1.5s infinite;
+}
+.hero-badge-dot{
+  width:6px;height:6px;
+  background:var(--accent);
+  border-radius:50%;
+  box-shadow:0 0 8px var(--accent);
+}
+@keyframes badgePulse{
+  0%,100%{box-shadow:0 0 0 0 rgba(212,176,68,.3)}
+  50%{box-shadow:0 0 0 12px rgba(212,176,68,0)}
+}
+@keyframes fadeInUp{
+  from{opacity:0;transform:translateY(24px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+.hero-greek{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;font-weight:400;
+  font-size:1.05rem;
+  color:var(--accent-light);
+  opacity:0;
+  margin-bottom:18px;
+  animation:fadeInUp 1.2s var(--ease) .5s forwards;
+}
+.hero-headline{
+  font-family:'Playfair Display',serif;
+  font-weight:500;
+  font-size:clamp(2.2rem,5.5vw,4.5rem);
+  line-height:1.05;
+  letter-spacing:-1.5px;
+  color:var(--white);
+  margin-bottom:14px;
+  opacity:0;
+  animation:fadeInUp 1.4s var(--ease) .7s forwards;
+}
+.hero-headline-em{
+  font-style:italic;
+  color:var(--accent-light);
+  font-weight:500;
+  background:linear-gradient(135deg,var(--accent-light),var(--accent),var(--accent-deep));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.hero-subheadline{
+  font-family:'Karla',sans-serif;
+  font-weight:300;
+  font-size:clamp(1rem,1.5vw,1.2rem);
+  color:var(--text);
+  max-width:720px;
+  margin:0 auto 36px;
+  line-height:1.75;
+  opacity:0;
+  animation:fadeInUp 1.4s var(--ease) .9s forwards;
+}
+.hero-subheadline strong{color:var(--white-soft);font-weight:400}
+
+.hero-meta{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:14px;
+  margin-bottom:44px;
+  opacity:0;
+  animation:fadeInUp 1.4s var(--ease) 1.1s forwards;
+}
+.hero-meta-item{
+  font-size:.78rem;font-weight:300;
+  letter-spacing:1.5px;
+  color:var(--white-soft);
+  padding:9px 18px;
+  border:1px solid var(--ghost-line);
+  border-radius:2px;
+  background:rgba(13,13,12,.5);
+  backdrop-filter:blur(8px);
+  display:inline-flex;align-items:center;gap:8px;
+}
+.hero-meta-icon{color:var(--accent);font-size:.7rem}
+
+.hero-ctas{
+  display:flex;justify-content:center;gap:18px;flex-wrap:wrap;
+  opacity:0;
+  animation:fadeInUp 1.4s var(--ease) 1.3s forwards;
+}
+
+/* ═══════════════════════════════════════════════════════
+   BOTÕES
+   ═══════════════════════════════════════════════════════ */
+.btn{
+  display:inline-flex;align-items:center;gap:12px;
+  font-family:'Karla',sans-serif;
+  font-weight:400;font-size:.7rem;
+  letter-spacing:3.5px;text-transform:uppercase;
+  padding:18px 40px;
+  border-radius:2px;
+  transition:all .5s var(--ease);
+  position:relative;overflow:hidden;
+  border:none;cursor:none;
+}
+.btn-primary{
+  color:var(--bg);
+  background:linear-gradient(135deg,var(--accent),var(--accent-light));
+  box-shadow:0 0 0 0 rgba(212,176,68,0);
+}
+.btn-primary:hover{
+  box-shadow:0 8px 40px rgba(212,176,68,.3),0 0 0 1px var(--accent-light);
+  transform:translateY(-2px);
+}
+.btn-primary::after{
+  content:'→';
+  font-family:serif;
+  transition:transform .4s var(--ease);
+}
+.btn-primary:hover::after{transform:translateX(6px)}
+
+.btn-ghost{
+  color:var(--accent);
+  background:transparent;
+  border:1px solid var(--accent-soft);
+}
+.btn-ghost:hover{
+  background:var(--accent-whisper);
+  border-color:var(--accent);
+}
+
+.scroll-indicator{
+  position:absolute;
+  bottom:32px;left:50%;
+  transform:translateX(-50%);
+  z-index:5;
+  opacity:0;
+  animation:fadeInUp 1.4s var(--ease) 1.6s forwards;
+  display:flex;flex-direction:column;align-items:center;gap:10px;
+}
+.scroll-indicator-text{
+  font-size:9px;font-weight:300;
+  letter-spacing:3px;text-transform:uppercase;
+  color:var(--ghost);
+}
+.scroll-indicator-line{
+  width:1px;height:50px;
+  background:linear-gradient(180deg,var(--accent),transparent);
+  animation:scrollPulse 2s ease-in-out infinite;
+}
+@keyframes scrollPulse{
+  0%,100%{opacity:.3;transform:scaleY(.7)}
+  50%{opacity:1;transform:scaleY(1)}
+}
+
+/* ═══════════════════════════════════════════════════════
+   ANNOUNCEMENT BLOCK (datas, local, prazo)
+   ═══════════════════════════════════════════════════════ */
+.announcement{
+  padding:80px 0;
+  background:linear-gradient(180deg,var(--bg) 0%,var(--bg-warm) 50%,var(--bg) 100%);
+  border-top:1px solid var(--ghost-line);
+  border-bottom:1px solid var(--ghost-line);
+  position:relative;
+  overflow:hidden;
+}
+.announcement::before{
+  content:'';position:absolute;
+  top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  width:80%;max-width:600px;height:600px;
+  background:radial-gradient(circle,var(--accent-glow) 0%,transparent 60%);
+  pointer-events:none;
+}
+.announcement-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:0;
+  border:1px solid var(--accent-soft);
+  border-radius:4px;
+  background:rgba(13,13,12,.6);
+  backdrop-filter:blur(12px);
+  overflow:hidden;
+}
+.announcement-item{
+  padding:36px 24px;
+  text-align:center;
+  border-right:1px solid var(--ghost-line);
+  transition:background .4s;
+  position:relative;
+}
+.announcement-item:last-child{border-right:none}
+.announcement-item:hover{background:var(--accent-whisper)}
+.announcement-label{
+  font-size:9px;font-weight:400;
+  letter-spacing:3.5px;text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:14px;
+}
+.announcement-value{
+  font-family:'Playfair Display',serif;
+  font-weight:500;
+  font-size:2rem;
+  color:var(--white);
+  line-height:1;
+  margin-bottom:8px;
+}
+.announcement-sub{
+  font-size:.7rem;font-weight:300;
+  color:var(--text);
+  line-height:1.5;
+  letter-spacing:.5px;
+}
+@media(max-width:900px){
+  .announcement-grid{grid-template-columns:1fr 1fr}
+  .announcement-item{border-right:none;border-bottom:1px solid var(--ghost-line)}
+  .announcement-item:nth-child(odd){border-right:1px solid var(--ghost-line)}
+  .announcement-item:nth-last-child(-n+2){border-bottom:none}
+}
+@media(max-width:600px){
+  .announcement-grid{grid-template-columns:1fr}
+  .announcement-item{border-right:none!important;border-bottom:1px solid var(--ghost-line)}
+  .announcement-item:last-child{border-bottom:none}
+}
+
+/* COUNTDOWN */
+.countdown-block{
+  margin-top:48px;
+  text-align:center;
+  padding:32px 24px;
+  border:1px dashed var(--accent-soft);
+  border-radius:4px;
+  background:rgba(212,176,68,.02);
+}
+.countdown-label{
+  font-size:11px;font-weight:400;
+  letter-spacing:4px;text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:18px;
+}
+.countdown{
+  display:flex;justify-content:center;gap:24px;flex-wrap:wrap;
+  margin-bottom:14px;
+}
+.countdown-unit{
+  text-align:center;
+  min-width:80px;
+}
+.countdown-num{
+  font-family:'Playfair Display',serif;
+  font-weight:500;
+  font-size:2.5rem;
+  color:var(--white);
+  line-height:1;
+  display:block;
+  margin-bottom:6px;
+}
+.countdown-text{
+  font-size:9px;font-weight:300;
+  letter-spacing:2.5px;text-transform:uppercase;
+  color:var(--ghost);
+}
+.countdown-sep{
+  font-family:'Playfair Display',serif;
+  font-size:2rem;color:var(--accent);
+  align-self:center;line-height:1;
+  margin-top:-10px;
+}
+.countdown-msg{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:.95rem;
+  color:var(--text);
+  margin-top:14px;
+}
+.countdown-msg strong{color:var(--accent-light);font-weight:500}
+
+/* ═══════════════════════════════════════════════════════
+   AS 4 INTELIGÊNCIAS — CARDS 3D
+   ═══════════════════════════════════════════════════════ */
+.intel-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:24px;
+  margin-top:60px;
+  perspective:1500px;
+}
+@media(max-width:780px){.intel-grid{grid-template-columns:1fr}}
+
+.intel-card{
+  position:relative;
+  padding:48px 36px;
+  border:1px solid var(--ghost-line);
+  border-radius:4px;
+  background:linear-gradient(135deg,rgba(25,24,21,.8) 0%,rgba(13,13,12,.95) 100%);
+  transition:all .6s var(--ease);
+  transform-style:preserve-3d;
+  overflow:hidden;
+  cursor:none;
+}
+.intel-card::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(circle at var(--mx,50%) var(--my,50%),var(--accent-glow) 0%,transparent 50%);
+  opacity:0;
+  transition:opacity .5s;
+  pointer-events:none;
+}
+.intel-card:hover{
+  border-color:var(--accent-soft);
+  transform:translateY(-6px);
+  box-shadow:0 20px 60px rgba(0,0,0,.5),0 0 0 1px var(--accent-soft);
+}
+.intel-card:hover::before{opacity:1}
+
+.intel-icon{
+  width:56px;height:56px;
+  margin-bottom:24px;
+  position:relative;
+  display:flex;align-items:center;justify-content:center;
+}
+.intel-icon svg{
+  width:100%;height:100%;
+  stroke:var(--accent);
+  stroke-width:.6;
+  fill:none;
+  transition:stroke-width .4s,filter .4s;
+}
+.intel-card:hover .intel-icon svg{
+  stroke-width:.9;
+  filter:drop-shadow(0 0 12px var(--accent));
+}
+.intel-num{
+  position:absolute;
+  top:24px;right:32px;
+  font-family:'Playfair Display',serif;
+  font-style:italic;
+  font-size:5rem;
+  color:var(--accent);
+  opacity:.08;
+  line-height:1;
+  font-weight:500;
+}
+.intel-title{
+  font-family:'Playfair Display',serif;
+  font-weight:500;
+  font-size:1.45rem;
+  color:var(--white);
+  margin-bottom:8px;
+  line-height:1.2;
+}
+.intel-tag{
+  font-size:.72rem;font-weight:400;
+  letter-spacing:2.5px;text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:18px;
+}
+.intel-desc{
+  font-weight:300;font-size:.92rem;
+  line-height:1.85;color:var(--text);
+  margin-bottom:20px;
+}
+.intel-list{list-style:none;padding:0}
+.intel-list li{
+  font-size:.82rem;font-weight:300;
+  color:var(--white-soft);
+  line-height:1.7;
+  padding:5px 0 5px 18px;
+  position:relative;
+}
+.intel-list li::before{
+  content:'';
+  position:absolute;
+  left:0;top:13px;
+  width:8px;height:1px;
+  background:var(--accent);
+  opacity:.5;
+}
+
+/* ═══════════════════════════════════════════════════════
+   QUOTE BLOCK
+   ═══════════════════════════════════════════════════════ */
+.quote-block{
+  text-align:center;
+  padding:80px 0;
+  position:relative;
+}
+.quote-mark{
+  font-family:'Playfair Display',serif;
+  font-size:6rem;
+  color:var(--accent);
+  opacity:.15;
+  line-height:.6;
+  margin-bottom:0;
+}
+.quote-text{
+  font-family:'Playfair Display',serif;
+  font-style:italic;font-weight:400;
+  font-size:clamp(1.2rem,2.2vw,1.7rem);
+  color:var(--white);
+  line-height:1.5;
+  max-width:760px;margin:24px auto 20px;
+  letter-spacing:.3px;
+}
+.quote-text em{color:var(--accent-light)}
+.quote-author{
+  font-size:.7rem;font-weight:300;
+  letter-spacing:4px;text-transform:uppercase;
+  color:var(--ghost);
+}
+
+/* ═══════════════════════════════════════════════════════
+   PARA QUEM É — DORES EXECUTIVAS
+   ═══════════════════════════════════════════════════════ */
+.dores-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px 36px;
+  max-width:880px;
+  margin:50px auto 0;
+}
+@media(max-width:780px){.dores-grid{grid-template-columns:1fr}}
+.dor-item{
+  font-weight:300;font-size:.92rem;
+  color:var(--text);
+  line-height:1.85;
+  padding:12px 0 12px 24px;
+  position:relative;
+  border-bottom:1px solid var(--ghost-line);
+  transition:color .3s,padding-left .4s var(--ease);
+}
+.dor-item:hover{color:var(--white-soft);padding-left:30px}
+.dor-item::before{
+  content:'';
+  position:absolute;
+  left:0;top:22px;
+  width:12px;height:1px;
+  background:var(--accent);
+  transition:width .4s var(--ease);
+}
+.dor-item:hover::before{width:18px}
+
+/* ═══════════════════════════════════════════════════════
+   MÉTODO EVOLUTION + 7 ETAPAS
+   ═══════════════════════════════════════════════════════ */
+.metodo-grid{
+  display:grid;
+  grid-template-columns:1fr 1.3fr;
+  gap:60px;
+  align-items:start;
+  margin-top:48px;
+}
+@media(max-width:880px){.metodo-grid{grid-template-columns:1fr;gap:40px}}
+
+.metodo-quote-card{
+  border:1px solid var(--accent-soft);
+  border-radius:3px;
+  padding:32px 28px;
+  background:linear-gradient(135deg,var(--accent-whisper),transparent);
+  margin-bottom:24px;
+}
+.metodo-quote-card p{
+  font-family:'Playfair Display',serif;
+  font-style:italic;font-weight:400;
+  font-size:1.05rem;
+  color:var(--white);
+  line-height:1.7;
+}
+.metodo-text{
+  font-weight:300;font-size:.95rem;
+  line-height:2;color:var(--text);
+  margin-bottom:18px;
+}
+.metodo-text strong{color:var(--accent);font-weight:500}
+
+.etapas{
+  margin-top:64px;
+  max-width:780px;
+  margin-left:auto;margin-right:auto;
+}
+.etapa{
+  display:flex;
+  gap:28px;
+  padding:24px 0;
+  border-bottom:1px solid var(--ghost-line);
+  transition:padding-left .4s var(--ease);
+}
+.etapa:hover{padding-left:12px;background:linear-gradient(90deg,var(--accent-whisper),transparent)}
+.etapa-num{
+  font-family:'Playfair Display',serif;
+  font-style:italic;
+  font-size:2.2rem;
+  font-weight:500;
+  color:var(--accent);
+  opacity:.5;
+  line-height:1;
+  flex-shrink:0;
+  width:48px;
+  text-align:center;
+}
+.etapa-content h4{
+  font-family:'Playfair Display',serif;
+  font-weight:500;
+  font-size:1.15rem;
+  color:var(--white);
+  margin-bottom:6px;
+}
+.etapa-content p{
+  font-weight:300;font-size:.88rem;
+  color:var(--text);
+  line-height:1.7;
+}
+
+/* ═══════════════════════════════════════════════════════
+   EVO-TALK
+   ═══════════════════════════════════════════════════════ */
+.evo-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:18px;
+  margin:36px 0;
+}
+@media(max-width:780px){.evo-grid{grid-template-columns:1fr}}
+.evo-card{
+  text-align:center;
+  padding:32px 24px;
+  border:1px solid var(--ghost-line);
+  border-radius:3px;
+  background:rgba(25,24,21,.4);
+  transition:all .4s var(--ease);
+}
+.evo-card:hover{
+  border-color:var(--accent-soft);
+  background:var(--accent-whisper);
+  transform:translateY(-3px);
+}
+.evo-card-title{
+  font-family:'Playfair Display',serif;
+  font-style:italic;
+  font-size:1.25rem;
+  color:var(--accent);
+  margin-bottom:6px;
+}
+.evo-card-sub{
+  font-size:.78rem;font-weight:300;
+  color:var(--text);
+  letter-spacing:1px;
+}
+
+/* ═══════════════════════════════════════════════════════
+   CONTEÚDO PROGRAMÁTICO
+   ═══════════════════════════════════════════════════════ */
+.conteudo-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px 32px;
+  margin-top:50px;
+  max-width:1000px;
+  margin-left:auto;margin-right:auto;
+}
+@media(max-width:780px){.conteudo-grid{grid-template-columns:1fr}}
+.conteudo-item{
+  font-weight:300;font-size:.86rem;
+  color:var(--text);
+  padding:14px 0 14px 22px;
+  border-left:1px solid var(--accent-soft);
+  margin-left:0;
+  transition:color .3s,border-left-color .3s,padding-left .3s;
+}
+.conteudo-item:hover{
+  color:var(--white-soft);
+  border-left-color:var(--accent);
+  padding-left:28px;
+}
+
+/* ═══════════════════════════════════════════════════════
+   EMPRESAS / CASES
+   ═══════════════════════════════════════════════════════ */
+.cases-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1px;
+  background:var(--ghost-line);
+  margin-top:60px;
+  border:1px solid var(--ghost-line);
+  border-radius:4px;
+  overflow:hidden;
+}
+@media(max-width:880px){.cases-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:600px){.cases-grid{grid-template-columns:repeat(2,1fr)}}
+.case-item{
+  background:var(--bg);
+  padding:24px 16px;
+  text-align:center;
+  font-family:'Playfair Display',serif;
+  font-weight:400;
+  font-size:.95rem;
+  color:var(--white-soft);
+  letter-spacing:.5px;
+  transition:all .4s;
+}
+.case-item:hover{
+  background:var(--bg-warm);
+  color:var(--accent-light);
+}
+
+/* ═══════════════════════════════════════════════════════
+   AUTORIDADE — CARLOS CRASTO
+   ═══════════════════════════════════════════════════════ */
+.autoridade-grid{
+  display:grid;
+  grid-template-columns:320px 1fr;
+  gap:60px;
+  align-items:stretch;
+}
+@media(max-width:880px){
+  .autoridade-grid{grid-template-columns:1fr;gap:40px}
+  .autoridade-photo{aspect-ratio:3/4;height:auto;}
+}
+.autoridade-photo{
+  position:relative;
+  height:100%;
+  border-radius:4px;
+  background:linear-gradient(180deg,var(--bg-warm),var(--bg));
+  border:1px solid var(--ghost-line);
+  display:flex;align-items:center;justify-content:center;
+  overflow:hidden;
+}
+.autoridade-photo::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 60%,rgba(13,13,12,.9));
+  z-index:2;
+}
+.autoridade-img{
+  position:absolute;inset:0;
+  width:100%;height:100%;
+  object-fit:cover;
+  object-position:center 15%;
+  z-index:1;
+}
+.autoridade-photo-label{
+  position:absolute;
+  bottom:24px;left:24px;right:24px;
+  text-align:left;
+  z-index:3;
+}
+.autoridade-photo-name{
+  font-family:'Playfair Display',serif;
+  font-weight:500;
+  font-size:1.4rem;
+  color:var(--white);
+  margin-bottom:4px;
+}
+.autoridade-photo-role{
+  font-size:.7rem;font-weight:300;
+  letter-spacing:2px;text-transform:uppercase;
+  color:var(--accent);
+}
+.autoridade-content h2{
+  font-family:'Playfair Display',serif;
+  font-weight:500;
+  font-size:2.4rem;
+  color:var(--white);
+  margin-bottom:8px;
+}
+.autoridade-tagline{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:1.1rem;
+  color:var(--accent-light);
+  margin-bottom:28px;
+}
+.autoridade-content p{
+  font-weight:300;font-size:.95rem;
+  line-height:1.95;
+  color:var(--text);
+  margin-bottom:18px;
+}
+.autoridade-content strong{color:var(--accent);font-weight:500}
+
+.autoridade-stats{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+  margin-top:32px;
+  padding-top:32px;
+  border-top:1px solid var(--ghost-line);
+}
+.autoridade-stat-num{
+  font-family:'Playfair Display',serif;
+  font-weight:500;
+  font-size:2rem;
+  color:var(--accent-light);
+  line-height:1;
+  margin-bottom:6px;
+}
+.autoridade-stat-label{
+  font-size:.7rem;font-weight:300;
+  letter-spacing:1.5px;text-transform:uppercase;
+  color:var(--text);
+  line-height:1.5;
+}
+
+/* ═══════════════════════════════════════════════════════
+   BÔNUS
+   ═══════════════════════════════════════════════════════ */
+.bonus-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+  margin-top:50px;
+}
+@media(max-width:880px){.bonus-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.bonus-grid{grid-template-columns:1fr}}
+.bonus-card{
+  padding:32px 28px;
+  border:1px solid var(--ghost-line);
+  border-radius:3px;
+  background:linear-gradient(180deg,var(--bg-warm),var(--bg));
+  transition:all .5s var(--ease);
+  position:relative;
+  overflow:hidden;
+}
+.bonus-card::before{
+  content:'';position:absolute;
+  top:0;left:0;
+  width:0;height:1px;
+  background:var(--accent);
+  transition:width .5s var(--ease);
+}
+.bonus-card:hover{
+  border-color:var(--accent-soft);
+  transform:translateY(-3px);
+}
+.bonus-card:hover::before{width:100%}
+.bonus-card h4{
+  font-family:'Playfair Display',serif;
+  font-weight:500;
+  font-size:1.1rem;
+  color:var(--white);
+  margin-bottom:10px;
+}
+.bonus-card p{
+  font-weight:300;font-size:.85rem;
+  color:var(--text);
+  line-height:1.7;
+}
+.bonus-tag{
+  display:inline-block;
+  font-size:9px;font-weight:400;
+  letter-spacing:2.5px;text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:14px;
+  padding:3px 10px;
+  border:1px solid var(--accent-soft);
+  border-radius:100px;
+  background:var(--accent-whisper);
+}
+
+/* ═══════════════════════════════════════════════════════
+   DEPOIMENTOS
+   ═══════════════════════════════════════════════════════ */
+.depo-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+  margin-top:50px;
+}
+@media(max-width:780px){.depo-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.depo-grid{grid-template-columns:1fr}}
+.depo-video{
+  aspect-ratio:9/14;
+  background:linear-gradient(180deg,var(--bg-warm),var(--bg));
+  border:1px solid var(--ghost-line);
+  border-radius:3px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  cursor:none;
+  transition:all .5s var(--ease);
+  position:relative;
+  overflow:hidden;
+}
+.depo-video::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(circle at center,var(--accent-glow),transparent 60%);
+  opacity:0;
+  transition:opacity .5s;
+}
+.depo-video:hover{
+  border-color:var(--accent-soft);
+  transform:scale(1.02);
+}
+.depo-video:hover::before{opacity:1}
+.depo-play{
+  width:64px;height:64px;
+  border:1px solid var(--accent-soft);
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:18px;
+  transition:all .4s var(--ease);
+  background:var(--accent-whisper);
+  position:relative;z-index:2;
+}
+.depo-video:hover .depo-play{
+  background:var(--accent);
+  border-color:var(--accent);
+  transform:scale(1.1);
+}
+.depo-play svg{
+  width:18px;height:18px;
+  fill:var(--accent);
+  transition:fill .3s;
+  margin-left:3px;
+}
+.depo-video:hover .depo-play svg{fill:var(--bg)}
+.depo-name{
+  font-family:'Playfair Display',serif;
+  font-weight:500;
+  font-size:.95rem;
+  color:var(--white);
+  margin-bottom:4px;
+  position:relative;z-index:2;
+}
+.depo-role{
+  font-size:.7rem;font-weight:300;
+  letter-spacing:1px;
+  color:var(--ghost);
+  position:relative;z-index:2;
+}
+
+/* ═══════════════════════════════════════════════════════
+   INVESTIMENTO
+   ═══════════════════════════════════════════════════════ */
+.invest-card{
+  max-width:600px;
+  margin:50px auto 0;
+  padding:48px 40px;
+  border:1px solid var(--accent-soft);
+  border-radius:4px;
+  background:linear-gradient(180deg,var(--bg-warm),var(--bg));
+  position:relative;
+  overflow:hidden;
+}
+.invest-card::before{
+  content:'';position:absolute;
+  top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--accent-light),var(--accent),var(--accent-light),transparent);
+}
+.invest-card::after{
+  content:'';position:absolute;
+  top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  width:400px;height:400px;
+  background:radial-gradient(circle,var(--accent-glow),transparent 60%);
+  pointer-events:none;
+}
+.invest-content{position:relative;z-index:2;text-align:center}
+.invest-tag{
+  display:inline-block;
+  font-size:9px;font-weight:400;
+  letter-spacing:4px;text-transform:uppercase;
+  color:var(--accent);
+  padding:6px 16px;
+  border:1px solid var(--accent-soft);
+  border-radius:100px;
+  margin-bottom:24px;
+}
+.invest-price{
+  font-family:'Playfair Display',serif;
+  font-weight:500;
+  font-size:3rem;
+  color:var(--accent-light);
+  line-height:1;
+  margin-bottom:8px;
+  background:linear-gradient(135deg,var(--accent-light),var(--accent));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.invest-price-sub{
+  font-size:.8rem;font-weight:300;
+  color:var(--text);
+  margin-bottom:14px;
+}
+.invest-avista{
+  font-size:.85rem;font-weight:400;
+  color:var(--accent);
+  margin-bottom:32px;
+  padding:10px 20px;
+  border-top:1px solid var(--ghost-line);
+  border-bottom:1px solid var(--ghost-line);
+  display:inline-block;
+}
+.invest-avista span{color:var(--white-soft);font-weight:500}
+.invest-includes{
+  text-align:left;
+  margin:32px 0;
+  padding:24px;
+  background:rgba(13,13,12,.5);
+  border-radius:3px;
+  border:1px solid var(--ghost-line);
+}
+.invest-includes-title{
+  font-size:10px;font-weight:400;
+  letter-spacing:3px;text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:14px;
+}
+.invest-includes-item{
+  font-size:.82rem;font-weight:300;
+  color:var(--white-soft);
+  line-height:1.9;
+  padding-left:18px;
+  position:relative;
+}
+.invest-includes-item::before{
+  content:'✓';
+  position:absolute;
+  left:0;color:var(--accent);
+  font-weight:600;
+}
+
+/* ═══════════════════════════════════════════════════════
+   FORMULÁRIO DE INSCRIÇÃO
+   ═══════════════════════════════════════════════════════ */
+.form-section{
+  background:linear-gradient(180deg,var(--bg) 0%,var(--bg-warm) 100%);
+  position:relative;
+}
+.form-card{
+  max-width:680px;
+  margin:50px auto 0;
+  padding:48px 40px;
+  border:1px solid var(--accent-soft);
+  border-radius:4px;
+  background:rgba(25,24,21,.5);
+  backdrop-filter:blur(20px);
+  position:relative;
+}
+.form-card::before{
+  content:'';position:absolute;
+  top:-1px;left:50%;
+  transform:translateX(-50%);
+  width:80px;height:1px;
+  background:var(--accent);
+  box-shadow:0 0 20px var(--accent);
+}
+.form-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+  margin-bottom:18px;
+}
+@media(max-width:600px){.form-row{grid-template-columns:1fr}}
+.form-group{
+  margin-bottom:18px;
+  position:relative;
+}
+.form-label{
+  display:block;
+  font-size:10px;font-weight:400;
+  letter-spacing:2.5px;text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:8px;
+}
+.form-label-required::after{
+  content:'*';
+  color:var(--accent);
+  margin-left:4px;
+}
+.form-input,.form-select,.form-textarea{
+  width:100%;
+  padding:14px 18px;
+  background:rgba(13,13,12,.6);
+  border:1px solid var(--ghost-line);
+  border-radius:3px;
+  color:var(--white);
+  font-family:'Karla',sans-serif;
+  font-weight:300;
+  font-size:.92rem;
+  transition:all .3s var(--ease);
+}
+.form-input:focus,.form-select:focus,.form-textarea:focus{
+  border-color:var(--accent);
+  background:rgba(13,13,12,.9);
+  box-shadow:0 0 0 3px var(--accent-glow);
+}
+.form-input::placeholder{color:var(--ghost)}
+.form-textarea{resize:vertical;min-height:90px}
+.form-select{
+  cursor:none;
+  appearance:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23d4b044' stroke-width='1.5'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;
+  background-position:right 18px center;
+  padding-right:45px;
+}
+.form-select option{
+  background:var(--bg);color:var(--white);
+}
+
+.form-submit{
+  display:block;width:100%;
+  margin-top:14px;
+  padding:20px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-light));
+  color:var(--bg);
+  border:none;
+  border-radius:3px;
+  font-family:'Karla',sans-serif;
+  font-weight:500;font-size:.78rem;
+  letter-spacing:4px;text-transform:uppercase;
+  cursor:none;
+  transition:all .4s var(--ease);
+  position:relative;overflow:hidden;
+}
+.form-submit::after{
+  content:'→';
+  margin-left:14px;
+  display:inline-block;
+  transition:transform .4s var(--ease);
+  font-family:serif;
+}
+.form-submit:hover{
+  box-shadow:0 10px 40px rgba(212,176,68,.35);
+  transform:translateY(-2px);
+}
+.form-submit:hover::after{transform:translateX(8px)}
+
+.form-disclaimer{
+  font-size:.7rem;
+  color:var(--ghost);
+  text-align:center;
+  margin-top:20px;
+  line-height:1.7;
+}
+.form-disclaimer strong{color:var(--accent);font-weight:400}
+
+/* ═══════════════════════════════════════════════════════
+   FAQ
+   ═══════════════════════════════════════════════════════ */
+.faq{max-width:820px;margin:50px auto 0}
+.faq-item{
+  border-bottom:1px solid var(--ghost-line);
+  transition:padding .4s;
+}
+.faq-q{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:28px 0;
+  cursor:none;
+  gap:20px;
+  transition:color .3s;
+}
+.faq-q:hover{color:var(--accent)}
+.faq-q h4{
+  font-family:'Playfair Display',serif;
+  font-weight:500;font-size:1.05rem;
+  color:var(--white);
+  transition:color .3s;
+  flex:1;
+}
+.faq-q:hover h4{color:var(--accent)}
+.faq-icon{
+  width:28px;height:28px;
+  flex-shrink:0;position:relative;
+  border:1px solid var(--accent-soft);
+  border-radius:50%;
+  transition:all .3s var(--ease);
+}
+.faq-icon::before,.faq-icon::after{
+  content:'';position:absolute;
+  background:var(--accent);
+  transition:transform .4s var(--ease);
+}
+.faq-icon::before{
+  width:12px;height:1px;
+  top:50%;left:50%;
+  transform:translate(-50%,-50%);
+}
+.faq-icon::after{
+  width:1px;height:12px;
+  top:50%;left:50%;
+  transform:translate(-50%,-50%);
+}
+.faq-item.open .faq-icon{
+  background:var(--accent);
+  transform:rotate(180deg);
+}
+.faq-item.open .faq-icon::before{background:var(--bg)}
+.faq-item.open .faq-icon::after{transform:translate(-50%,-50%) rotate(90deg);opacity:0}
+.faq-a{
+  max-height:0;overflow:hidden;
+  transition:max-height .6s var(--ease),padding .4s;
+}
+.faq-item.open .faq-a{max-height:500px;padding-bottom:28px}
+.faq-a p{
+  font-weight:300;font-size:.9rem;
+  line-height:2;color:var(--text);
+  margin-bottom:10px;
+}
+.faq-a strong{color:var(--white-soft);font-weight:500}
+.faq-a em{color:var(--accent-light);font-style:italic}
+
+/* ═══════════════════════════════════════════════════════
+   CTA FINAL
+   ═══════════════════════════════════════════════════════ */
+.cta-final{
+  text-align:center;
+  padding:140px 0;
+  position:relative;
+  overflow:hidden;
+}
+.cta-final::before{
+  content:'';position:absolute;
+  top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  width:900px;height:500px;
+  background:radial-gradient(ellipse,var(--accent-glow) 0%,transparent 60%);
+  pointer-events:none;
+}
+.cta-final-headline{
+  font-family:'Playfair Display',serif;
+  font-weight:500;
+  font-size:clamp(1.8rem,4vw,3rem);
+  line-height:1.15;
+  color:var(--white);
+  margin-bottom:24px;
+  max-width:780px;
+  margin-left:auto;margin-right:auto;
+  position:relative;z-index:2;
+}
+.cta-final-headline em{
+  font-style:italic;
+  color:var(--accent-light);
+}
+.cta-final-sub{
+  font-weight:300;font-size:1rem;
+  color:var(--text);
+  max-width:560px;margin:0 auto 44px;
+  line-height:1.85;
+  position:relative;z-index:2;
+}
+
+/* ═══════════════════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════════════════ */
+.footer{
+  padding:60px 0 40px;
+  border-top:1px solid var(--ghost-line);
+  text-align:center;
+  background:var(--bg-warm);
+}
+.footer-logo{
+  font-family:'Playfair Display',serif;
+  font-weight:600;
+  font-size:1.6rem;
+  letter-spacing:8px;
+  color:var(--white);
+  margin-bottom:6px;
+}
+.footer-tag{
+  font-size:.6rem;font-weight:300;
+  letter-spacing:4px;text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:24px;
+}
+.footer-links{
+  display:flex;justify-content:center;gap:32px;flex-wrap:wrap;
+  margin-bottom:28px;
+}
+.footer-links a{
+  font-size:.7rem;font-weight:300;
+  letter-spacing:3px;text-transform:uppercase;
+  color:var(--text);
+  transition:color .3s;
+}
+.footer-links a:hover{color:var(--accent)}
+.footer-copy{
+  font-size:.65rem;font-weight:300;
+  color:var(--ghost);
+  letter-spacing:1.5px;
+  margin-bottom:16px;
+}
+.footer-disclaimer{
+  font-size:.6rem;font-weight:300;
+  color:var(--ghost);
+  line-height:1.8;
+  max-width:680px;
+  margin:0 auto;
+  opacity:.7;
+}
+
+/* ═══════════════════════════════════════════════════════
+   WHATSAPP FLUTUANTE
+   ═══════════════════════════════════════════════════════ */
+.wa-float{
+  position:fixed;
+  bottom:32px;right:32px;
+  z-index:200;
+  opacity:0;
+  animation:fadeInUp 1s ease 2s forwards,waPulse 3s ease-in-out 3s infinite;
+}
+.wa-float a{
+  width:58px;height:58px;
+  background:linear-gradient(135deg,#25D366,#128C7E);
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 6px 20px rgba(37,211,102,.4);
+  transition:all .4s var(--ease);
+  cursor:none;
+}
+.wa-float a:hover{
+  transform:scale(1.1);
+  box-shadow:0 10px 30px rgba(37,211,102,.6);
+}
+.wa-float svg{width:28px;height:28px;fill:#fff}
+@keyframes waPulse{
+  0%,100%{box-shadow:0 6px 20px rgba(37,211,102,.4),0 0 0 0 rgba(37,211,102,.4)}
+  50%{box-shadow:0 6px 20px rgba(37,211,102,.4),0 0 0 16px rgba(37,211,102,0)}
+}
+@media(max-width:600px){.wa-float{bottom:20px;right:20px}}
+
+/* ═══════════════════════════════════════════════════════
+   SLIDE-IN ANIMATIONS DA NAV
+   ═══════════════════════════════════════════════════════ */
+@keyframes slideDown{
+  from{transform:translateY(-100%)}
+  to{transform:translateY(0)}
+}
+
+/* ═══════════════════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════════════════ */
+@media(max-width:780px){
+  html{font-size:16px}
+  :root{--section-gap:90px}
+  .container,.container-narrow{padding:0 24px}
+  .hero{padding:120px 0 80px}
+  .invest-card,.form-card{padding:32px 24px}
+  .nav{padding:14px 20px}
+}
+@media(max-width:480px){
+  .hero-meta{gap:8px}
+  .hero-meta-item{font-size:.7rem;padding:7px 12px}
+  .btn{padding:14px 28px;font-size:.65rem}
+  .nav-cta{padding:8px 16px;font-size:9px}
+}
+</style>
+</head>
+<body>
+
+<!-- CURSOR CUSTOMIZADO -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- SCROLL PROGRESS -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- NAVBAR -->
+<nav class="nav" id="navbar">
+  <a href="#" class="nav-logo">
+    CRASTO
+    <span class="nav-logo-tag">Inteligência que Evolui</span>
+  </a>
+  <div class="nav-right">
+    <a href="#metodo" class="nav-link">Método</a>
+    <a href="#inteligencias" class="nav-link">4 Inteligências</a>
+    <a href="#programa" class="nav-link">Programa</a>
+    <a href="#investimento" class="nav-link">Investimento</a>
+    <a href="#inscricao" class="nav-cta">Inscrever-se</a>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════════════════
+     HERO
+     ═══════════════════════════════════════════════════════ -->
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-socrates" id="heroSocrates"></div>
+  <div class="hero-vignette"></div>
+  <div class="particles" id="particles"></div>
+
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="hero-badge-dot"></span>
+      Edição Única · Agosto 2026
+    </div>
+
+    <p class="hero-greek">γνῶθι σεαυτόν · Conhece a ti mesmo</p>
+
+    <h1 class="hero-headline">
+      Maestria em <span class="hero-headline-em">Liderança</span>
+    </h1>
+
+    <p class="hero-subheadline">
+      A formação que executivos das maiores multinacionais do mundo fazem para se tornarem <strong>líderes verdadeiramente completos</strong> — dominando comunicação, negociação, vendas e as quatro inteligências que separam um bom gestor de um líder lendário.
+    </p>
+
+    <div class="hero-meta">
+      <span class="hero-meta-item"><span class="hero-meta-icon">◆</span> 14 · 15 · 16 de Agosto · 2026</span>
+      <span class="hero-meta-item"><span class="hero-meta-icon">◆</span> 36h Presenciais</span>
+      <span class="hero-meta-item"><span class="hero-meta-icon">◆</span> + 100h Online</span>
+      <span class="hero-meta-item"><span class="hero-meta-icon">◆</span> Certificação Internacional</span>
+    </div>
+
+    <div class="hero-ctas">
+      <a href="#inscricao" class="btn btn-primary">Garantir minha vaga</a>
+      <a href="#metodo" class="btn btn-ghost">Conhecer o Método</a>
+    </div>
+  </div>
+
+  <div class="scroll-indicator">
+    <span class="scroll-indicator-text">Role para descobrir</span>
+    <div class="scroll-indicator-line"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     ANNOUNCEMENT — DATAS · LOCAL · PRAZO
+     ═══════════════════════════════════════════════════════ -->
+<section class="announcement">
+  <div class="container">
+    <div class="reveal" style="text-align:center;margin-bottom:48px">
+      <span class="eyebrow eyebrow-center">Reserve sua agenda</span>
+      <h2 class="section-title" style="text-align:center">Edição única <em>de 2026</em></h2>
+      <p class="section-desc section-desc-center" style="margin-top:14px">Não haverá segunda turma este ano. Espaço com capacidade limitada e confirmações por ordem de resposta.</p>
+    </div>
+
+    <div class="announcement-grid reveal delay-1">
+      <div class="announcement-item">
+        <div class="announcement-label">Data</div>
+        <div class="announcement-value">14·15·16</div>
+        <div class="announcement-sub">Agosto · 2026</div>
+      </div>
+      <div class="announcement-item">
+        <div class="announcement-label">Horário</div>
+        <div class="announcement-value">07:30<span style="font-size:1.2rem;color:var(--accent)">→</span>19:30</div>
+        <div class="announcement-sub">36 horas presenciais</div>
+      </div>
+      <div class="announcement-item">
+        <div class="announcement-label">Local</div>
+        <div class="announcement-value" style="font-size:1.4rem">A confirmar</div>
+        <div class="announcement-sub">Campo Belo ou Santo Amaro · SP</div>
+      </div>
+      <div class="announcement-item">
+        <div class="announcement-label">Prazo confirmação</div>
+        <div class="announcement-value" style="font-size:1.6rem">30/06/2026</div>
+        <div class="announcement-sub">Após esta data, lista de espera</div>
+      </div>
+    </div>
+
+    <div class="countdown-block reveal delay-2">
+      <div class="countdown-label">Tempo restante para confirmar sua vaga</div>
+      <div class="countdown" id="countdown">
+        <div class="countdown-unit"><span class="countdown-num" id="cd-days">--</span><span class="countdown-text">Dias</span></div>
+        <span class="countdown-sep">:</span>
+        <div class="countdown-unit"><span class="countdown-num" id="cd-hours">--</span><span class="countdown-text">Horas</span></div>
+        <span class="countdown-sep">:</span>
+        <div class="countdown-unit"><span class="countdown-num" id="cd-min">--</span><span class="countdown-text">Min</span></div>
+        <span class="countdown-sep">:</span>
+        <div class="countdown-unit"><span class="countdown-num" id="cd-sec">--</span><span class="countdown-text">Seg</span></div>
+      </div>
+      <p class="countdown-msg">Edição única · <strong>Espaço com capacidade limitada</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     CITAÇÃO SÓCRATES
+     ═══════════════════════════════════════════════════════ -->
+<section class="quote-block">
+  <div class="container-narrow reveal">
+    <div class="quote-mark">"</div>
+    <p class="quote-text">Sábio é o homem capaz de perceber seus limites e imperfeições. Compreender as ilusões das aparências, a efemeridade das paixões, e com a razão, <em>controlar-se.</em></p>
+    <p class="quote-author">— Sócrates</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     PARA QUEM É — DORES EXECUTIVAS
+     ═══════════════════════════════════════════════════════ -->
+<section class="section section-alt">
+  <div class="ambient-orb" style="width:500px;height:500px;top:-200px;left:-200px"></div>
+
+  <div class="container">
+    <div class="reveal" style="text-align:center;max-width:700px;margin:0 auto">
+      <span class="eyebrow eyebrow-center">Para quem é</span>
+      <h2 class="section-title" style="text-align:center">Se você se reconhece aqui,<br><em>esta formação é para você.</em></h2>
+      <p class="section-desc section-desc-center">Para líderes que já chegaram longe pelo talento técnico, mas sentem que o próximo nível exige algo diferente — uma liderança comportamental, comunicacional e sistêmica que a formação tradicional não entrega.</p>
+    </div>
+
+    <div class="dores-grid reveal delay-2">
+      <p class="dor-item">Você lidera tecnicamente bem, mas sente que falta presença e impacto comunicacional</p>
+      <p class="dor-item">Negocia com inteligência, mas perde acordos que deveria ganhar pela leitura emocional</p>
+      <p class="dor-item">Sua equipe entrega, mas não floresce — e você sabe que poderia tirar mais do potencial dela</p>
+      <p class="dor-item">Você sabe vender, mas quer dominar a venda consultiva de alto nível executivo</p>
+      <p class="dor-item">Sente que reage demais sob pressão e quer acessar uma régua emocional mais alta</p>
+      <p class="dor-item">Quer parar de carregar o peso de conflitos que drenam sua energia e tempo</p>
+      <p class="dor-item">Busca clareza profunda sobre legado, propósito e o próximo capítulo da sua carreira</p>
+      <p class="dor-item">Quer dominar a inteligência sistêmica para enxergar o invisível que move organizações e famílias</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     AS 4 INTELIGÊNCIAS — DIFERENCIAL CONCEITUAL
+     ═══════════════════════════════════════════════════════ -->
+<section class="section" id="inteligencias">
+  <div class="ambient-orb" style="width:600px;height:600px;bottom:-200px;right:-200px"></div>
+
+  <div class="container">
+    <div class="reveal" style="text-align:center;max-width:780px;margin:0 auto">
+      <span class="eyebrow eyebrow-center">O diferencial</span>
+      <h2 class="section-title" style="text-align:center">As <em>4 Inteligências</em> da Maestria em Liderança</h2>
+      <p class="section-desc section-desc-center">Liderança verdadeira não é uma habilidade — é um conjunto integrado de inteligências. A Maestria desenvolve as quatro que executivos das maiores multinacionais do mundo consideram essenciais.</p>
+    </div>
+
+    <div class="intel-grid">
+      <!-- 1. COMUNICACIONAL -->
+      <div class="intel-card reveal delay-1">
+        <span class="intel-num">01</span>
+        <div class="intel-icon">
+          <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="30" cy="30" r="22"/>
+            <path d="M14 30 L46 30 M30 14 L30 46"/>
+            <circle cx="30" cy="30" r="6"/>
+            <path d="M22 22 L38 38 M38 22 L22 38" opacity=".4"/>
+          </svg>
+        </div>
+        <p class="intel-tag">Comunicacional</p>
+        <h3 class="intel-title">Falar, escutar e calar com maestria</h3>
+        <p class="intel-desc">A inteligência que transforma palavras em movimento. Domínio do framework EVO-TALK®, comunicação assertiva, escuta ativa estratégica e o poder do silêncio em momentos decisivos.</p>
+        <ul class="intel-list">
+          <li>Comunicação que abre portas, não as fecha</li>
+          <li>Apresentações executivas de alto impacto</li>
+          <li>Conversas difíceis sem perder o controle</li>
+          <li>Storytelling para liderar e influenciar</li>
+        </ul>
+      </div>
+
+      <!-- 2. RELACIONAL -->
+      <div class="intel-card reveal delay-2">
+        <span class="intel-num">02</span>
+        <div class="intel-icon">
+          <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="22" r="10"/>
+            <circle cx="40" cy="22" r="10"/>
+            <circle cx="30" cy="40" r="10"/>
+            <path d="M20 32 L30 30 L40 32" opacity=".5"/>
+          </svg>
+        </div>
+        <p class="intel-tag">Relacional</p>
+        <h3 class="intel-title">Construir vínculos que sustentam negócios</h3>
+        <p class="intel-desc">A inteligência que cria pontes onde havia paredes. Negociação avançada, leitura de perfis comportamentais (DISC), gestão de conflitos e construção de relações duradouras com pares, equipes e clientes premium.</p>
+        <ul class="intel-list">
+          <li>Negociação consultiva de alto valor</li>
+          <li>Leitura de perfis e adaptação tática</li>
+          <li>Resolução de conflitos sem ruptura</li>
+          <li>Networking estratégico de longo prazo</li>
+        </ul>
+      </div>
+
+      <!-- 3. EMOCIONAL -->
+      <div class="intel-card reveal delay-3">
+        <span class="intel-num">03</span>
+        <div class="intel-icon">
+          <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+            <path d="M30 50 C15 40 8 28 14 18 C20 8 30 14 30 22 C30 14 40 8 46 18 C52 28 45 40 30 50 Z"/>
+            <circle cx="30" cy="28" r="5" opacity=".5"/>
+          </svg>
+        </div>
+        <p class="intel-tag">Emocional</p>
+        <h3 class="intel-title">Liderar a si antes de liderar os outros</h3>
+        <p class="intel-desc">A inteligência que define quem se mantém íntegro sob pressão. Autorregulação, neutralização de gatilhos, gestão de estresse executivo e acesso à régua emocional necessária para decisões de alto valor.</p>
+        <ul class="intel-list">
+          <li>Autorregulação em momentos críticos</li>
+          <li>Neutralização de gatilhos e reações</li>
+          <li>Calibração sensorial avançada</li>
+          <li>Decisões com clareza, não com pressa</li>
+        </ul>
+      </div>
+
+      <!-- 4. SISTÊMICA -->
+      <div class="intel-card reveal delay-4">
+        <span class="intel-num">04</span>
+        <div class="intel-icon">
+          <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="30" cy="30" r="22"/>
+            <circle cx="30" cy="30" r="14"/>
+            <circle cx="30" cy="30" r="6"/>
+            <path d="M30 8 L30 52 M8 30 L52 30 M14 14 L46 46 M46 14 L14 46" opacity=".3"/>
+          </svg>
+        </div>
+        <p class="intel-tag">Sistêmica</p>
+        <h3 class="intel-title">Enxergar o invisível que move tudo</h3>
+        <p class="intel-desc">A inteligência mais rara entre executivos. Compreender padrões sistêmicos em organizações, famílias e times. Identificar o que está oculto por trás de resultados, conflitos e estagnações — e agir na causa, não no sintoma.</p>
+        <ul class="intel-list">
+          <li>Visão sistêmica organizacional</li>
+          <li>Constelação aplicada à liderança</li>
+          <li>Diagnóstico de causas-raiz</li>
+          <li>Sucessão familiar e empresarial</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     MÉTODO EVOLUTION + 7 ETAPAS
+     ═══════════════════════════════════════════════════════ -->
+<section class="section section-alt" id="metodo">
+  <div class="container">
+    <div class="reveal" style="text-align:center;max-width:780px;margin:0 auto">
+      <span class="eyebrow eyebrow-center">O método por trás da transformação</span>
+      <h2 class="section-title" style="text-align:center">Método <em>Evolution by Crasto</em></h2>
+      <p class="section-desc section-desc-center">Validado pelo PMI Brasil. Aplicado por executivos de Amazon, Google, IBM, Petrobras, XP, Nestlé. Mais de 16.000 vidas transformadas.</p>
+    </div>
+
+    <div class="metodo-grid">
+      <div class="reveal delay-1">
+        <div class="metodo-quote-card">
+          <p>"Método ou técnica que pressupõe que a verdade está latente em todo ser humano, podendo aflorar aos poucos na medida em que se responde a uma série de perguntas simples, quase ingênuas, porém perspicazes."</p>
+        </div>
+        <p style="font-size:.78rem;color:var(--ghost);text-align:center;letter-spacing:1.5px">— Sobre a Maiêutica Socrática, raiz filosófica do Método Evolution</p>
+      </div>
+
+      <div class="reveal delay-2">
+        <p class="metodo-text">O <strong>Método Evolution by Crasto</strong> integra a maiêutica socrática às melhores práticas em neurociência, psicoterapia, fenomenologia e mais de 30 especialidades. Criado em 2015, nasceu da mentoria premium para executivos que buscavam transformação real — não treinamento pontual.</p>
+
+        <p class="metodo-text">É a experiência de transformação mais completa da atualidade — validada pelo <strong>PMI Brasil</strong> como método extraordinário que complementa comunicação, liderança, gestão de riscos e acompanhamento de resultados.</p>
+
+        <p class="metodo-text">O mesmo método aplicado em executivos de <strong>Amazon, Google, IBM Brasil, Petrobras, XP Investimentos, Nestlé, Itaú-Unibanco e Bayer</strong> — agora estruturado em três dias de imersão para transformação acelerada.</p>
+      </div>
+    </div>
+
+    <!-- 7 ETAPAS -->
+    <div class="etapas reveal">
+      <div style="text-align:center;margin-bottom:32px">
+        <span class="eyebrow eyebrow-center">As 7 etapas do Método Evolution</span>
+      </div>
+      <div class="etapa">
+        <span class="etapa-num">1</span>
+        <div class="etapa-content">
+          <h4>Descoberta</h4>
+          <p>Levantamento profundo de dores, desejos e potencial de transição executiva e pessoal.</p>
+        </div>
+      </div>
+      <div class="etapa">
+        <span class="etapa-num">2</span>
+        <div class="etapa-content">
+          <h4>Conscientização</h4>
+          <p>Análise de padrões mentais, sabotagens cognitivas e limites emocionais que travam o crescimento.</p>
+        </div>
+      </div>
+      <div class="etapa">
+        <span class="etapa-num">3</span>
+        <div class="etapa-content">
+          <h4>Responsabilização</h4>
+          <p>Definição de metas, prazos e compromissos concretos com autorresponsabilidade radical.</p>
+        </div>
+      </div>
+      <div class="etapa">
+        <span class="etapa-num">4</span>
+        <div class="etapa-content">
+          <h4>Possibilidades</h4>
+          <p>Elaboração de estratégias e formatos de execução adaptados ao seu contexto profissional.</p>
+        </div>
+      </div>
+      <div class="etapa">
+        <span class="etapa-num">5</span>
+        <div class="etapa-content">
+          <h4>Análise de Riscos</h4>
+          <p>Avaliação executiva de cenários, caminhos, riscos, perdas e ganhos — antes de cada decisão.</p>
+        </div>
+      </div>
+      <div class="etapa">
+        <span class="etapa-num">6</span>
+        <div class="etapa-content">
+          <h4>Execução Guiada</h4>
+          <p>Plano de ação prático com acompanhamento estruturado e calibração contínua.</p>
+        </div>
+      </div>
+      <div class="etapa">
+        <span class="etapa-num">7</span>
+        <div class="etapa-content">
+          <h4>Acompanhamento de Resultados</h4>
+          <p>Mensuração de conquistas, redirecionamento e cálculo de retorno emocional, financeiro e de legado.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     EVO-TALK®
+     ═══════════════════════════════════════════════════════ -->
+<section class="section">
+  <div class="ambient-orb" style="width:500px;height:500px;top:30%;left:-250px"></div>
+  <div class="container-narrow">
+    <div class="reveal" style="text-align:center">
+      <span class="eyebrow eyebrow-center">O framework conversacional proprietário</span>
+      <h2 class="section-title" style="text-align:center">EVO-TALK<sup style="font-size:.5em;color:var(--accent)">®</sup></h2>
+      <p style="font-weight:300;font-size:.85rem;color:var(--grey);letter-spacing:1.5px;margin-bottom:36px">Behavioral Intelligence · Inteligência Comportamental Evolutiva</p>
+    </div>
+
+    <div class="metodo-quote-card reveal delay-1" style="text-align:center;max-width:700px;margin:0 auto 36px">
+      <p>"No Método Evolution, falar é curar, ouvir é servir, calar é integrar — e agir é evoluir."</p>
+    </div>
+
+    <p class="metodo-text reveal delay-2" style="text-align:center;max-width:680px;margin:0 auto 32px">O EVO-TALK® é o framework conversacional proprietário da CRASTO, desenvolvido em mais de 20 anos de prática executiva. Transforma a comunicação em consciência, a consciência em ação, e a ação em comportamento evolutivo.</p>
+
+    <div class="evo-grid reveal delay-3">
+      <div class="evo-card">
+        <p class="evo-card-title">A comunicação</p>
+        <p class="evo-card-sub">é o veículo</p>
+      </div>
+      <div class="evo-card">
+        <p class="evo-card-title">O comportamento</p>
+        <p class="evo-card-sub">é o destino</p>
+      </div>
+      <div class="evo-card">
+        <p class="evo-card-title">O piloto protagonista</p>
+        <p class="evo-card-sub">é você</p>
+      </div>
+    </div>
+
+    <p class="metodo-text reveal delay-4" style="text-align:center;max-width:680px;margin:32px auto 0">Cada interação se torna um campo de consciência ativa: a palavra revela o que estava oculto, a escuta integra o que estava fragmentado, o silêncio permite o movimento da alma, e a ação consciente consolida a experiência.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     CONTEÚDO PROGRAMÁTICO
+     ═══════════════════════════════════════════════════════ -->
+<section class="section section-alt" id="programa">
+  <div class="container">
+    <div class="reveal" style="text-align:center;max-width:760px;margin:0 auto">
+      <span class="eyebrow eyebrow-center">Conteúdo programático</span>
+      <h2 class="section-title" style="text-align:center">O que você vai <em>dominar</em></h2>
+      <p class="section-desc section-desc-center">Conteúdo estruturado em três dias de imersão presencial profunda + 100 horas online complementares.</p>
+    </div>
+
+    <div class="conteudo-grid reveal delay-1">
+      <p class="conteudo-item">Liderar a própria mente, vontades e emoções com domínio</p>
+      <p class="conteudo-item">Comunicação executiva assertiva e liderança positiva</p>
+      <p class="conteudo-item">Framework conversacional EVO-TALK® aplicado</p>
+      <p class="conteudo-item">Negociação de alto valor sem desgaste emocional</p>
+      <p class="conteudo-item">Vendas consultivas e venda complexa de longo ciclo</p>
+      <p class="conteudo-item">Inteligência emocional avançada para executivos</p>
+      <p class="conteudo-item">Visão sistêmica organizacional e familiar</p>
+      <p class="conteudo-item">Avaliação DISC e leitura de perfis comportamentais</p>
+      <p class="conteudo-item">Gestão de conflitos sem ruptura de relações</p>
+      <p class="conteudo-item">Eliminar procrastinação e neutralizar críticas</p>
+      <p class="conteudo-item">Reprogramar padrões comportamentais autossabotadores</p>
+      <p class="conteudo-item">Calibração sensorial e gestão de gatilhos emocionais</p>
+      <p class="conteudo-item">Foco, disciplina e constância em alto desempenho</p>
+      <p class="conteudo-item">Clareza de propósito, metas e visão de legado</p>
+      <p class="conteudo-item">Ressignificar crenças, valores e princípios profissionais</p>
+      <p class="conteudo-item">Apresentações executivas e oratória de impacto</p>
+      <p class="conteudo-item">Construir e nutrir relacionamentos estratégicos</p>
+      <p class="conteudo-item">Maturidade emocional e autorresponsabilidade radical</p>
+      <p class="conteudo-item">Hábitos desencadeadores de alto rendimento</p>
+      <p class="conteudo-item">Tornar-se líder lendário na vida pessoal e profissional</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     CITAÇÃO CAVERNA
+     ═══════════════════════════════════════════════════════ -->
+<section class="quote-block">
+  <div class="container-narrow reveal">
+    <p class="quote-text">A caverna que você tem medo de entrar<br><em>esconde o tesouro que você há tanto tempo procura.</em></p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     EMPRESAS QUE CONFIAM
+     ═══════════════════════════════════════════════════════ -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="reveal" style="text-align:center;max-width:700px;margin:0 auto">
+      <span class="eyebrow eyebrow-center">Reconhecimento</span>
+      <h2 class="section-title" style="text-align:center">Empresas que confiam no <em>Método Evolution</em></h2>
+      <p class="section-desc section-desc-center">Executivos das maiores corporações do Brasil e do mundo já passaram pelas formações Crasto.</p>
+    </div>
+
+    <div class="cases-grid reveal delay-1">
+      <div class="case-item">Google Brasil</div>
+      <div class="case-item">Amazon</div>
+      <div class="case-item">IBM Brasil</div>
+      <div class="case-item">Nestlé</div>
+      <div class="case-item">Petrobras</div>
+      <div class="case-item">XP Investimentos</div>
+      <div class="case-item">Itaú-Unibanco</div>
+      <div class="case-item">Banco do Brasil</div>
+      <div class="case-item">Caixa Econômica</div>
+      <div class="case-item">Bayer</div>
+      <div class="case-item">Philips</div>
+      <div class="case-item">Tramontina</div>
+      <div class="case-item">Grupo Ambev</div>
+      <div class="case-item">Volvo</div>
+      <div class="case-item">Delta Air Lines</div>
+      <div class="case-item">Pfizer</div>
+      <div class="case-item">FGV</div>
+      <div class="case-item">Mackenzie</div>
+      <div class="case-item">PMI Brasil</div>
+      <div class="case-item">+ Centenas</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     AUTORIDADE — CARLOS CRASTO
+     ═══════════════════════════════════════════════════════ -->
+<section class="section">
+  <div class="ambient-orb" style="width:500px;height:500px;top:50%;right:-250px"></div>
+
+  <div class="container">
+    <div class="autoridade-grid">
+      <div class="reveal autoridade-photo">
+        <img src="../../assets/crastp_9db978973623.webp" alt="Carlos Crasto" class="autoridade-img">
+        <div class="autoridade-photo-label">
+          <p class="autoridade-photo-name">Carlos Crasto</p>
+          <p class="autoridade-photo-role">Founder · Crasto.com</p>
+        </div>
+      </div>
+
+      <div class="autoridade-content">
+        <span class="eyebrow reveal">Quem é seu mentor</span>
+        <h2 class="reveal delay-1">Carlos Crasto</h2>
+        <p class="autoridade-tagline reveal delay-2">"Comportamento move. Estratégia guia. Tecnologia escala."</p>
+
+        <p class="reveal delay-3">Especialista em inteligência comportamental aplicada e conselheiro estratégico de líderes e empresários. Criador do <strong>Método Evolution</strong> e do framework <strong>EVO-TALK®</strong> — reconhecido pelo PMI como método extraordinário para comunicação assertiva, liderança positiva e gestão empresarial.</p>
+
+        <p class="reveal delay-4">Mais de <strong>20 anos de experiência</strong>. Licensed Master Trainer em PNL, Mestre em Hipnoterapia Clínica, Neurociências, Constelação Familiar, Terapia Familiar e Perfis Comportamentais. MBA em Gestão de Projetos pela FGV. 6 anos no exterior.</p>
+
+        <p class="reveal delay-5">Executivo em <strong>IBM, Nestlé, Delta Air Lines e Pfizer</strong>. Treinou líderes de Amazon, Google, XP Investimentos e Petrobras. Palestrante premium do PMI. Sócio-fundador da Personay.com.</p>
+
+        <div class="autoridade-stats reveal delay-6">
+          <div>
+            <div class="autoridade-stat-num">+16.000</div>
+            <div class="autoridade-stat-label">Vidas<br>Transformadas</div>
+          </div>
+          <div>
+            <div class="autoridade-stat-num">+20</div>
+            <div class="autoridade-stat-label">Anos de<br>Experiência</div>
+          </div>
+          <div>
+            <div class="autoridade-stat-num">+100</div>
+            <div class="autoridade-stat-label">Multinacionais<br>Atendidas</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     BÔNUS
+     ═══════════════════════════════════════════════════════ -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="reveal" style="text-align:center;max-width:700px;margin:0 auto">
+      <span class="eyebrow eyebrow-center">Incluído na formação</span>
+      <h2 class="section-title" style="text-align:center">Bônus e <em>materiais exclusivos</em></h2>
+      <p class="section-desc section-desc-center">Tudo o que você recebe ao confirmar sua participação na Maestria em Liderança 2026.</p>
+    </div>
+
+    <div class="bonus-grid">
+      <div class="bonus-card reveal delay-1">
+        <span class="bonus-tag">Bônus 01</span>
+        <h4>Constelação Familiar</h4>
+        <p>Sessão exclusiva para 2 participantes durante a imersão — revelação sistêmica profunda das forças invisíveis que moldam carreira e família.</p>
+      </div>
+      <div class="bonus-card reveal delay-2">
+        <span class="bonus-tag">Bônus 02</span>
+        <h4>Avaliação DISC Personay</h4>
+        <p>Análise completa do seu perfil comportamental com diagnóstico executivo personalizado e plano de desenvolvimento.</p>
+      </div>
+      <div class="bonus-card reveal delay-3">
+        <span class="bonus-tag">Bônus 03</span>
+        <h4>Relaxamento Restaurador</h4>
+        <p>Sessão guiada de relaxamento profundo para integrar e consolidar toda a vivência dos três dias de imersão.</p>
+      </div>
+      <div class="bonus-card reveal delay-1">
+        <span class="bonus-tag">Bônus 04</span>
+        <h4>Planner do Método</h4>
+        <p>E-book com planner completo para manter o uso do Método Evolution no dia a dia — transformação contínua após o evento.</p>
+      </div>
+      <div class="bonus-card reveal delay-2">
+        <span class="bonus-tag">Bônus 05</span>
+        <h4>E-book Estratégias Executivas</h4>
+        <p>Ferramenta com estratégias práticas para alavancar carreira, liderança e negócios no mercado executivo.</p>
+      </div>
+      <div class="bonus-card reveal delay-3">
+        <span class="bonus-tag">Bônus 06</span>
+        <h4>Mentoria GoBeyond</h4>
+        <p>2h de mentoria à escolha: <em>Vencendo a Ansiedade Executiva</em> ou <em>Maestria sobre Compulsões</em>.</p>
+      </div>
+    </div>
+
+    <div class="reveal delay-4" style="margin-top:36px;text-align:center;padding:24px;border:1px solid var(--ghost-line);border-radius:3px;background:rgba(13,13,12,.5);max-width:760px;margin-left:auto;margin-right:auto">
+      <p style="font-size:.85rem;color:var(--text);line-height:1.8"><strong style="color:var(--accent);font-weight:500">Materiais físicos inclusos:</strong> Cartilha CNH com fórmula diária do Método · Caderneta executiva de anotações · <strong style="color:var(--white-soft)">Certificado Internacional de Comunicação e Liderança de Alta Performance</strong>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     DEPOIMENTOS
+     ═══════════════════════════════════════════════════════ -->
+<section class="section">
+  <div class="container">
+    <div class="reveal" style="text-align:center;max-width:700px;margin:0 auto">
+      <span class="eyebrow eyebrow-center">O que dizem os alunos</span>
+      <h2 class="section-title" style="text-align:center">Depoimentos de quem viveu a <em>transformação</em></h2>
+    </div>
+
+    <div class="depo-grid">
+      <div class="depo-video reveal delay-1">
+        <div class="depo-play">
+          <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+        <p class="depo-name">Pyong Lee</p>
+        <p class="depo-role">Empresário · Apresentador</p>
+      </div>
+      <div class="depo-video reveal delay-2">
+        <div class="depo-play">
+          <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+        <p class="depo-name">Aluno · Aguardando</p>
+        <p class="depo-role">Vídeo em breve</p>
+      </div>
+      <div class="depo-video reveal delay-3">
+        <div class="depo-play">
+          <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+        <p class="depo-name">Aluno · Aguardando</p>
+        <p class="depo-role">Vídeo em breve</p>
+      </div>
+      <div class="depo-video reveal delay-4">
+        <div class="depo-play">
+          <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+        <p class="depo-name">Aluno · Aguardando</p>
+        <p class="depo-role">Vídeo em breve</p>
+      </div>
+      <div class="depo-video reveal delay-1">
+        <div class="depo-play">
+          <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+        <p class="depo-name">Aluno · Aguardando</p>
+        <p class="depo-role">Vídeo em breve</p>
+      </div>
+      <div class="depo-video reveal delay-2">
+        <div class="depo-play">
+          <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+        <p class="depo-name">Aluno · Aguardando</p>
+        <p class="depo-role">Vídeo em breve</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     INVESTIMENTO
+     ═══════════════════════════════════════════════════════ -->
+<section class="section section-alt" id="investimento">
+  <div class="container-narrow">
+    <div class="reveal" style="text-align:center;max-width:680px;margin:0 auto">
+      <span class="eyebrow eyebrow-center">Investimento</span>
+      <h2 class="section-title" style="text-align:center">A formação mais profunda do meu <em>portfólio</em></h2>
+      <p class="section-desc section-desc-center">Três dias de imersão presencial + 100 horas online + bônus exclusivos + certificação internacional.</p>
+    </div>
+
+    <div class="invest-card reveal delay-1">
+      <div class="invest-content">
+        <span class="invest-tag">Maestria em Liderança 2026</span>
+        <p class="invest-price">10x R$ 1.000</p>
+        <p class="invest-price-sub">no cartão de crédito</p>
+        <p class="invest-avista">À vista: <span>R$ 9.500</span> · 5% de desconto</p>
+
+        <div class="invest-includes">
+          <p class="invest-includes-title">Está incluído</p>
+          <p class="invest-includes-item">36 horas presenciais de imersão profunda</p>
+          <p class="invest-includes-item">100 horas de conteúdo online complementar</p>
+          <p class="invest-includes-item">Avaliação DISC Personay completa</p>
+          <p class="invest-includes-item">Sessão de Constelação Familiar</p>
+          <p class="invest-includes-item">2h de Mentoria GoBeyond personalizada</p>
+          <p class="invest-includes-item">Materiais físicos exclusivos</p>
+          <p class="invest-includes-item">Coffee break, frutas e água durante os 3 dias</p>
+          <p class="invest-includes-item">Certificação Internacional</p>
+        </div>
+
+        <a href="#inscricao" class="btn btn-primary" style="display:flex;justify-content:center;width:100%">Garantir minha vaga</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     FORMULÁRIO DE INSCRIÇÃO
+     ═══════════════════════════════════════════════════════ -->
+<section class="section form-section" id="inscricao">
+  <div class="ambient-orb" style="width:600px;height:600px;top:-200px;left:-200px"></div>
+  <div class="ambient-orb" style="width:500px;height:500px;bottom:-200px;right:-200px"></div>
+
+  <div class="container-narrow">
+    <div class="reveal" style="text-align:center;max-width:680px;margin:0 auto">
+      <span class="eyebrow eyebrow-center">Inscrição · Maestria em Liderança 2026</span>
+      <h2 class="section-title" style="text-align:center">Garanta sua <em>vaga</em></h2>
+      <p class="section-desc section-desc-center">Preencha os dados abaixo. Após o envio, você será direcionado ao WhatsApp para finalizar a inscrição diretamente com nossa equipe.</p>
+    </div>
+
+    <form class="form-card reveal delay-1" id="inscriptionForm" onsubmit="return submitForm(event)">
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label form-label-required">Nome completo</label>
+          <input type="text" class="form-input" id="f-nome" required placeholder="Seu nome">
+        </div>
+        <div class="form-group">
+          <label class="form-label form-label-required">WhatsApp</label>
+          <input type="tel" class="form-input" id="f-tel" required placeholder="(11) 98000-0000">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label form-label-required">E-mail</label>
+          <input type="email" class="form-input" id="f-email" required placeholder="email@empresa.com">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Empresa</label>
+          <input type="text" class="form-input" id="f-empresa" placeholder="Onde você atua">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Cargo</label>
+          <input type="text" class="form-input" id="f-cargo" placeholder="Ex: Diretor Comercial">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Senioridade</label>
+          <select class="form-select" id="f-senior">
+            <option value="">Selecione</option>
+            <option value="C-Level / Presidência">C-Level / Presidência</option>
+            <option value="Diretoria">Diretoria</option>
+            <option value="Gerência Sênior">Gerência Sênior</option>
+            <option value="Gerência">Gerência</option>
+            <option value="Coordenação">Coordenação</option>
+            <option value="Empresário / Sócio">Empresário / Sócio</option>
+            <option value="Outro">Outro</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Forma de pagamento de preferência</label>
+        <select class="form-select" id="f-pag">
+          <option value="">Selecione</option>
+          <option value="À vista (R$ 9.500 com 5% desconto)">À vista (R$ 9.500 com 5% desconto)</option>
+          <option value="Parcelado em até 10x R$ 1.000 no cartão">Parcelado em até 10x R$ 1.000 no cartão</option>
+          <option value="Quero conversar sobre opções">Quero conversar sobre opções</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Mensagem (opcional)</label>
+        <textarea class="form-textarea" id="f-msg" placeholder="Algo que devemos saber sobre você ou seu momento profissional?"></textarea>
+      </div>
+
+      <button type="submit" class="form-submit">Enviar e continuar no WhatsApp</button>
+
+      <p class="form-disclaimer">Ao enviar, você será direcionado ao <strong>WhatsApp da nossa equipe</strong> para finalizar a inscrição e tirar dúvidas. Seus dados são tratados com total confidencialidade.</p>
+    </form>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     FAQ
+     ═══════════════════════════════════════════════════════ -->
+<section class="section">
+  <div class="container-narrow">
+    <div class="reveal" style="text-align:center;max-width:600px;margin:0 auto">
+      <span class="eyebrow eyebrow-center">Perguntas frequentes</span>
+      <h2 class="section-title" style="text-align:center">FAQ</h2>
+    </div>
+
+    <div class="faq reveal delay-1">
+      <div class="faq-item">
+        <div class="faq-q"><h4>Por que essa formação é considerada essencial por executivos das maiores multinacionais?</h4><span class="faq-icon"></span></div>
+        <div class="faq-a"><p>Porque integra as <strong>4 inteligências fundamentais</strong> da liderança contemporânea: Comunicacional, Relacional, Emocional e Sistêmica. Executivos de Amazon, Google, IBM, Petrobras e XP descobriram que dominar tecnicamente uma área é apenas o ponto de partida — o que separa um diretor de um líder lendário é o domínio comportamental que a Maestria desenvolve.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q"><h4>Como funciona a dinâmica dos 3 dias presenciais?</h4><span class="faq-icon"></span></div>
+        <div class="faq-a"><p>São <strong>36 horas presenciais</strong> distribuídas em três dias intensos (07h30 às 19h30), com 1h30 de almoço. Frutas, café, chá e água à vontade. Quem quiser estender após o horário oficial, terá disponibilidade — mas a permanência além das 19h30 é opcional.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q"><h4>O que é o Método Evolution e o EVO-TALK®?</h4><span class="faq-icon"></span></div>
+        <div class="faq-a"><p>O <strong>Método Evolution by Crasto</strong> é o framework central da formação — integra maiêutica socrática, neurociência, psicoterapia e mais de 30 especialidades. O <strong>EVO-TALK®</strong> é o framework conversacional proprietário, que transforma cada interação em campo de consciência ativa. Ambos são propriedade intelectual da Crasto.com, com mais de 20 anos de aplicação executiva.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q"><h4>Há limite de vagas? Por quê?</h4><span class="faq-icon"></span></div>
+        <div class="faq-a"><p>Sim. O espaço tem <strong>capacidade limitada</strong> e a metodologia exige proximidade real entre os participantes. As confirmações seguem por <em>ordem de resposta</em>. Após 30/06/2026, novas confirmações entrarão para lista de espera.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q"><h4>Posso fazer com meu cônjuge, sócio ou parente?</h4><span class="faq-icon"></span></div>
+        <div class="faq-a"><p>Sim — e é altamente recomendado. Índice acima de <strong>97% de relacionamentos restaurados</strong> entre alunos que fizeram juntos. Para sócios, transforma a parceria. Para casais, restaura a clareza. Cada participante precisa de inscrição própria.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q"><h4>Funciona para quem já fez muitos cursos de liderança?</h4><span class="faq-icon"></span></div>
+        <div class="faq-a"><p><strong>Especialmente para essas pessoas.</strong> Quem já consumiu muito conteúdo de liderança costuma ter mapas teóricos mas dificuldade de aplicação real. A Maestria não é teoria — é prática vivencial profunda que reorganiza a operação interna do líder. <em>É o único treinamento que muitos alunos relatam manter aplicando diariamente, anos depois.</em></p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q"><h4>Quando recebo o conteúdo online?</h4><span class="faq-icon"></span></div>
+        <div class="faq-a"><p>Imediatamente após a confirmação do pagamento, você tem <strong>acesso à plataforma com 100 horas de conteúdo online</strong>. A imersão presencial é o ápice da experiência — mas a transformação começa antes e continua depois.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q"><h4>Como faço para esclarecer dúvidas adicionais?</h4><span class="faq-icon"></span></div>
+        <div class="faq-a"><p>Pelo WhatsApp <strong>(11) 98181-0002</strong> ou preenchendo o formulário acima. Nossa equipe responde em até 24 horas úteis.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     CTA FINAL
+     ═══════════════════════════════════════════════════════ -->
+<section class="cta-final">
+  <div class="container-narrow">
+    <div class="reveal">
+      <span class="eyebrow eyebrow-center">A decisão é sua</span>
+      <h2 class="cta-final-headline">Se você continuar sendo quem você é,<br><em>jamais será quem você quer ser.</em></h2>
+      <p class="cta-final-sub">Renunciar a uma oportunidade como esta é como desistir de viver aquilo que foi reservado para você.</p>
+      <a href="#inscricao" class="btn btn-primary">Garantir minha vaga agora</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     FOOTER
+     ═══════════════════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="container">
+    <p class="footer-logo">CRASTO</p>
+    <p class="footer-tag">Inteligência que Evolui</p>
+    <div class="footer-links">
+      <a href="https://crasto.com">Crasto.com</a>
+      <a href="https://crasto.com/mentoria-executiva">Mentoria Executiva</a>
+      <a href="https://crasto.com/metodo-evolution">Método Evolution</a>
+      <a href="https://wa.me/5511981810002">Contato</a>
+    </div>
+    <p class="footer-copy">© 2026 CRASTO.com · Tecnologia &amp; Neurociências · Est. 2015</p>
+    <p class="footer-disclaimer">Aviso Legal: Nenhuma informação contida nesta página constitui promessa ou garantia de resultados. Resultados variam de pessoa para pessoa. Conteúdo de caráter informativo e educacional. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLUTUANTE -->
+<div class="wa-float">
+  <a href="https://wa.me/5511981810002?text=Ol%C3%A1!%20Tenho%20interesse%20na%20Maestria%20em%20Liderança%202026%20-%20Edição%20de%20Agosto." target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.057 21.785h-.004c-1.747 0-3.462-.469-4.957-1.355l-.355-.21-3.687.967.985-3.595-.232-.369c-.974-1.55-1.487-3.342-1.487-5.184 0-5.367 4.367-9.732 9.738-9.732 2.6 0 5.043 1.013 6.881 2.853 1.838 1.84 2.85 4.283 2.849 6.881-.003 5.367-4.369 9.733-9.737 9.733zm8.413-18.146c-2.246-2.246-5.232-3.483-8.413-3.485C5.452.154 0 5.604 0 12.286c0 2.135.558 4.219 1.617 6.057L0 24l5.79-1.518c1.77.965 3.762 1.473 5.79 1.473h.004c6.602 0 11.984-5.382 11.987-12.078.001-3.211-1.249-6.226-3.527-8.479z"/></svg>
+  </a>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     SCRIPTS
+     ═══════════════════════════════════════════════════════ -->
+<script>
+// ─── HERO LOAD ───
+window.addEventListener('load',()=>{
+  document.querySelector('.hero').classList.add('loaded');
+});
+
+// ─── CURSOR CUSTOMIZADO ───
+const cursorDot=document.getElementById('cursorDot');
+const cursorRing=document.getElementById('cursorRing');
+let mouseX=0,mouseY=0,ringX=0,ringY=0;
+
+document.addEventListener('mousemove',e=>{
+  mouseX=e.clientX;mouseY=e.clientY;
+  cursorDot.style.left=mouseX+'px';
+  cursorDot.style.top=mouseY+'px';
+});
+
+function animateRing(){
+  ringX+=(mouseX-ringX)*0.18;
+  ringY+=(mouseY-ringY)*0.18;
+  cursorRing.style.left=ringX+'px';
+  cursorRing.style.top=ringY+'px';
+  requestAnimationFrame(animateRing);
+}
+animateRing();
+
+// Cursor active em hovers
+document.querySelectorAll('a,button,.intel-card,.faq-q,.depo-video,.case-item,.bonus-card,input,select,textarea').forEach(el=>{
+  el.addEventListener('mouseenter',()=>cursorRing.classList.add('active'));
+  el.addEventListener('mouseleave',()=>cursorRing.classList.remove('active'));
+});
+
+// ─── PARTÍCULAS DOURADAS ───
+const particlesContainer=document.getElementById('particles');
+for(let i=0;i<25;i++){
+  const p=document.createElement('div');
+  p.className='particle';
+  p.style.left=Math.random()*100+'%';
+  p.style.animationDelay=Math.random()*12+'s';
+  p.style.animationDuration=(8+Math.random()*8)+'s';
+  particlesContainer.appendChild(p);
+}
+
+// ─── PARALLAX SUTIL NO SÓCRATES ───
+const heroSocrates=document.getElementById('heroSocrates');
+window.addEventListener('scroll',()=>{
+  const y=window.scrollY;
+  if(y<window.innerHeight){
+    heroSocrates.style.transform=`scale(1.1) translateY(${y*0.15}px)`;
+  }
+});
+
+// ─── NAVBAR + SCROLL PROGRESS ───
+const navbar=document.getElementById('navbar');
+const scrollProgress=document.getElementById('scrollProgress');
+
+window.addEventListener('scroll',()=>{
+  const y=window.scrollY;
+  const totalHeight=document.documentElement.scrollHeight-window.innerHeight;
+  const progress=(y/totalHeight)*100;
+  scrollProgress.style.width=progress+'%';
+
+  if(y>200) navbar.classList.add('show');
+  else navbar.classList.remove('show');
+});
+
+// ─── REVEAL ON SCROLL ───
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+},{threshold:.1,rootMargin:'0px 0px -60px 0px'});
+
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+// ─── INTEL CARDS — GLOW SEGUE O MOUSE ───
+document.querySelectorAll('.intel-card').forEach(card=>{
+  card.addEventListener('mousemove',e=>{
+    const rect=card.getBoundingClientRect();
+    const x=((e.clientX-rect.left)/rect.width)*100;
+    const y=((e.clientY-rect.top)/rect.height)*100;
+    card.style.setProperty('--mx',x+'%');
+    card.style.setProperty('--my',y+'%');
+  });
+});
+
+// ─── FAQ ───
+document.querySelectorAll('.faq-q').forEach(q=>{
+  q.addEventListener('click',()=>{
+    const item=q.parentElement;
+    const wasOpen=item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));
+    if(!wasOpen) item.classList.add('open');
+  });
+});
+
+// ─── COUNTDOWN ATÉ 30/06/2026 ───
+const deadline=new Date('2026-06-30T23:59:59-03:00').getTime();
+
+function updateCountdown(){
+  const now=new Date().getTime();
+  const diff=deadline-now;
+
+  if(diff<=0){
+    document.getElementById('cd-days').textContent='00';
+    document.getElementById('cd-hours').textContent='00';
+    document.getElementById('cd-min').textContent='00';
+    document.getElementById('cd-sec').textContent='00';
+    return;
+  }
+
+  const days=Math.floor(diff/(1000*60*60*24));
+  const hours=Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+  const min=Math.floor((diff%(1000*60*60))/(1000*60));
+  const sec=Math.floor((diff%(1000*60))/1000);
+
+  document.getElementById('cd-days').textContent=String(days).padStart(2,'0');
+  document.getElementById('cd-hours').textContent=String(hours).padStart(2,'0');
+  document.getElementById('cd-min').textContent=String(min).padStart(2,'0');
+  document.getElementById('cd-sec').textContent=String(sec).padStart(2,'0');
+}
+updateCountdown();
+setInterval(updateCountdown,1000);
+
+// ─── FORMULÁRIO → WHATSAPP ───
+function submitForm(e){
+  e.preventDefault();
+
+  const nome=document.getElementById('f-nome').value.trim();
+  const tel=document.getElementById('f-tel').value.trim();
+  const email=document.getElementById('f-email').value.trim();
+  const empresa=document.getElementById('f-empresa').value.trim();
+  const cargo=document.getElementById('f-cargo').value.trim();
+  const senior=document.getElementById('f-senior').value;
+  const pag=document.getElementById('f-pag').value;
+  const msg=document.getElementById('f-msg').value.trim();
+
+  if(!nome||!tel||!email){
+    alert('Por favor, preencha nome, WhatsApp e e-mail.');
+    return false;
+  }
+
+  let texto=`*INSCRIÇÃO · MAESTRIA EM LIDERANÇA 2026*\n\n`;
+  texto+=`*Nome:* ${nome}\n`;
+  texto+=`*WhatsApp:* ${tel}\n`;
+  texto+=`*E-mail:* ${email}\n`;
+  if(empresa) texto+=`*Empresa:* ${empresa}\n`;
+  if(cargo) texto+=`*Cargo:* ${cargo}\n`;
+  if(senior) texto+=`*Senioridade:* ${senior}\n`;
+  if(pag) texto+=`*Pagamento:* ${pag}\n`;
+  if(msg) texto+=`\n*Mensagem:* ${msg}\n`;
+  texto+=`\nGostaria de garantir minha vaga na Maestria em Liderança 2026 (14, 15 e 16 de agosto).`;
+
+  const url=`https://wa.me/5511981810002?text=${encodeURIComponent(texto)}`;
+  window.open(url,'_blank');
+  return false;
+}
+
+// ─── SMOOTH SCROLL ───
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const href=a.getAttribute('href');
+    if(href==='#') return;
+    const target=document.querySelector(href);
+    if(target){
+      e.preventDefault();
+      target.scrollIntoView({behavior:'smooth',block:'start'});
+    }
+  });
+});
+</script>
+
+</body>
+</html>
