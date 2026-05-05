@@ -905,32 +905,70 @@ input,select,textarea{font-family:inherit;outline:none}
 /* ═══════════════════════════════════════════════════════
    EMPRESAS / CASES
    ═══════════════════════════════════════════════════════ */
-.cases-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:1px;
-  background:var(--ghost-line);
-  margin-top:60px;
-  border:1px solid var(--ghost-line);
-  border-radius:4px;
+.logo-carousel-wrapper {
   overflow:hidden;
+  position:relative;
+  width:100%;
+  margin-top:60px;
+  -webkit-mask-image:linear-gradient(to right,transparent,black 5%,black 95%,transparent);
+  mask-image:linear-gradient(to right,transparent,black 5%,black 95%,transparent);
 }
-@media(max-width:880px){.cases-grid{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:600px){.cases-grid{grid-template-columns:repeat(2,1fr)}}
-.case-item{
-  background:var(--bg);
-  padding:24px 16px;
-  text-align:center;
+.logo-carousel-track {
+  display:flex;
+  width:max-content;
+  align-items:center;
+  gap:40px;
+  padding-left:40px;
+  animation:logoScroll 40s linear infinite;
+}
+.logo-carousel-track:hover {
+  animation-play-state:paused;
+}
+@keyframes logoScroll {
+  to { transform:translateX(calc(-50% - 20px)); }
+}
+.logo-card {
+  height:auto;
+  min-width:140px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  padding:15px;
+  transition:all .4s var(--ease);
+}
+.logo-card:hover {
+  transform:translateY(-3px);
+}
+.company-logo-img {
+  height:40px;
+  max-width:120px;
+  object-fit:contain;
+  transition:all .4s var(--ease);
+}
+.logo-card:hover .company-logo-img {
+  transform:scale(1.05);
+}
+.company-name {
   font-family:'Playfair Display',serif;
+  font-size:.9rem;
+  color:var(--ghost);
   font-weight:400;
-  font-size:.95rem;
-  color:var(--white-soft);
+  white-space:nowrap;
   letter-spacing:.5px;
-  transition:all .4s;
+  transition:color .4s var(--ease);
 }
-.case-item:hover{
-  background:var(--bg-warm);
-  color:var(--accent-light);
+.logo-card:hover .company-name {
+  color:var(--white);
+}
+.company-text {
+  font-family:'Playfair Display',serif;
+  font-size:1.2rem;
+  color:var(--ghost);
+  font-weight:500;
+  white-space:nowrap;
+  padding:0 20px;
 }
 
 /* ═══════════════════════════════════════════════════════
@@ -2013,28 +2051,53 @@ input,select,textarea{font-family:inherit;outline:none}
       <h2 class="section-title" style="text-align:center">Empresas que confiam no <em>Método Evolution</em></h2>
       <p class="section-desc section-desc-center">Executivos das maiores corporações do Brasil e do mundo já passaram pelas formações Crasto.</p>
     </div>
+  </div> <!-- CLOSE CONTAINER TO MAKE CAROUSEL FULL WIDTH -->
 
-    <div class="cases-grid reveal delay-1">
-      <div class="case-item">Google Brasil</div>
-      <div class="case-item">Amazon</div>
-      <div class="case-item">IBM Brasil</div>
-      <div class="case-item">Nestlé</div>
-      <div class="case-item">Petrobras</div>
-      <div class="case-item">XP Investimentos</div>
-      <div class="case-item">Itaú-Unibanco</div>
-      <div class="case-item">Banco do Brasil</div>
-      <div class="case-item">Caixa Econômica</div>
-      <div class="case-item">Bayer</div>
-      <div class="case-item">Philips</div>
-      <div class="case-item">Tramontina</div>
-      <div class="case-item">Grupo Ambev</div>
-      <div class="case-item">Volvo</div>
-      <div class="case-item">Delta Air Lines</div>
-      <div class="case-item">Pfizer</div>
-      <div class="case-item">FGV</div>
-      <div class="case-item">Mackenzie</div>
-      <div class="case-item">PMI Brasil</div>
-      <div class="case-item">+ Centenas</div>
+  <div class="logo-carousel-wrapper reveal delay-1">
+    <div class="logo-carousel-track">
+      <!-- FIRST SET -->
+      <div class="logo-card"><img src="https://logo.clearbit.com/google.com" alt="Google" class="company-logo-img" onerror="this.style.display='none'"><span class="company-name">Google Brasil</span></div>
+      <div class="logo-card"><img src="https://logo.clearbit.com/amazon.com" alt="Amazon" class="company-logo-img" onerror="this.style.display='none'"><span class="company-name">Amazon</span></div>
+      <div class="logo-card"><img src="https://logo.clearbit.com/ibm.com" alt="IBM" class="company-logo-img" onerror="this.style.display='none'"><span class="company-name">IBM Brasil</span></div>
+      <div class="logo-card"><img src="https://logo.clearbit.com/nestle.com" alt="Nestlé" class="company-logo-img" onerror="this.style.display='none'"><span class="company-name">Nestlé</span></div>
+      <div class="logo-card"><img src="https://logo.clearbit.com/petrobras.com.br" alt="Petrobras" class="company-logo-img" onerror="this.style.display='none'"><span class="company-name">Petrobras</span></div>
+      <div class="logo-card"><img src="https://logo.clearbit.com/xpi.com.br" alt="XP" class="company-logo-img" onerror="this.style.display='none'"><span class="company-name">XP Investimentos</span></div>
+      <div class="logo-card"><img src="https://logo.clearbit.com/itau.com.br" alt="Itaú" class="company-logo-img" onerror="this.style.display='none'"><span class="company-name">Itaú-Unibanco</span></div>
+      <div class="logo-card"><img src="https://logo.clearbit.com/bb.com.br" alt="Banco do Brasil" class="company-logo-img" onerror="this.style.display='none'"><span class="company-name">Banco do Brasil</span></div>
+      <div class="logo-card"><img src="https://logo.clearbit.com/caixa.gov.br" alt="Caixa" class="company-logo-img" onerror="this.style.display='none'"><span class="company-name">Caixa Econômica</span></div>
+      <div class="logo-card"><img src="https://logo.clearbit.com/bayer.com" alt="Bayer" class="company-logo-img" onerror="this.style.display='none'"><span class="company-name">Bayer</span></div>
+      <div class="logo-card"><img src="https://logo.clearbit.com/philips.com" alt="Philips" class="company-logo-img" onerror="this.style.display='none'"><span class="company-name">Philips</span></div>
+      <div class="logo-card"><img src="https://logo.clearbit.com/tramontina.com.br" alt="Tramontina" class="company-logo-img" onerror="this.style.display='none'"><span class="company-name">Tramontina</span></div>
+      <div class="logo-card"><img src="https://logo.clearbit.com/ambev.com.br" alt="Ambev" class="company-logo-img" onerror="this.style.display='none'"><span class="company-name">Grupo Ambev</span></div>
+      <div class="logo-card"><img src="https://logo.clearbit.com/volvo.com" alt="Volvo" class="company-logo-img" onerror="this.style.display='none'"><span class="company-name">Volvo</span></div>
+      <div class="logo-card"><img src="https://logo.clearbit.com/delta.com" alt="Delta" class="company-logo-img" onerror="this.style.display='none'"><span class="company-name">Delta Air Lines</span></div>
+      <div class="logo-card"><img src="https://logo.clearbit.com/pfizer.com" alt="Pfizer" class="company-logo-img" onerror="this.style.display='none'"><span class="company-name">Pfizer</span></div>
+      <div class="logo-card"><img src="https://logo.clearbit.com/fgv.br" alt="FGV" class="company-logo-img" onerror="this.style.display='none'"><span class="company-name">FGV</span></div>
+      <div class="logo-card"><img src="https://logo.clearbit.com/mackenzie.br" alt="Mackenzie" class="company-logo-img" onerror="this.style.display='none'"><span class="company-name">Mackenzie</span></div>
+      <div class="logo-card"><img src="https://logo.clearbit.com/pmi.org" alt="PMI" class="company-logo-img" onerror="this.style.display='none'"><span class="company-name">PMI Brasil</span></div>
+      <div class="logo-card"><span class="company-name" style="font-size:1.1rem;font-weight:600;font-style:italic">+ Centenas</span></div>
+
+      <!-- DUPLICATE FOR INFINITE LOOP -->
+      <div class="logo-card"><img src="https://logo.clearbit.com/google.com" alt="Google" class="company-logo-img" onerror="this.style.display='none'"><span class="company-name">Google Brasil</span></div>
+      <div class="logo-card"><img src="https://logo.clearbit.com/amazon.com" alt="Amazon" class="company-logo-img" onerror="this.style.display='none'"><span class="company-name">Amazon</span></div>
+      <div class="logo-card"><img src="https://logo.clearbit.com/ibm.com" alt="IBM" class="company-logo-img" onerror="this.style.display='none'"><span class="company-name">IBM Brasil</span></div>
+      <div class="logo-card"><img src="https://logo.clearbit.com/nestle.com" alt="Nestlé" class="company-logo-img" onerror="this.style.display='none'"><span class="company-name">Nestlé</span></div>
+      <div class="logo-card"><img src="https://logo.clearbit.com/petrobras.com.br" alt="Petrobras" class="company-logo-img" onerror="this.style.display='none'"><span class="company-name">Petrobras</span></div>
+      <div class="logo-card"><img src="https://logo.clearbit.com/xpi.com.br" alt="XP" class="company-logo-img" onerror="this.style.display='none'"><span class="company-name">XP Investimentos</span></div>
+      <div class="logo-card"><img src="https://logo.clearbit.com/itau.com.br" alt="Itaú" class="company-logo-img" onerror="this.style.display='none'"><span class="company-name">Itaú-Unibanco</span></div>
+      <div class="logo-card"><img src="https://logo.clearbit.com/bb.com.br" alt="Banco do Brasil" class="company-logo-img" onerror="this.style.display='none'"><span class="company-name">Banco do Brasil</span></div>
+      <div class="logo-card"><img src="https://logo.clearbit.com/caixa.gov.br" alt="Caixa" class="company-logo-img" onerror="this.style.display='none'"><span class="company-name">Caixa Econômica</span></div>
+      <div class="logo-card"><img src="https://logo.clearbit.com/bayer.com" alt="Bayer" class="company-logo-img" onerror="this.style.display='none'"><span class="company-name">Bayer</span></div>
+      <div class="logo-card"><img src="https://logo.clearbit.com/philips.com" alt="Philips" class="company-logo-img" onerror="this.style.display='none'"><span class="company-name">Philips</span></div>
+      <div class="logo-card"><img src="https://logo.clearbit.com/tramontina.com.br" alt="Tramontina" class="company-logo-img" onerror="this.style.display='none'"><span class="company-name">Tramontina</span></div>
+      <div class="logo-card"><img src="https://logo.clearbit.com/ambev.com.br" alt="Ambev" class="company-logo-img" onerror="this.style.display='none'"><span class="company-name">Grupo Ambev</span></div>
+      <div class="logo-card"><img src="https://logo.clearbit.com/volvo.com" alt="Volvo" class="company-logo-img" onerror="this.style.display='none'"><span class="company-name">Volvo</span></div>
+      <div class="logo-card"><img src="https://logo.clearbit.com/delta.com" alt="Delta" class="company-logo-img" onerror="this.style.display='none'"><span class="company-name">Delta Air Lines</span></div>
+      <div class="logo-card"><img src="https://logo.clearbit.com/pfizer.com" alt="Pfizer" class="company-logo-img" onerror="this.style.display='none'"><span class="company-name">Pfizer</span></div>
+      <div class="logo-card"><img src="https://logo.clearbit.com/fgv.br" alt="FGV" class="company-logo-img" onerror="this.style.display='none'"><span class="company-name">FGV</span></div>
+      <div class="logo-card"><img src="https://logo.clearbit.com/mackenzie.br" alt="Mackenzie" class="company-logo-img" onerror="this.style.display='none'"><span class="company-name">Mackenzie</span></div>
+      <div class="logo-card"><img src="https://logo.clearbit.com/pmi.org" alt="PMI" class="company-logo-img" onerror="this.style.display='none'"><span class="company-name">PMI Brasil</span></div>
+      <div class="logo-card"><span class="company-name" style="font-size:1.1rem;font-weight:600;font-style:italic">+ Centenas</span></div>
     </div>
   </div>
 </section>
