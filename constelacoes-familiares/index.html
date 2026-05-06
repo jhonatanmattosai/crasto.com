@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Workshop Constelações Familiares — Método Evolution · Carlos Crasto</title>
+<meta name="description" content="Workshop presencial de Constelações Familiares com Carlos Crasto. Método Evolution — Neurociência, PNL e abordagem sistêmica integrada. Descubra a raiz dos padrões que você não consegue mudar.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Karla:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0D0D0C;--bg-alt:#131311;--bg-deep:#0a0a09;--accent:#d4b044;--accent-light:#e8c94e;--accent-dim:rgba(212,176,68,.08);--accent-border:rgba(212,176,68,.22);--white:#f2efe6;--white-soft:#d8d2c7;--text:#b0a99d;--grey:#918880;--ghost:#5e574c;--ghost-line:#252219;--section-gap:110px}
+*{margin:0;padding:0;box-sizing:border-box}html{font-size:18.5px;scroll-behavior:smooth}body{background:var(--bg);color:var(--white);font-family:'Karla',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.rv{opacity:0;transform:translateY(24px);transition:opacity 1.2s cubic-bezier(.16,1,.3,1),transform 1.2s cubic-bezier(.16,1,.3,1)}.rv.v{opacity:1;transform:translateY(0)}.d1{transition-delay:.15s}.d2{transition-delay:.3s}.d3{transition-delay:.45s}.d4{transition-delay:.6s}
+.ct{max-width:900px;margin:0 auto;padding:0 32px}.cw{max-width:1100px;margin:0 auto;padding:0 32px}.sc{padding:var(--section-gap) 0}.tc{text-align:center}.lb{font-weight:300;font-size:.65rem;letter-spacing:5px;text-transform:uppercase;color:var(--text)}.al{width:32px;height:1px;background:linear-gradient(90deg,transparent,var(--accent),transparent);margin:16px auto}.ab{background:var(--bg-alt);border-top:1px solid var(--ghost-line);border-bottom:1px solid var(--ghost-line)}
+.tb{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 40px;display:flex;justify-content:space-between;align-items:center;background:rgba(13,13,12,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--ghost-line);transform:translateY(-100%);transition:transform .6s}.tb.sh{transform:translateY(0)}
+.tb-logo{display:flex;flex-direction:column;align-items:flex-start;font-weight:500;font-size:15px;letter-spacing:7px;text-transform:uppercase;color:var(--white);text-decoration:none;line-height:1}.tb-tag{font-weight:200;font-size:.5rem;letter-spacing:3px;text-transform:uppercase;color:var(--grey);margin-top:3px}.tb-logo:hover{color:var(--accent)}
+.tb-r{display:flex;align-items:center;gap:24px}.tb-b{font-size:.62rem;font-weight:300;letter-spacing:2px;text-transform:uppercase;color:var(--text);text-decoration:none;transition:color .4s}.tb-b:hover{color:var(--accent)}.tb-c{font-weight:300;font-size:.6rem;letter-spacing:3px;text-transform:uppercase;color:var(--accent);text-decoration:none;padding:8px 20px;border:1px solid var(--accent-border);border-radius:2px;transition:all .4s}.tb-c:hover{background:var(--accent);color:var(--bg)}
+.btn{display:inline-block;font-weight:400;font-size:.58rem;letter-spacing:4px;text-transform:uppercase;color:var(--bg);background:linear-gradient(135deg,var(--accent),var(--accent-light));padding:18px 44px;text-decoration:none;transition:all .5s;border-radius:2px;border:none;cursor:pointer}.btn:hover{box-shadow:0 4px 40px rgba(212,176,68,.2);transform:translateY(-1px)}
+.hero{padding:150px 0 90px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:url('https://images.unsplash.com/photo-1511895426328-dc8714191300?w=1600&q=80') center/cover no-repeat;opacity:.05;pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:200px;background:linear-gradient(to top,var(--bg),transparent);pointer-events:none}
+h2.sec{font-family:'Playfair Display',serif;font-weight:400;font-size:2.2rem;text-align:center;color:var(--white);margin-bottom:16px}
+.mod{padding:28px;border:1px solid var(--ghost-line);border-radius:3px;transition:all .6s}.mod:hover{border-color:var(--accent-border);background:rgba(212,176,68,.01)}.mod h4{font-family:'Playfair Display',serif;font-weight:400;font-size:1rem;color:var(--white);margin-bottom:10px}.mod p{font-weight:200;font-size:.78rem;line-height:1.85;color:var(--text)}
+.dor-item{font-weight:300;font-size:.88rem;color:var(--text);line-height:2.2;position:relative;padding-left:20px}.dor-item::before{content:'';position:absolute;left:0;top:12px;width:6px;height:1px;background:var(--accent);opacity:.5}
+.quote{font-family:'Playfair Display',serif;font-style:italic;font-weight:400;font-size:1.3rem;color:var(--accent-light);line-height:1.6;text-align:center;max-width:700px;margin:0 auto;opacity:.85}
+.quote-src{font-weight:200;font-size:.65rem;color:var(--ghost);letter-spacing:2px;text-transform:uppercase;margin-top:12px;text-align:center}
+.not-list{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 24px;margin:32px 0}.not-item{font-weight:300;font-size:.78rem;color:var(--text);display:flex;align-items:center;gap:8px}
+.num{font-family:'Playfair Display',serif;font-size:2rem;color:var(--accent);opacity:.3;margin-bottom:4px}
+.fc{text-align:center;padding:100px 0;position:relative}.fc::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:400px;background:radial-gradient(ellipse,rgba(212,176,68,.025) 0%,transparent 65%);pointer-events:none}.fc h2{font-family:'Playfair Display',serif;font-weight:400;font-size:2.2rem;line-height:1.15;color:var(--white);margin-bottom:20px}
+.ft{padding:48px 0;text-align:center;border-top:1px solid var(--ghost-line)}
+.wa{position:fixed;bottom:32px;right:44px;z-index:200;opacity:0;animation:em 1s ease 2s forwards}.wa a{width:48px;height:48px;border-radius:50%;border:1px solid var(--ghost-line);display:flex;align-items:center;justify-content:center;text-decoration:none;transition:all .6s}.wa a:hover{border-color:rgba(212,176,68,.35)}.wa svg{width:18px;height:18px;fill:var(--accent);opacity:.5}
+/* FAQ */
+.faq{max-width:760px;margin:0 auto}
+.faq-item{border-bottom:1px solid var(--ghost-line)}
+.faq-q{display:flex;justify-content:space-between;align-items:center;padding:24px 0;cursor:pointer;gap:16px;transition:color .4s}
+.faq-q:hover{color:var(--accent)}
+.faq-q h4{font-family:'Playfair Display',serif;font-weight:400;font-size:1rem;color:var(--white);transition:color .4s}
+.faq-q:hover h4{color:var(--accent)}
+.faq-icon{width:20px;height:20px;flex-shrink:0;position:relative;transition:transform .4s}
+.faq-icon::before,.faq-icon::after{content:'';position:absolute;background:var(--grey);transition:all .4s}
+.faq-icon::before{width:12px;height:1px;top:50%;left:50%;transform:translate(-50%,-50%)}
+.faq-icon::after{width:1px;height:12px;top:50%;left:50%;transform:translate(-50%,-50%)}
+.faq-item.open .faq-icon::after{transform:translate(-50%,-50%) rotate(90deg);opacity:0}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .6s cubic-bezier(.16,1,.3,1),padding .4s}
+.faq-item.open .faq-a{max-height:600px;padding-bottom:24px}
+.faq-a p{font-weight:200;font-size:.8rem;line-height:1.9;color:var(--text);margin-bottom:8px}
+.faq-a p:last-child{margin-bottom:0}
+.faq-a strong{color:var(--white-soft);font-weight:400}
+@keyframes em{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.c-img{width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:3px;border:1px solid var(--ghost-line)}
+@media(max-width:768px){html{font-size:16.5px}:root{--section-gap:80px}.tb{padding:14px 20px}.ct,.cw{padding:0 20px}.hero{padding:120px 0 60px}.hero h1{font-size:2rem!important}.mg{grid-template-columns:1fr!important}.quote{font-size:1.1rem}.faq-q h4{font-size:.9rem}.c-img{aspect-ratio:1/1;height:auto!important}}
+@media(max-width:480px){.hero h1{font-size:1.7rem!important}.tb-c,.tb-b{display:none}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<div class="tb" id="tb">
+  <a href="/" class="tb-logo"><span>CRASTO</span><span class="tb-tag">Go Beyond</span></a>
+  <div class="tb-r"><a href="/pessoal/formacoes" class="tb-b">← Formações</a><a href="#checkout" class="tb-c">Participar</a></div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- HERO -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<section class="hero"><div class="ct">
+<p style="font-weight:300;font-size:.72rem;letter-spacing:5px;text-transform:uppercase;color:var(--text);margin-bottom:28px;opacity:0;animation:em 1.5s ease .3s forwards">Workshop Presencial · Constelações Familiares · Método Evolution</p>
+
+<h1 style="font-family:'Playfair Display',serif;font-weight:400;font-size:2.8rem;line-height:1.15;color:var(--white);margin-bottom:28px;opacity:0;animation:em 1.8s cubic-bezier(.16,1,.3,1) .5s forwards">Descubra o que está por trás dos padrões<br>que você não consegue mudar.</h1>
+
+<p style="font-weight:300;font-size:.92rem;color:var(--text);max-width:520px;margin:0 auto 36px;line-height:1.8;opacity:0;animation:em 1.8s cubic-bezier(.16,1,.3,1) .7s forwards">Transforme a raiz, não o sintoma — com ciência, técnica e responsabilidade.</p>
+
+<div style="display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-bottom:40px;opacity:0;animation:em 1.8s ease .85s forwards">
+  <span style="font-weight:300;font-size:.72rem;color:var(--grey);letter-spacing:1px">14 de Março, 2026</span>
+  <span style="color:var(--accent);opacity:.4">·</span>
+  <span style="font-weight:300;font-size:.72rem;color:var(--grey);letter-spacing:1px">14h30 às 20h</span>
+  <span style="color:var(--accent);opacity:.4">·</span>
+  <span style="font-weight:300;font-size:.72rem;color:var(--grey);letter-spacing:1px">Campo Belo, São Paulo</span>
+</div>
+<div style="text-align:center;opacity:0;animation:em 2s ease .95s forwards"><a href="#checkout" class="btn">Garantir minha vaga</a></div>
+</div></section>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- PADRÕES DE REPETIÇÃO -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<section class="sc ab"><div class="ct">
+<p class="lb tc rv">Reconhece algo?</p><div class="al"></div>
+<h2 class="sec rv d1">Se você está cansado de repetir<br>os mesmos padrões na sua vida…</h2>
+<p class="rv d2" style="font-weight:300;font-size:.88rem;color:var(--text);text-align:center;max-width:560px;margin:0 auto 36px;line-height:1.9">Talvez o problema não tenha começado com você.</p>
+<div style="max-width:600px;margin:0 auto 40px" class="rv d2">
+<p class="dor-item">Por que sempre escolhe parceiros que te machucam?</p>
+<p class="dor-item">Por que seu casamento nunca flui como deveria?</p>
+<p class="dor-item">Por que briga com seu pai como se ainda tivesse 15 anos?</p>
+<p class="dor-item">Por que não consegue perdoar sua mãe?</p>
+<p class="dor-item">Por que o dinheiro entra e sai na mesma velocidade?</p>
+<p class="dor-item">Por que trabalha tanto e não prospera como deveria?</p>
+<p class="dor-item">Por que algo sempre parece dar errado quando está tudo bem?</p>
+</div>
+<p class="rv d3" style="font-weight:300;font-size:.88rem;color:var(--white-soft);text-align:center;max-width:560px;margin:0 auto;line-height:1.85">Talvez você não esteja vivendo apenas a sua própria história. Existe algo que atua sobre a sua vida, que pertence a ela, que virou padrão — <strong style="color:var(--accent);font-weight:400">mas cuja raiz pode estar antes de você</strong>.</p>
+
+<div class="rv d4" style="max-width:620px;margin:36px auto 0;text-align:center;border-top:1px solid var(--ghost-line);padding-top:32px">
+  <p style="font-weight:300;font-size:.88rem;color:var(--text);line-height:1.9;margin-bottom:12px">A origem de muitos problemas emocionais que você enfrenta está em pontos cegos da história da sua família. A única forma de se libertar desses emaranhamentos é ampliando a consciência sobre eles — por meio de uma dinâmica sistêmica.</p>
+  <p style="font-weight:400;font-size:.82rem;color:var(--white-soft);line-height:1.8">Não importa o que a vida fez com você. O que importa é o que você decide fazer com o que a vida fez com você. <span style="color:var(--accent)">A responsabilidade de fazer diferente é sua.</span></p>
+</div>
+</div></section>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- DUAS ORIGENS (expandida) -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<section class="sc"><div class="cw">
+<p class="lb tc rv">Método Evolution · A distinção fundamental</p><div class="al"></div>
+<h2 class="sec rv d1">Existem duas origens<br>para os problemas humanos</h2>
+<p class="rv d2" style="font-weight:300;font-size:.88rem;color:var(--text);text-align:center;max-width:660px;margin:0 auto 48px;line-height:1.9">O Método Evolution trabalha com uma distinção que a maioria das abordagens ignora — e que muda completamente a forma de tratar qualquer questão emocional, relacional ou comportamental.</p>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:24px" class="mg">
+  <div class="mod rv d1">
+    <p class="num">01</p>
+    <h4>Origem Biográfica</h4>
+    <p style="margin-bottom:12px">Do momento da sua <strong>concepção no útero da sua mãe</strong> até o último dia da sua vida — tudo que acontece nesse período pertence à sua <strong>jornada biográfica</strong>.</p>
+    <p style="margin-bottom:12px">Traumas, abandonos, humilhações, perdas, violências, fracassos — tudo que você viveu diretamente. Esses são <strong>problemas de origem biográfica</strong>.</p>
+    <p>Para esses problemas, atuam técnicas como Liberação de Trauma, Hipnoterapia Clínica, Neurociência do comportamento e reestruturação de crenças.</p>
+  </div>
+  <div class="mod rv d2" style="border-color:var(--accent-border);background:rgba(212,176,68,.01)">
+    <p class="num">02</p>
+    <h4>Origem Sistêmica <span style="font-size:.8rem;color:var(--accent);opacity:.7">— Herança Emocional Familiar</span></h4>
+    <p style="margin-bottom:12px">Os problemas que <strong>antecedem a sua concepção</strong> pertencem a outra categoria. Aquilo que a sua avó tinha, que a sua mãe era, que você também é — sem saber por quê.</p>
+    <p style="margin-bottom:12px">Isso é <strong>herança emocional familiar</strong> — também conhecida como herança fenomenológica ou herança sistêmica familiar. Padrões que pertencem ao sistema da família e que atravessam gerações.</p>
+    <p>São lealdades invisíveis, culpa inconsciente, exclusões, epigenética emocional e campos morfológicos. É quando você sente que está vivendo <strong>um filme que não é seu</strong>.</p>
+  </div>
+</div>
+
+<p class="rv d3" style="font-weight:300;font-size:.88rem;color:var(--white-soft);text-align:center;margin-top:40px;line-height:1.9;max-width:620px;margin-left:auto;margin-right:auto"><strong style="color:var(--accent);font-weight:400">A Constelação Familiar</strong> atua precisamente na segunda origem — revelando os vínculos invisíveis, as dinâmicas ocultas e os emaranhamentos que impedem o amor e a vida de fluírem. <em style="color:var(--grey)">Onde o amor não flui, a vida não flui.</em></p>
+</div></section>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- O NOME VERDADEIRO -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<section class="sc ab"><div class="ct">
+<p class="lb tc rv">O que poucos sabem</p><div class="al"></div>
+<h2 class="sec rv d1">O nome não conta<br>a história verdadeira</h2>
+<p class="rv d2" style="font-weight:300;font-size:.88rem;color:var(--text);text-align:center;max-width:640px;margin:0 auto 24px;line-height:1.9">"Constelação Familiar" é uma tradução adaptada que não reflete a essência do trabalho. O termo original em alemão — <strong style="color:var(--white-soft);font-weight:400">Familienaufstellung</strong> — significa literalmente <strong style="color:var(--accent);font-weight:400">Reposicionamento Familiar</strong> ou <strong style="color:var(--accent);font-weight:400">Reconfiguração Familiar</strong>.</p>
+<p class="rv d3" style="font-weight:300;font-size:.88rem;color:var(--text);text-align:center;max-width:640px;margin:0 auto 32px;line-height:1.9">Não se trata de misticismo ou adivinhação. Trata-se de <em style="color:var(--white-soft)">reposicionar</em> cada membro do sistema familiar no lugar correto — reconhecendo os excluídos, encerrando compensações inconscientes e devolvendo a cada um aquilo que lhe pertence.</p>
+<p class="rv d4" style="font-weight:300;font-size:.88rem;color:var(--text);text-align:center;max-width:640px;margin:0 auto;line-height:1.9">Bert Hellinger, filósofo e ex-padre alemão, desenvolveu essa abordagem fenomenológica sistêmica que observa as leis que regem o amor, as ordens do pertencimento, a hierarquia familiar e o equilíbrio entre dar e receber.</p>
+</div></section>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- PERDÃO · LUTO · VÍCIOS — DESCONSTRUÇÃO -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<section class="sc"><div class="cw">
+<p class="lb tc rv">O que será trabalhado em profundidade</p><div class="al"></div>
+<h2 class="sec rv d1">Temas que mudam tudo<br>quando compreendidos na raiz</h2>
+
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;margin-top:40px" class="mg">
+
+  <!-- PERDÃO -->
+  <div class="rv d1" style="border:1px solid var(--accent-border);border-radius:3px;padding:36px 28px;text-align:center;background:rgba(212,176,68,.012);position:relative;overflow:hidden">
+    <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--accent),transparent)"></div>
+    <p class="lb" style="margin-bottom:12px">Aviso</p>
+    <p style="font-family:'Playfair Display',serif;font-weight:400;font-size:1.2rem;color:var(--white);margin-bottom:14px;line-height:1.4">Tudo o que você sabe sobre<br><em style="color:var(--accent-light)">perdão</em> será desconstruído.</p>
+    <p style="font-weight:200;font-size:.76rem;color:var(--text);line-height:1.85">A sua compreensão sobre o que significa perdoar — e por que você não consegue fazer isso da forma que te ensinaram — vai mudar completamente. Você não sairá mais o mesmo.</p>
+  </div>
+
+  <!-- LUTO -->
+  <div class="rv d2" style="border:1px solid var(--accent-border);border-radius:3px;padding:36px 28px;text-align:center;background:rgba(212,176,68,.012);position:relative;overflow:hidden">
+    <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--accent),transparent)"></div>
+    <p class="lb" style="margin-bottom:12px">Essencial</p>
+    <p style="font-family:'Playfair Display',serif;font-weight:400;font-size:1.2rem;color:var(--white);margin-bottom:14px;line-height:1.4">O <em style="color:var(--accent-light)">luto</em> precisa<br>ser completado.</p>
+    <p style="font-weight:200;font-size:.76rem;color:var(--text);line-height:1.85">Para a vida fluir com leveza e amor, é preciso estar em paz com aqueles que precisaram partir. O luto não resolvido trava relacionamentos, saúde, prosperidade e a capacidade de seguir em frente.</p>
+  </div>
+
+  <!-- VÍCIOS -->
+  <div class="rv d3" style="border:1px solid var(--accent-border);border-radius:3px;padding:36px 28px;text-align:center;background:rgba(212,176,68,.012);position:relative;overflow:hidden">
+    <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--accent),transparent)"></div>
+    <p class="lb" style="margin-bottom:12px">Raiz oculta</p>
+    <p style="font-family:'Playfair Display',serif;font-weight:400;font-size:1.2rem;color:var(--white);margin-bottom:14px;line-height:1.4">O <em style="color:var(--accent-light)">vício</em> pode não ser<br>apenas seu.</p>
+    <p style="font-weight:200;font-size:.76rem;color:var(--text);line-height:1.85">Álcool, drogas, drogadição, pornografia, compulsões — muitos vícios carregam uma raiz sistêmica que a força de vontade sozinha não resolve. Quando o sistema familiar é reorganizado, a compulsão perde força.</p>
+  </div>
+
+</div>
+</div></section>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- CITAÇÃO BÍBLICA -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<section class="sc ab"><div class="ct">
+<div class="rv" style="padding:40px 0">
+  <p class="quote">"Os pais comeram uvas verdes, e os dentes dos filhos se embotaram."</p>
+  <p class="quote-src">Jeremias 31:29</p>
+  <p style="font-weight:200;font-size:.82rem;color:var(--text);text-align:center;max-width:580px;margin:24px auto 0;line-height:1.9" class="rv d1">Essa metáfora fala sobre herança intergeracional — consequências que atravessam gerações. Não estamos falando de religião. Estamos falando de padrões, comportamentos e repetições. Há marcas que o tempo não apaga sozinho. A Constelação não cria essas marcas. Ela as revela. E ao revelar, permite que você se liberte daquilo que carrega sem saber.</p>
+</div>
+</div></section>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- O QUE NÃO É / O QUE É -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<section class="sc"><div class="cw">
+<p class="lb tc rv">Clareza e responsabilidade</p><div class="al"></div>
+<h2 class="sec rv d1">O que a Constelação não é</h2>
+<div class="not-list rv d2">
+  <span class="not-item"><span style="color:#6b3a3a;font-weight:500;font-size:.85rem">✕</span> Religião</span>
+  <span class="not-item"><span style="color:#6b3a3a;font-weight:500;font-size:.85rem">✕</span> Espiritismo</span>
+  <span class="not-item"><span style="color:#6b3a3a;font-weight:500;font-size:.85rem">✕</span> Ritual místico</span>
+  <span class="not-item"><span style="color:#6b3a3a;font-weight:500;font-size:.85rem">✕</span> Adivinhação</span>
+  <span class="not-item"><span style="color:#6b3a3a;font-weight:500;font-size:.85rem">✕</span> Ciência cartesiana exata</span>
+  <span class="not-item"><span style="color:#6b3a3a;font-weight:500;font-size:.85rem">✕</span> Substituto de médico ou psicólogo</span>
+</div>
+
+<p class="rv d3" style="font-weight:300;font-size:.88rem;color:var(--text);text-align:center;max-width:620px;margin:16px auto 20px;line-height:1.9">Nem tudo que ainda não é mensurável por instrumentos científicos deixa de existir. Durante séculos não havia como medir ondas eletromagnéticas — e elas sempre estiveram lá. Até hoje não provaram cientificamente a existência de Deus — e ainda assim bilhões acreditam.</p>
+<p class="rv d3" style="font-weight:300;font-size:.88rem;color:var(--text);text-align:center;max-width:620px;margin:0 auto 40px;line-height:1.9">Constelação é <strong style="color:var(--white-soft);font-weight:400">fenomenologia aplicada</strong>. Ela dialoga com conceitos como epigenética, campos morfológicos, psicologia sistêmica e fenomenologia. Trabalha no campo das relações humanas — observando o que se manifesta.</p>
+
+<div style="border:1px solid var(--accent-border);border-radius:3px;padding:36px;max-width:600px;margin:0 auto;text-align:center;background:rgba(212,176,68,.01)" class="rv d4">
+  <p style="font-family:'Playfair Display',serif;font-weight:400;font-size:1.1rem;color:var(--white);margin-bottom:12px;line-height:1.6">Não pedimos que você acredite.<br>Convidamos você a <em style="color:var(--accent-light)">experimentar</em>.</p>
+  <p style="font-weight:200;font-size:.78rem;color:var(--grey);line-height:1.7">Venha duvidando. Venha questionando. Venha crítico. Mas venha.</p>
+</div>
+</div></section>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- DORES TRABALHADAS -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<section class="sc ab"><div class="cw">
+<p class="lb tc rv">Onde a constelação atua</p><div class="al"></div>
+<h2 class="sec rv d1">Questões que serão<br>trabalhadas no campo</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:40px" class="mg">
+  <div class="mod rv d1"><h4>Família</h4><p>Relacionamento com pai e mãe. Dificuldade de perdoar. Raiva persistente. Filhos adotivos ou abandonados. Criação pelos avós. Conflitos entre irmãos.</p></div>
+  <div class="mod rv d2"><h4>Relacionamentos</h4><p>Casamentos repetidamente fracassados. Padrões destrutivos. Escolha inconsciente do parceiro errado. Dificuldade de manter vínculos saudáveis e duradouros.</p></div>
+  <div class="mod rv d3"><h4>Prosperidade</h4><p>Fracassos financeiros recorrentes. Dificuldade de prosperar apesar do esforço. Autossabotagem. Sensação de que o dinheiro entra e sai sem parar.</p></div>
+  <div class="mod rv d1"><h4>Saúde e Corpo</h4><p>Doenças recorrentes. Sintomas sem explicação médica clara. O corpo manifesta o que a mente esconde. Constelação não substitui médico — mas ajuda a compreender a mensagem emocional por trás do sintoma.</p></div>
+  <div class="mod rv d2"><h4>Comportamento</h4><p>Vícios (álcool, drogas, compulsões). Padrões que se repetem apesar da consciência. Lealdades invisíveis que te prendem a comportamentos que você não escolheu conscientemente.</p></div>
+  <div class="mod rv d3"><h4>Propósito</h4><p>Sensação de viver o destino de outra pessoa. Peso inexplicável. Culpa sem razão aparente. Bloqueio para avançar mesmo tendo todas as condições para isso.</p></div>
+</div>
+<div class="tc rv d4" style="margin-top:44px"><a href="#checkout" class="btn">Quero participar</a></div>
+</div></section>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- DOENÇA E EMOÇÃO -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<section class="sc"><div class="ct">
+<div class="rv" style="padding:20px 0">
+  <p class="quote">"Toda doença é um grito de socorro da alma.<br>O corpo é a armadura da alma."</p>
+  <p style="font-weight:200;font-size:.82rem;color:var(--text);text-align:center;max-width:560px;margin:24px auto 0;line-height:1.9" class="rv d1">Não substituímos tratamento médico. Mas ajudamos você a compreender possíveis conflitos emocionais associados aos seus padrões de vida. Muitas vezes o corpo grita o que a alma silencia.</p>
+</div>
+</div></section>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- DIFERENCIAL MÉTODO EVOLUTION -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<section class="sc ab"><div class="cw">
+<p class="lb tc rv">O diferencial</p><div class="al"></div>
+<h2 class="sec rv d1">Constelação + Método Evolution</h2>
+<p class="rv d2" style="font-weight:300;font-size:.88rem;color:var(--text);text-align:center;max-width:660px;margin:0 auto 48px;line-height:1.9">Este não é um workshop genérico de constelação. Carlos Crasto integra a técnica sistêmica com o Método Evolution — unindo Neurociência, PNL, Hipnoterapia e mais de 30 especialidades para identificar com precisão se o padrão é biográfico ou sistêmico, e aplicar a intervenção correta.</p>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px" class="mg">
+  <div class="rv d1" style="text-align:center;padding:28px 16px"><p class="num">01</p><h4 style="font-family:'Playfair Display',serif;font-weight:500;font-size:1rem;color:var(--white);margin:8px 0">Diagnóstico Preciso</h4><p style="font-weight:200;font-size:.78rem;line-height:1.8;color:var(--text)">Separamos sintoma de causa. Emoção vivida de emoção herdada. Problema biográfico de problema sistêmico. Essa distinção muda completamente a abordagem.</p></div>
+  <div class="rv d2" style="text-align:center;padding:28px 16px"><p class="num">02</p><h4 style="font-family:'Playfair Display',serif;font-weight:500;font-size:1rem;color:var(--white);margin:8px 0">Intervenção Integrada</h4><p style="font-weight:200;font-size:.78rem;line-height:1.8;color:var(--text)">Não apenas constelar. Reestruturar decisões inconscientes com neurociência, reprogramação comportamental e leitura avançada de padrões.</p></div>
+  <div class="rv d3" style="text-align:center;padding:28px 16px"><p class="num">03</p><h4 style="font-family:'Playfair Display',serif;font-weight:500;font-size:1rem;color:var(--white);margin:8px 0">Resultado Sustentado</h4><p style="font-weight:200;font-size:.78rem;line-height:1.8;color:var(--text)">O campo continua atuando após o workshop. Os novos padrões se consolidam nas semanas e meses seguintes de forma natural e profunda.</p></div>
+</div>
+</div></section>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- AUTORIDADE -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<section class="sc"><div class="cw">
+<div style="display:grid;grid-template-columns:300px 1fr;gap:56px;align-items:stretch" class="mg">
+<img src="/assets/crastp_9db978973623.webp" alt="Carlos Crasto" class="rv c-img">
+<div>
+<p class="lb rv">Quem conduz o processo</p>
+<h2 class="rv d1" style="font-family:'Playfair Display',serif;font-weight:400;font-size:2.2rem;color:var(--white);margin-bottom:16px;text-align:left">Carlos Crasto</h2>
+<p class="rv d2" style="font-weight:300;font-size:.85rem;line-height:2;color:var(--text);margin-bottom:20px">Você não estará com um "achista". Estará com um profissional que atua com <strong style="color:var(--white-soft);font-weight:400">base científica, técnica e responsabilidade</strong> — com mais de 20 anos dedicados ao desenvolvimento humano.</p>
+<div class="rv d3" style="display:flex;flex-direction:column;gap:10px;margin-bottom:24px">
+  <p style="font-weight:300;font-size:.78rem;color:var(--text);padding-left:16px;border-left:1px solid var(--accent-border)"><strong style="color:var(--white-soft);font-weight:400">Especialização</strong> em Abordagens Transdisciplinares Sistêmicas Familiares</p>
+  <p style="font-weight:300;font-size:.78rem;color:var(--text);padding-left:16px;border-left:1px solid var(--accent-border)"><strong style="color:var(--white-soft);font-weight:400">Cursando Pós-graduação</strong> em Neurociência da Saúde</p>
+  <p style="font-weight:300;font-size:.78rem;color:var(--text);padding-left:16px;border-left:1px solid var(--accent-border)"><strong style="color:var(--white-soft);font-weight:400">Licensed Master Trainer</strong> em Programação Neurolinguística (Richard Bandler)</p>
+  <p style="font-weight:300;font-size:.78rem;color:var(--text);padding-left:16px;border-left:1px solid var(--accent-border)"><strong style="color:var(--white-soft);font-weight:400">Mestre</strong> em Hipnoterapia Clínica e Hospitalar</p>
+  <p style="font-weight:300;font-size:.78rem;color:var(--text);padding-left:16px;border-left:1px solid var(--accent-border)"><strong style="color:var(--white-soft);font-weight:400">Especialista</strong> em Liberação de Trauma</p>
+  <p style="font-weight:300;font-size:.78rem;color:var(--text);padding-left:16px;border-left:1px solid var(--accent-border)">Mais de <strong style="color:var(--accent);font-weight:400">16.000 atendimentos individuais</strong> realizados</p>
+  <p style="font-weight:300;font-size:.78rem;color:var(--text);padding-left:16px;border-left:1px solid var(--accent-border)">Desde <strong style="color:var(--white-soft);font-weight:400">2004</strong> no desenvolvimento humano</p>
+</div>
+<p class="rv d4" style="font-weight:300;font-size:.85rem;line-height:2;color:var(--text)">O Método Evolution integra mais de <strong style="color:var(--white-soft);font-weight:400">30 especialidades</strong>. Não é constelação isolada. É constelação com base comportamental, neurocientífica e sistêmica.</p>
+</div></div></div></section>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- COMO FUNCIONA O WORKSHOP -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<section class="sc ab"><div class="cw">
+<p class="lb tc rv">Como funciona</p><div class="al"></div>
+<h2 class="sec rv d1">O Workshop</h2>
+<p class="rv d2" style="font-weight:300;font-size:.88rem;color:var(--text);text-align:center;max-width:640px;margin:0 auto 48px;line-height:1.9">Não é sessão individual fechada. É um campo fenomenológico coletivo onde dinâmicas sistêmicas são reveladas e trabalhadas em tempo real.</p>
+
+<div style="display:grid;grid-template-columns:1fr auto 1fr;gap:20px;align-items:start" class="mg">
+  <div class="mod rv d1" style="text-align:center">
+    <p style="font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--accent);margin-bottom:8px">Participante</p>
+    <p style="font-weight:200;font-size:.78rem;color:var(--text);line-height:1.8;margin-bottom:16px">Você assiste, aprende e vivencia o campo. Pode ser convidado a representar alguém — sem obrigatoriedade, sem exposição, sem constrangimento. O aprendizado acontece mesmo para quem apenas observa.</p>
+    <p style="font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--white)">R$ 100</p>
+  </div>
+  <div style="width:1px;background:linear-gradient(180deg,transparent,var(--ghost-line),transparent);align-self:stretch" class="rv d2"></div>
+  <div class="mod rv d3" style="text-align:center;border-color:var(--accent-border);background:rgba(212,176,68,.01)">
+    <p style="font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--accent);margin-bottom:8px">Constelante</p>
+    <p style="font-weight:200;font-size:.78rem;color:var(--text);line-height:1.8;margin-bottom:16px">Você traz seu tema pessoal para ser trabalhado no campo sistêmico. Vagas extremamente limitadas — a vaga de constelante é analisada conforme o tempo do workshop. Prioridade por ordem de inscrição.</p>
+    <p style="font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--white)">R$ 500</p>
+  </div>
+</div>
+
+<div style="max-width:560px;margin:40px auto 0;text-align:center" class="rv d4">
+  <p style="font-weight:200;font-size:.72rem;color:var(--grey);line-height:1.8">
+    <span style="color:var(--accent);margin-right:6px">✓</span> Não há exposição obrigatória &nbsp;&nbsp;
+    <span style="color:var(--accent);margin-right:6px">✓</span> Não há constrangimento &nbsp;&nbsp;
+    <span style="color:var(--accent);margin-right:6px">✓</span> Não há pressão para falar
+  </p>
+</div>
+</div></section>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- PARA QUEM É / NÃO É -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<section class="sc"><div class="cw">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:40px" class="mg">
+  <div class="rv d1">
+    <p class="lb" style="margin-bottom:16px">Para quem é</p>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <p style="font-weight:300;font-size:.78rem;color:var(--text);line-height:1.7;padding-left:16px;border-left:1px solid var(--accent-border)">Para quem está cansado de padrões repetitivos</p>
+      <p style="font-weight:300;font-size:.78rem;color:var(--text);line-height:1.7;padding-left:16px;border-left:1px solid var(--accent-border)">Para quem tem conflitos com pai, mãe ou irmãos</p>
+      <p style="font-weight:300;font-size:.78rem;color:var(--text);line-height:1.7;padding-left:16px;border-left:1px solid var(--accent-border)">Para filhos adotivos ou criados por avós</p>
+      <p style="font-weight:300;font-size:.78rem;color:var(--text);line-height:1.7;padding-left:16px;border-left:1px solid var(--accent-border)">Para quem vive conflitos conjugais recorrentes</p>
+      <p style="font-weight:300;font-size:.78rem;color:var(--text);line-height:1.7;padding-left:16px;border-left:1px solid var(--accent-border)">Para quem sente bloqueio financeiro ou de prosperidade</p>
+      <p style="font-weight:300;font-size:.78rem;color:var(--text);line-height:1.7;padding-left:16px;border-left:1px solid var(--accent-border)">Para quem quer assumir autorresponsabilidade</p>
+    </div>
+  </div>
+  <div class="rv d2">
+    <p class="lb" style="margin-bottom:16px">Para quem não é</p>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <p style="font-weight:300;font-size:.78rem;color:var(--ghost);line-height:1.7;padding-left:16px;border-left:1px solid var(--ghost-line)">Para quem busca milagre instantâneo</p>
+      <p style="font-weight:300;font-size:.78rem;color:var(--ghost);line-height:1.7;padding-left:16px;border-left:1px solid var(--ghost-line)">Para quem quer terceirizar a própria responsabilidade</p>
+      <p style="font-weight:300;font-size:.78rem;color:var(--ghost);line-height:1.7;padding-left:16px;border-left:1px solid var(--ghost-line)">Para quem quer "resolver a vida" sem mudar postura</p>
+      <p style="font-weight:300;font-size:.78rem;color:var(--ghost);line-height:1.7;padding-left:16px;border-left:1px solid var(--ghost-line)">Para quem espera promessa de cura médica</p>
+    </div>
+    <p style="font-weight:300;font-size:.82rem;color:var(--text);margin-top:24px;line-height:1.8"><strong style="color:var(--white-soft);font-weight:400">Constelação revela.</strong> Você decide o que fazer com o que foi revelado.</p>
+  </div>
+</div>
+</div></section>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- CTA INSCRIÇÃO -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<section class="sc ab" id="checkout"><div class="ct">
+<div style="max-width:700px;margin:0 auto;text-align:center" class="rv">
+  <p class="lb">Inscrição</p><div class="al"></div>
+  <h2 style="font-family:'Playfair Display',serif;font-weight:400;font-size:1.8rem;color:var(--white);margin-bottom:8px">Workshop Constelações Familiares</h2>
+  <p style="font-weight:200;font-size:.78rem;color:var(--grey);margin-bottom:8px">Método Evolution · Carlos Crasto</p>
+  <div style="display:flex;justify-content:center;gap:20px;margin-bottom:36px;flex-wrap:wrap">
+    <span style="font-weight:300;font-size:.72rem;color:var(--grey)">14 de Março, 2026</span>
+    <span style="color:var(--accent);opacity:.4">·</span>
+    <span style="font-weight:300;font-size:.72rem;color:var(--grey)">14h30 — 20h</span>
+    <span style="color:var(--accent);opacity:.4">·</span>
+    <span style="font-weight:300;font-size:.72rem;color:var(--grey)">Campo Belo, SP</span>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:28px" class="mg">
+    <div style="border:1px solid var(--ghost-line);border-radius:3px;padding:32px 24px;text-align:center;transition:border-color .4s" onmouseover="this.style.borderColor='rgba(212,176,68,.22)'" onmouseout="this.style.borderColor='var(--ghost-line)'">
+      <p style="font-weight:200;font-size:.6rem;letter-spacing:4px;text-transform:uppercase;color:var(--grey);margin-bottom:12px">Participante</p>
+      <p style="font-family:'Playfair Display',serif;font-weight:400;font-size:2rem;color:var(--accent)">R$ 100</p>
+      <p style="font-weight:200;font-size:.72rem;color:var(--text);margin:12px 0 20px;line-height:1.7">Vivência do campo sistêmico e possibilidade de representar.</p>
+      <a href="#" style="display:block;width:100%;padding:14px;background:linear-gradient(135deg,var(--accent),var(--accent-light));color:var(--bg);font-weight:400;font-size:.55rem;letter-spacing:4px;text-transform:uppercase;text-decoration:none;border-radius:2px;transition:all .4s" target="_blank">Quero Participar — R$ 100</a>
+    </div>
+    <div style="border:1px solid var(--accent-border);border-radius:3px;padding:32px 24px;text-align:center;background:rgba(212,176,68,.015);position:relative;overflow:hidden">
+      <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--accent),transparent)"></div>
+      <p style="font-weight:200;font-size:.6rem;letter-spacing:4px;text-transform:uppercase;color:var(--accent);margin-bottom:12px">Constelante</p>
+      <p style="font-family:'Playfair Display',serif;font-weight:400;font-size:2rem;color:var(--accent)">R$ 500</p>
+      <p style="font-weight:200;font-size:.72rem;color:var(--text);margin:12px 0 20px;line-height:1.7">Traga sua questão para o campo. Prioridade por ordem de inscrição.</p>
+      <a href="#" style="display:block;width:100%;padding:14px;background:linear-gradient(135deg,var(--accent),var(--accent-light));color:var(--bg);font-weight:400;font-size:.55rem;letter-spacing:4px;text-transform:uppercase;text-decoration:none;border-radius:2px;transition:all .4s" target="_blank">Quero Constelar — R$ 500</a>
+    </div>
+  </div>
+
+  <div style="width:60px;height:1px;background:linear-gradient(90deg,transparent,var(--accent-border),transparent);margin:24px auto"></div>
+
+  <p style="font-weight:300;font-size:.75rem;color:var(--white-soft);margin-top:20px;line-height:1.8">Ao confirmar inscrição e pagamento, você recebe o endereço completo do local<br>e <strong style="font-weight:400;color:var(--accent)">1 ano de acesso ao portal online de terapia da CRASTO.com</strong>.</p>
+
+  <div style="display:flex;justify-content:center;gap:16px;margin-top:28px;flex-wrap:wrap">
+    <a href="https://wa.me/5511981810002?text=Olá%2C%20tenho%20interesse%20no%20Workshop%20de%20Constelações%20Familiares%20do%20dia%2014/03." style="display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border:1px solid var(--accent-border);border-radius:2px;text-decoration:none;font-weight:300;font-size:.55rem;letter-spacing:3px;text-transform:uppercase;color:var(--accent);transition:all .4s" target="_blank" rel="noopener">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+      Tirar dúvidas
+    </a>
+    <a href="tel:+5511981810002" style="display:inline-flex;align-items:center;gap:8px;padding:12px 24px;text-decoration:none;font-weight:200;font-size:.55rem;letter-spacing:3px;text-transform:uppercase;color:var(--grey)">Ligar · +55 11 98181-0002</a>
+  </div>
+  <p style="font-weight:200;font-size:.62rem;color:var(--ghost);margin-top:20px">Vagas limitadas pelo espaço físico.</p>
+</div>
+</div></section>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- CONSTELAÇÃO EMPRESARIAL -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<section class="sc ab"><div class="cw">
+<p class="lb tc rv">Também para empresas</p><div class="al"></div>
+<h2 class="sec rv d1">Constelação Empresarial</h2>
+<p class="rv d2" style="font-weight:300;font-size:.88rem;color:var(--text);text-align:center;max-width:640px;margin:0 auto 32px;line-height:1.9">Existe um campo chamado <strong style="color:var(--white-soft);font-weight:400">Constelações Empresariais</strong>. Da mesma forma que constelamos pessoas, podemos constelar você, a sua empresa e os desafios que ela enfrenta para prosperar, faturar, crescer e multiplicar.</p>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:800px;margin:0 auto" class="mg">
+  <div class="mod rv d2">
+    <h4>Empresa e Sistema</h4>
+    <p>Empresas são sistemas vivos — com dinâmicas ocultas que afetam resultados, cultura, retenção de talentos e tomada de decisão. Quando o sistema empresarial é reorganizado, os bloqueios perdem força e os resultados fluem com mais naturalidade.</p>
+  </div>
+  <div class="mod rv d3">
+    <h4>Sucessão Empresarial</h4>
+    <p>Um dos temas mais críticos no mundo corporativo. Sucessão exige postura de extremo cuidado, planejamento eficiente e, acima de tudo, <strong>mérito, presença e humildade</strong>. A constelação revela as dinâmicas invisíveis que travam ou facilitam esse processo.</p>
+  </div>
+</div>
+
+<p class="rv d4" style="font-weight:300;font-size:.78rem;color:var(--grey);text-align:center;margin-top:32px;line-height:1.7">Interessado em Constelação Empresarial? <a href="https://wa.me/5511981810002?text=Olá%2C%20tenho%20interesse%20em%20Constelação%20Empresarial." style="color:var(--accent);text-decoration:none" target="_blank">Fale conosco pelo WhatsApp</a>.</p>
+</div></section>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- FAQ -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<section class="sc"><div class="ct">
+<p class="lb tc rv">Perguntas frequentes</p><div class="al"></div>
+<h2 class="sec rv d1">FAQ</h2>
+
+<div class="faq rv d2">
+
+  <div class="faq-item">
+    <div class="faq-q"><h4>O que é Constelação Familiar?</h4><span class="faq-icon"></span></div>
+    <div class="faq-a">
+      <p>Constelação Familiar é uma abordagem sistêmica fenomenológica criada por Bert Hellinger que observa padrões ocultos nas relações familiares. O termo original em alemão — <strong>Familienaufstellung</strong> — significa <strong>Reposicionamento Familiar</strong> ou <strong>Reconfiguração Familiar</strong>.</p>
+      <p>Ela revela dinâmicas inconscientes que influenciam relacionamentos, conflitos com pais e filhos, bloqueios financeiros, repetições de fracassos, culpa, exclusão e lealdades invisíveis. Não é aconselhamento comum — é uma experiência vivencial que revela o que está oculto no sistema familiar.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q"><h4>Para que serve a Constelação?</h4><span class="faq-icon"></span></div>
+    <div class="faq-a">
+      <p>Constelação serve para <strong>revelar</strong>. Ela não "resolve" sua vida. Ela revela onde está a raiz do padrão repetitivo, qual vínculo sistêmico está desalinhado, que exclusão ou lealdade invisível está ativa, e que carga emocional não pertence apenas a você.</p>
+      <p>A partir dessa revelação, você pode criar novos mecanismos internos, mudar sua postura, ampliar consciência e romper padrões. Constelação não impõe mudança — ela desperta consciência. A mudança depende de você.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q"><h4>Qual a diferença entre Constelante e Representante?</h4><span class="faq-icon"></span></div>
+    <div class="faq-a">
+      <p><strong>Constelante</strong> é quem traz um tema pessoal para ser trabalhado no campo — relacionamento, dinheiro, conflito familiar, bloqueios emocionais. O processo acontece com representantes do grupo, sem exposição forçada e sem obrigação de contar detalhes íntimos.</p>
+      <p><strong>Representante</strong> é alguém convidado a representar uma pessoa ou elemento do sistema. Você não precisa atuar — apenas permite que seu corpo responda ao campo fenomenológico. Não há constrangimento nem obrigação. Muitas pessoas relatam que representar já traz aprendizados profundos sobre sua própria vida.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q"><h4>Posso apenas assistir sem participar ativamente?</h4><span class="faq-icon"></span></div>
+    <div class="faq-a">
+      <p>Sim. Você pode participar apenas como observador. Não há obrigação de falar, não há exposição. Muitas vezes, apenas assistir já é transformador — o campo fenomenológico impacta mesmo quem não está diretamente constelando.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q"><h4>Quanto tempo dura cada constelação?</h4><span class="faq-icon"></span></div>
+    <div class="faq-a">
+      <p>Uma constelação pode durar entre 20 minutos e 2 horas, dependendo do caso, da complexidade sistêmica e do que se manifesta no campo. Cada processo é único. O workshop vai das 14h30 às 20h.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q"><h4>Constelação substitui terapia ou tratamento médico?</h4><span class="faq-icon"></span></div>
+    <div class="faq-a">
+      <p><strong>Não.</strong> Constelação não substitui acompanhamento médico, psicológico ou psiquiátrico. Ela amplia consciência e pode complementar processos terapêuticos, mas decisões clínicas são sempre responsabilidade de profissionais da saúde.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q"><h4>Constelação é religião?</h4><span class="faq-icon"></span></div>
+    <div class="faq-a">
+      <p>Não. Constelação não tem vínculo com religião. Embora Bert Hellinger tenha sido padre, o método é fenomenológico e sistêmico. Não há ritual religioso, culto ou dogma. Você não precisa acreditar em nada — o convite é vivenciar.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q"><h4>É ciência?</h4><span class="faq-icon"></span></div>
+    <div class="faq-a">
+      <p>Constelação não é uma ciência cartesiana exata, mas dialoga com conceitos como epigenética, campos morfológicos, fenomenologia e psicologia sistêmica. Muitas realidades humanas ainda não são completamente mensuráveis — mas isso não as torna inexistentes.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q"><h4>E se eu não acreditar?</h4><span class="faq-icon"></span></div>
+    <div class="faq-a">
+      <p>Melhor ainda. Venha com dúvida. Venha questionando. Venha crítico. O Método Evolution não trabalha com crença — trabalha com experiência. Ninguém precisa acreditar para experimentar o impacto de uma dinâmica sistêmica.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q"><h4>A Constelação resolve meus problemas?</h4><span class="faq-icon"></span></div>
+    <div class="faq-a">
+      <p>Constelação revela a raiz sistêmica do problema. A mudança depende da sua postura após a revelação. Se você assumir autorresponsabilidade e aplicar o que foi visto, sua vida pode fluir com mais leveza. Sem postura nova, nada muda. A constelação não é sobre culpa — é sobre pertencimento, reorganização e consciência.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q"><h4>O que eu preciso levar no dia?</h4><span class="faq-icon"></span></div>
+    <div class="faq-a">
+      <p>Leve apenas você, com disposição para vivenciar a experiência. Se for constelante, tenha clareza sobre o tema que deseja trabalhar. Não é necessário levar nenhum material. O endereço completo será enviado após a confirmação do pagamento.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q"><h4>O que recebo ao me inscrever?</h4><span class="faq-icon"></span></div>
+    <div class="faq-a">
+      <p>Ao confirmar inscrição e pagamento, você recebe o endereço completo do local do workshop em Campo Belo (SP) e <strong>1 ano de acesso ao portal online de terapia da CRASTO.com</strong> — um benefício exclusivo para participantes.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q"><h4>Existe Constelação para empresas?</h4><span class="faq-icon"></span></div>
+    <div class="faq-a">
+      <p>Sim. As <strong>Constelações Empresariais</strong> aplicam a mesma abordagem sistêmica ao contexto corporativo. É possível constelar desafios de faturamento, crescimento, cultura organizacional, conflitos societários e processos de sucessão empresarial. Esse trabalho é realizado em formato personalizado — entre em contato para saber mais.</p>
+    </div>
+  </div>
+
+</div>
+</div></section>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- FRASE FINAL + CTA -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<section class="fc"><div class="ct">
+<p class="lb rv">Posicionamento</p><div class="al"></div>
+<div class="rv d1">
+  <p class="quote" style="font-size:1.2rem;margin-bottom:24px">A constelação não resolve seu problema.<br>Ela revela o que está por trás dele.</p>
+  <p style="font-weight:300;font-size:.9rem;color:var(--text);max-width:540px;margin:0 auto;line-height:1.85">Se você tiver maturidade para assumir o que vê, sua postura muda. E quando a postura muda — a vida flui.</p>
+</div>
+<div class="rv d2" style="margin-top:44px"><a href="#checkout" class="btn">Garantir minha vaga</a></div>
+</div></section>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- FOOTER -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div class="ft"><div class="ct">
+  <div style="display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-bottom:20px">
+    <a href="/sobre" style="font-weight:300;font-size:.6rem;letter-spacing:3px;text-transform:uppercase;color:var(--accent);text-decoration:none">Sobre Nós</a>
+    <a href="/metodo-evolution" style="font-weight:300;font-size:.6rem;letter-spacing:3px;text-transform:uppercase;color:var(--accent);text-decoration:none">Sobre o Método</a>
+    <a href="#" style="font-weight:300;font-size:.6rem;letter-spacing:3px;text-transform:uppercase;color:var(--accent);text-decoration:none">Links</a>
+  </div>
+  <p style="font-weight:500;font-size:.75rem;letter-spacing:7px;text-transform:uppercase;color:var(--white);margin-bottom:4px">CRASTO</p>
+  <p style="font-weight:200;font-size:.55rem;letter-spacing:3px;text-transform:uppercase;color:var(--grey);margin-bottom:14px">Go Beyond</p>
+  <p style="font-weight:300;font-size:.6rem;letter-spacing:3px;text-transform:uppercase;color:var(--text);margin-bottom:32px">© <span style="color:var(--white-soft)">Crasto.com</span> · Technology &amp; Neuroscience · Est. 2015</p>
+
+  <div style="max-width:640px;margin:0 auto;border-top:1px solid var(--ghost-line);padding-top:24px">
+    <p style="font-weight:200;font-size:.52rem;color:var(--ghost);line-height:1.8;margin-bottom:12px">Este site não é parte do Facebook, Instagram ou Meta Platforms, Inc., nem é endossado por eles. Facebook e Instagram são marcas registradas da Meta Platforms, Inc.</p>
+    <p style="font-weight:200;font-size:.52rem;color:var(--ghost);line-height:1.8;margin-bottom:12px">Aviso Legal: Nenhuma informação contida nesta página constitui promessa ou garantia de resultados. Resultados variam de pessoa para pessoa e dependem de fatores individuais. Referências a desempenho passado ou potencial de qualquer abordagem apresentada não devem ser interpretadas como garantia de resultado específico. Este conteúdo tem caráter informativo e educacional.</p>
+    <p style="font-weight:200;font-size:.52rem;color:var(--ghost);line-height:1.8">Constelação Familiar não substitui acompanhamento médico, psicológico ou psiquiátrico. Em caso de condições de saúde, consulte um profissional habilitado. CRASTO.com — Tecnologia e Neurociências Ltda. CNPJ sob sigilo. Todos os direitos reservados.</p>
+  </div>
+</div></div>
+
+<!-- WA FLOAT -->
+<div class="wa"><a href="https://wa.me/5511981810002?text=Olá%2C%20tenho%20interesse%20no%20Workshop%20de%20Constelações%20Familiares%20do%20dia%2014/03" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg></a></div>
+
+<script>
+// Scroll reveal
+const o=new IntersectionObserver(e=>{e.forEach(i=>{if(i.isIntersecting){i.target.classList.add('v');o.unobserve(i.target)}})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.rv').forEach(e=>o.observe(e));
+
+// Sticky nav
+window.addEventListener('scroll',()=>{document.getElementById('tb').classList.toggle('sh',scrollY>400)});
+
+// FAQ accordion
+document.querySelectorAll('.faq-q').forEach(q=>{
+  q.addEventListener('click',()=>{
+    const item=q.parentElement;
+    const wasOpen=item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));
+    if(!wasOpen) item.classList.add('open');
+  });
+});
+</script>
+</body></html>
