@@ -1581,7 +1581,7 @@ input,select,textarea{font-family:inherit;outline:none}
   bottom:32px;right:32px;
   z-index:200;
   opacity:0;
-  animation:fadeInUp 1s ease 2s forwards,waPulse 3s ease-in-out 3s infinite;
+  animation:fadeInUp 1s ease 2s forwards;
 }
 .wa-float a{
   width:58px;height:58px;
@@ -1591,6 +1591,7 @@ input,select,textarea{font-family:inherit;outline:none}
   box-shadow:0 6px 20px rgba(37,211,102,.4);
   transition:all .4s var(--ease);
   cursor:none;
+  animation:waPulse 3s ease-in-out 3s infinite;
 }
 .wa-float a:hover{
   transform:scale(1.1);
@@ -1637,6 +1638,306 @@ input,select,textarea{font-family:inherit;outline:none}
   .nav-cta{padding:8px 16px;font-size:9px}
   .autoridade-photo{aspect-ratio:3/4;}
 }
+
+/* ═══════════════════════════════════════
+   7 ETAPAS PREMIUM (from mentoria-executiva)
+   ═══════════════════════════════════════ */
+.steps-container-premium {
+  position: relative;
+  margin-top: 56px;
+}
+.steps-line-premium {
+  position: absolute;
+  left: 32px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(180deg, var(--accent), rgba(212,176,68,.1));
+}
+.step-item-premium {
+  display: flex;
+  gap: 40px;
+  padding: 32px 0;
+  position: relative;
+  transition: all .5s var(--ease);
+}
+.step-item-premium:last-child {
+  border-bottom: none;
+}
+.step-number-circle-premium {
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(212,176,68,.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--accent);
+  background: var(--bg);
+  position: relative;
+  z-index: 2;
+  transition: all .5s var(--ease);
+}
+.step-item-premium:hover .step-number-circle-premium {
+  background: var(--accent);
+  color: var(--bg);
+  border-color: var(--accent);
+  box-shadow: 0 0 32px rgba(212,176,68,.2);
+}
+.step-body-premium {
+  padding-top: 8px;
+}
+.step-title-premium {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--white);
+  margin-bottom: 8px;
+  transition: color .4s;
+}
+.step-item-premium:hover .step-title-premium {
+  color: var(--accent-light);
+}
+.step-text-premium {
+  font-size: .88rem;
+  font-weight: 300;
+  line-height: 1.85;
+  color: var(--text);
+  max-width: 600px;
+}
+@media(max-width:780px){
+  .steps-line-premium { left: 24px; }
+  .step-number-circle-premium { width: 48px; height: 48px; font-size: 16px; }
+  .step-item-premium { gap: 24px; }
+}
+
+/* ═══════════════════════════════════════
+   TRÍADE DA LIDERANÇA
+   ═══════════════════════════════════════ */
+.triad-container-maestria {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1fr;
+  gap: 3px;
+  background: var(--ghost-line);
+  padding: 3px;
+  margin-top: 48px;
+}
+.triad-pillar-maestria {
+  background: var(--bg);
+  padding: 48px 32px;
+  text-align: center;
+  transition: all .6s var(--ease);
+  position: relative;
+  overflow: hidden;
+}
+.triad-pillar-maestria::before {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transition: transform .6s var(--ease);
+}
+.triad-pillar-maestria:hover::before { transform: scaleX(1); }
+.triad-pillar-maestria:hover { background: rgba(212,176,68,.02); }
+.triad-pillar-maestria.triad-center-maestria {
+  background: rgba(212,176,68,.03);
+  border-left: 1px solid rgba(212,176,68,.15);
+  border-right: 1px solid rgba(212,176,68,.15);
+}
+.triad-icon-maestria {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 600;
+  transition: all .5s var(--ease);
+}
+.triad-icon-outline {
+  border: 1.5px solid rgba(212,176,68,.3);
+  color: var(--accent);
+  background: transparent;
+}
+.triad-icon-gold {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+  color: var(--bg);
+  box-shadow: 0 4px 24px rgba(212,176,68,.2);
+}
+.triad-pillar-maestria:hover .triad-icon-outline {
+  background: var(--accent);
+  color: var(--bg);
+  border-color: var(--accent);
+}
+.triad-role-maestria {
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 8px;
+  font-weight: 400;
+}
+.triad-name-maestria {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--white);
+  margin-bottom: 20px;
+}
+.triad-list-maestria {
+  list-style: none;
+  text-align: left;
+  padding: 0;
+}
+.triad-list-maestria li {
+  font-size: .8rem;
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--text);
+  padding: 6px 0;
+  border-bottom: 1px solid var(--ghost-line);
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.triad-list-maestria li:last-child { border-bottom: none; }
+.triad-list-maestria li::before {
+  content: '✓';
+  color: var(--accent);
+  font-size: 11px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.triad-explanation-maestria {
+  margin-top: 48px;
+  text-align: center;
+  padding: 32px;
+  border: 1px solid var(--ghost-line);
+  background: rgba(212,176,68,.01);
+  border-radius: 3px;
+}
+.triad-explanation-maestria p {
+  font-weight: 300;
+  font-size: .9rem;
+  line-height: 2;
+  color: var(--text);
+  max-width: 700px;
+  margin: 0 auto;
+}
+.triad-explanation-maestria strong { color: var(--accent-light); font-weight: 500; }
+@media(max-width:880px){
+  .triad-container-maestria { grid-template-columns: 1fr; }
+  .triad-pillar-maestria { padding: 36px 24px; }
+}
+
+/* ═══════════════════════════════════════
+   ICEBERG — ESTRUTURA DO COMPORTAMENTO
+   ═══════════════════════════════════════ */
+.iceberg-visual-maestria {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  max-width: 800px;
+  margin: 48px auto 0;
+}
+.iceberg-half-maestria {
+  padding: 40px 48px;
+  position: relative;
+}
+.iceberg-visible-maestria {
+  background: linear-gradient(135deg, rgba(104,162,210,.06) 0%, rgba(104,162,210,.02) 100%);
+  border: 1px solid rgba(104,162,210,.15);
+  border-bottom: none;
+  border-radius: 4px 4px 0 0;
+}
+.iceberg-hidden-maestria {
+  background: linear-gradient(135deg, rgba(20,60,100,.12) 0%, rgba(20,40,80,.06) 100%);
+  border: 1px solid rgba(104,162,210,.1);
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+}
+.iceberg-waterline-maestria {
+  height: 3px;
+  background: linear-gradient(90deg, transparent, rgba(104,162,210,.5), var(--accent), rgba(104,162,210,.5), transparent);
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+.iceberg-waterline-label-maestria {
+  position: absolute;
+  right: -120px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent);
+  white-space: nowrap;
+}
+.iceberg-zone-label-maestria {
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+.iceberg-zone-visible { color: rgba(104,162,210,.7); }
+.iceberg-zone-hidden { color: rgba(180,140,60,.6); }
+.iceberg-items-maestria {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.iceberg-item-maestria {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  background: rgba(0,0,0,.2);
+  border-radius: 3px;
+  transition: all .4s var(--ease);
+}
+.iceberg-item-maestria:hover { background: rgba(212,176,68,.04); }
+.iceberg-dot-visible {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: rgba(104,162,210,.6);
+}
+.iceberg-dot-hidden {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: rgba(212,176,68,.5);
+}
+.iceberg-item-maestria span {
+  font-size: .78rem;
+  font-weight: 300;
+  color: var(--text);
+}
+.iceberg-credit-maestria {
+  text-align: center;
+  margin-top: 32px;
+  font-size: .75rem;
+  color: var(--ghost);
+  font-style: italic;
+  line-height: 1.8;
+}
+.iceberg-credit-maestria strong { color: var(--accent-light); font-weight: 500; font-style: normal; }
+@media(max-width:768px){
+  .iceberg-half-maestria { padding: 28px 24px; }
+  .iceberg-items-maestria { grid-template-columns: 1fr; }
+  .iceberg-waterline-label-maestria { display: none; }
+}
 </style>
 </head>
 <body>
@@ -1659,7 +1960,7 @@ input,select,textarea{font-family:inherit;outline:none}
     <a href="#inteligencias" class="nav-link">4 Inteligências</a>
     <a href="#programa" class="nav-link">Programa</a>
     <a href="#investimento" class="nav-link">Investimento</a>
-    <a href="https://wa.me/5511981810002?text=Ol%C3%A1!%20Tenho%20interesse%20na%20Maestria%20em%20Liderança%202026%20-%20Edição%20de%20Agosto." class="nav-cta">Inscrever-se</a>
+    <a href="https://forms.gle/VMhDnXywAiUu5Jv6A" target="_blank" rel="noopener" class="nav-cta">Inscrever-se</a>
   </div>
 </nav>
 
@@ -1696,7 +1997,7 @@ input,select,textarea{font-family:inherit;outline:none}
     </div>
 
     <div class="hero-ctas">
-      <a href="https://wa.me/5511981810002?text=Ol%C3%A1!%20Tenho%20interesse%20na%20Maestria%20em%20Liderança%202026%20-%20Edição%20de%20Agosto." class="btn btn-primary">Garantir minha vaga</a>
+      <a href="https://forms.gle/VMhDnXywAiUu5Jv6A" target="_blank" rel="noopener" class="btn btn-primary">Garantir minha vaga</a>
       <a href="#metodo" class="btn btn-ghost">Conhecer o Método</a>
     </div>
   </div>
@@ -1925,60 +2226,189 @@ input,select,textarea{font-family:inherit;outline:none}
       </div>
     </div>
 
-    <!-- 7 ETAPAS -->
-    <div class="etapas reveal">
-      <div style="text-align:center;margin-bottom:32px">
-        <span class="eyebrow eyebrow-center">As 7 etapas do Método Evolution</span>
-      </div>
-      <div class="etapa">
-        <span class="etapa-num">1</span>
-        <div class="etapa-content">
-          <h4>Descoberta</h4>
-          <p>Levantamento profundo de dores, desejos e potencial de transição executiva e pessoal.</p>
+    <!-- 7 ETAPAS PREMIUM -->
+    <div class="reveal" style="margin-top:64px;padding-top:48px;border-top:1px solid var(--ghost-line)">
+      <span class="eyebrow">Método Evolution by Crasto</span>
+      <h2 class="section-title">As 7 Etapas da <em>Transformação</em></h2>
+      <p class="section-desc">O método opera de dentro para fora. A mudança real de comportamento nasce quando o líder assume <strong>autorresponsabilidade radical</strong> — para de terceirizar problemas, se compromete com datas específicas e ancora a transformação no seu próprio sistema de crenças, valores e referências pessoais.</p>
+    </div>
+
+    <div class="steps-container-premium reveal">
+      <div class="steps-line-premium"></div>
+
+      <div class="step-item-premium">
+        <div class="step-number-circle-premium">01</div>
+        <div class="step-body-premium">
+          <div class="step-title-premium">Descoberta</div>
+          <div class="step-text-premium">Mapeamento comportamental profundo. DISC Premium. Entrevistas estratégicas. Identificação de padrões invisíveis que bloqueiam liderança — na camada biográfica, relacional e sistêmica.</div>
         </div>
       </div>
-      <div class="etapa">
-        <span class="etapa-num">2</span>
-        <div class="etapa-content">
-          <h4>Conscientização</h4>
-          <p>Análise de padrões mentais, sabotagens cognitivas e limites emocionais que travam o crescimento.</p>
+
+      <div class="step-item-premium">
+        <div class="step-number-circle-premium">02</div>
+        <div class="step-body-premium">
+          <div class="step-title-premium">Conscientização</div>
+          <div class="step-text-premium">Ampliação da percepção sobre padrões, crenças limitantes e impactos comportamentais no ambiente corporativo. O líder começa a ver o que estava invisível — a estrutura que sustenta o problema.</div>
         </div>
       </div>
-      <div class="etapa">
-        <span class="etapa-num">3</span>
-        <div class="etapa-content">
-          <h4>Responsabilização</h4>
-          <p>Definição de metas, prazos e compromissos concretos com autorresponsabilidade radical.</p>
+
+      <div class="step-item-premium">
+        <div class="step-number-circle-premium">03</div>
+        <div class="step-body-premium">
+          <div class="step-title-premium">Responsabilização</div>
+          <div class="step-text-premium">Autorresponsabilidade radical. O líder deixa de culpar contexto, mercado, equipe — e assume protagonismo total sobre resultados e relacionamentos. Este é o ponto de virada do método.</div>
         </div>
       </div>
-      <div class="etapa">
-        <span class="etapa-num">4</span>
-        <div class="etapa-content">
-          <h4>Possibilidades</h4>
-          <p>Elaboração de estratégias e formatos de execução adaptados ao seu contexto profissional.</p>
+
+      <div class="step-item-premium">
+        <div class="step-number-circle-premium">04</div>
+        <div class="step-body-premium">
+          <div class="step-title-premium">Possibilidades</div>
+          <div class="step-text-premium">Identificação de novos caminhos, estratégias de ação e recursos internos não utilizados. Expansão de repertório comportamental e de liderança — enxergar o que antes não existia.</div>
         </div>
       </div>
-      <div class="etapa">
-        <span class="etapa-num">5</span>
-        <div class="etapa-content">
-          <h4>Análise de Riscos</h4>
-          <p>Avaliação executiva de cenários, caminhos, riscos, perdas e ganhos — antes de cada decisão.</p>
+
+      <div class="step-item-premium">
+        <div class="step-number-circle-premium">05</div>
+        <div class="step-body-premium">
+          <div class="step-title-premium">Análise de Riscos</div>
+          <div class="step-text-premium">Avaliação de cenários, blindagem de decisões críticas. Cada compromisso recebe data completa — dia, mês, ano, hora e minuto. A neurociência mostra: compromisso específico destrói procrastinação.</div>
         </div>
       </div>
-      <div class="etapa">
-        <span class="etapa-num">6</span>
-        <div class="etapa-content">
-          <h4>Execução Guiada</h4>
-          <p>Plano de ação prático com acompanhamento estruturado e calibração contínua.</p>
+
+      <div class="step-item-premium">
+        <div class="step-number-circle-premium">06</div>
+        <div class="step-body-premium">
+          <div class="step-title-premium">Execução Guiada</div>
+          <div class="step-text-premium">Implementação de planos de ação com acompanhamento próximo. Estímulo de dentro para fora — não pressão externa. A mudança se ancora no sistema de crenças e valores pessoais do líder.</div>
         </div>
       </div>
-      <div class="etapa">
-        <span class="etapa-num">7</span>
-        <div class="etapa-content">
-          <h4>Acompanhamento de Resultados</h4>
-          <p>Mensuração de conquistas, redirecionamento e cálculo de retorno emocional, financeiro e de legado.</p>
+
+      <div class="step-item-premium">
+        <div class="step-number-circle-premium">07</div>
+        <div class="step-body-premium">
+          <div class="step-title-premium">Acompanhamento &amp; Mensuração</div>
+          <div class="step-text-premium">Consolidação das mudanças. Indicadores objetivos de evolução. Relatórios mensais com métricas comportamentais. O líder permanece evoluindo porque a mudança está ancorada em quem ele realmente é.</div>
         </div>
       </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     TRÍADE DA LIDERANÇA
+     ═══════════════════════════════════════════════════════ -->
+<section class="section">
+  <div class="ambient-orb" style="width:600px;height:600px;top:-200px;right:-200px"></div>
+  <div class="container">
+    <div class="reveal">
+      <span class="eyebrow">Framework EVO-TALK® · Inteligência Comportamental Evolutiva</span>
+      <h2 class="section-title">A Tríade da <em>Liderança</em></h2>
+      <p class="section-desc">O Método Evolution faz um 360 na cabeça do líder. Ele precisa dominar três papéis simultâneos — e transitar entre eles com maestria. Cada papel exige competências diferentes, feedbacks diferentes e posturas completamente diferentes.</p>
+    </div>
+
+    <div class="triad-container-maestria reveal">
+      <!-- GESTOR -->
+      <div class="triad-pillar-maestria">
+        <div class="triad-icon-maestria triad-icon-outline">G</div>
+        <div class="triad-role-maestria">Papel 01</div>
+        <div class="triad-name-maestria">Gestor</div>
+        <ul class="triad-list-maestria">
+          <li>Orienta regras e processos</li>
+          <li>Estabelece metas e objetivos</li>
+          <li>Define métricas</li>
+          <li>Declara prioridades</li>
+          <li>Especifica o "por quê"</li>
+          <li>Acompanha evolução</li>
+          <li>Feedback de correção</li>
+        </ul>
+      </div>
+      <!-- DESENVOLVEDOR EVO-TALK -->
+      <div class="triad-pillar-maestria triad-center-maestria">
+        <div class="triad-icon-maestria triad-icon-gold">D</div>
+        <div class="triad-role-maestria">Papel Central</div>
+        <div class="triad-name-maestria">Desenvolvedor EVO-TALK®</div>
+        <ul class="triad-list-maestria">
+          <li>Desenvolve competências comportamentais</li>
+          <li>Promove postura de autoliderança</li>
+          <li>Explora motivadores e estratégias</li>
+          <li>Avalia riscos e consequências</li>
+          <li>Gera atitudes e comprometimento</li>
+          <li>Provoca escuta ativa</li>
+          <li>Desperta engajamento</li>
+          <li>Acompanha a evolução</li>
+          <li>Feedback de desenvolvimento</li>
+        </ul>
+      </div>
+      <!-- EDUCADOR -->
+      <div class="triad-pillar-maestria">
+        <div class="triad-icon-maestria triad-icon-outline">E</div>
+        <div class="triad-role-maestria">Papel 03</div>
+        <div class="triad-name-maestria">Educador</div>
+        <ul class="triad-list-maestria">
+          <li>Ensina técnicas e ferramentas</li>
+          <li>Entrega conhecimento</li>
+          <li>Faz mentoria e "shadow"</li>
+          <li>Providencia recursos</li>
+          <li>Aplica treinamentos</li>
+          <li>Aconselha e pratica junto</li>
+          <li>Acompanha evolução</li>
+          <li>Feedback de reconhecimento</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="triad-explanation-maestria reveal">
+      <p>O <strong>Evolution Leader</strong> não é apenas um gestor que cobra resultados, nem apenas um educador que ensina técnicas. Ele é, acima de tudo, um <strong>Desenvolvedor EVO-TALK®</strong> — alguém que domina a arte de fazer perguntas profundas e poderosas para provocar evolução real nas pessoas. Quando o líder transita entre os três papéis com consciência, a organização inteira se transforma.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     ICEBERG — ESTRUTURA DO COMPORTAMENTO
+     ═══════════════════════════════════════════════════════ -->
+<section class="section section-alt">
+  <div class="ambient-orb" style="width:500px;height:500px;top:50%;left:-250px"></div>
+  <div class="container">
+    <div class="reveal" style="max-width:800px;margin:0 auto;text-align:center">
+      <span class="eyebrow eyebrow-center">Modelo Exclusivo · Neurociência Aplicada</span>
+      <h2 class="section-title" style="text-align:center">A Estrutura do <em>Comportamento Humano</em></h2>
+      <p class="section-desc section-desc-center">O que a maioria dos programas de desenvolvimento trabalha é apenas a ponta do iceberg — resultados, habilidades e competências visíveis. O Método Evolution mergulha nas camadas invisíveis: emoções, personalidade, inteligência emocional, sistêmica e heranças emocionais.</p>
+    </div>
+
+    <div class="reveal">
+      <div class="iceberg-visual-maestria">
+        <!-- Visível -->
+        <div class="iceberg-half-maestria iceberg-visible-maestria">
+          <div class="iceberg-zone-label-maestria iceberg-zone-visible">▲ Comportamento Observável</div>
+          <div class="iceberg-items-maestria">
+            <div class="iceberg-item-maestria"><div class="iceberg-dot-visible"></div><span>Resultados · Agir</span></div>
+            <div class="iceberg-item-maestria"><div class="iceberg-dot-visible"></div><span>Inteligência Racional</span></div>
+            <div class="iceberg-item-maestria"><div class="iceberg-dot-visible"></div><span>Habilidades · Hábitos</span></div>
+            <div class="iceberg-item-maestria"><div class="iceberg-dot-visible"></div><span>Temperamento · DISC</span></div>
+          </div>
+        </div>
+
+        <!-- Linha d'água -->
+        <div class="iceberg-waterline-maestria">
+          <span class="iceberg-waterline-label-maestria">← Linha d'água · Competências</span>
+        </div>
+
+        <!-- Invisível -->
+        <div class="iceberg-half-maestria iceberg-hidden-maestria">
+          <div class="iceberg-zone-label-maestria iceberg-zone-hidden">▼ Comportamento Invisível</div>
+          <div class="iceberg-items-maestria">
+            <div class="iceberg-item-maestria"><div class="iceberg-dot-hidden"></div><span>Emoções · Sentir</span></div>
+            <div class="iceberg-item-maestria"><div class="iceberg-dot-hidden"></div><span>Inteligência Emocional</span></div>
+            <div class="iceberg-item-maestria"><div class="iceberg-dot-hidden"></div><span>Personalidade · Pensar</span></div>
+            <div class="iceberg-item-maestria"><div class="iceberg-dot-hidden"></div><span>Inteligência Sistêmica</span></div>
+            <div class="iceberg-item-maestria" style="grid-column:1/-1"><div class="iceberg-dot-hidden"></div><span>Heranças Emocionais · Padrões Familiares e Sistêmicos</span></div>
+          </div>
+        </div>
+      </div>
+
+      <p class="iceberg-credit-maestria">Modelo: <strong>A Estrutura do Comportamento Humano</strong> · Por Carlos Crasto · Método Evolution by Crasto<br>Publicação: <em>Maestria Comportamental — Como aplicar inteligência comportamental e atingir seu potencial máximo</em></p>
     </div>
   </div>
 </section>
@@ -2293,7 +2723,7 @@ input,select,textarea{font-family:inherit;outline:none}
           <p class="invest-includes-item">Certificação Internacional</p>
         </div>
 
-        <a href="https://wa.me/5511981810002?text=Ol%C3%A1!%20Tenho%20interesse%20na%20Maestria%20em%20Liderança%202026%20-%20Edição%20de%20Agosto." class="btn btn-primary" style="display:flex;justify-content:center;width:100%">Garantir minha vaga</a>
+        <a href="https://forms.gle/VMhDnXywAiUu5Jv6A" target="_blank" rel="noopener" class="btn btn-primary" style="display:flex;justify-content:center;width:100%">Garantir minha vaga</a>
       </div>
     </div>
   </div>
@@ -2364,7 +2794,7 @@ input,select,textarea{font-family:inherit;outline:none}
       <span class="eyebrow eyebrow-center">A decisão é sua</span>
       <h2 class="cta-final-headline">Se você continuar sendo quem você é,<br><em>jamais será quem você quer ser.</em></h2>
       <p class="cta-final-sub">Renunciar a uma oportunidade como esta é como desistir de viver aquilo que foi reservado para você.</p>
-      <a href="https://wa.me/5511981810002?text=Ol%C3%A1!%20Tenho%20interesse%20na%20Maestria%20em%20Liderança%202026%20-%20Edição%20de%20Agosto." class="btn btn-primary">Garantir minha vaga agora</a>
+      <a href="https://forms.gle/VMhDnXywAiUu5Jv6A" target="_blank" rel="noopener" class="btn btn-primary">Garantir minha vaga agora</a>
     </div>
   </div>
 </section>

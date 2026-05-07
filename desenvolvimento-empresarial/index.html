@@ -413,6 +413,75 @@
     color: var(--white-soft);
   }
 
+  .path-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .path-list li {
+    position: relative;
+    z-index: 2;
+  }
+
+  .path-list li a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 24px;
+    background: rgba(212,176,68,0.02);
+    border: 1px solid rgba(212,176,68,0.1);
+    border-radius: 4px;
+    color: var(--white-soft);
+    text-decoration: none;
+    font-weight: 300;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    transition: all .5s cubic-bezier(.23,1,.32,1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .path-list li a::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 0%; height: 100%;
+    background: linear-gradient(90deg, rgba(212,176,68,0.1), transparent);
+    transition: width .6s cubic-bezier(.23,1,.32,1);
+    z-index: -1;
+  }
+
+  .path-list li a::after {
+    content: '→';
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: var(--accent);
+    opacity: 0;
+    transform: translateX(-15px);
+    transition: all .5s cubic-bezier(.23,1,.32,1);
+  }
+
+  .path-list li a:hover {
+    border-color: rgba(212,176,68,0.4);
+    color: var(--white);
+    padding-left: 32px;
+    background: rgba(212,176,68,0.05);
+    box-shadow: 0 4px 20px rgba(212,176,68,0.1);
+  }
+
+  .path-list li a:hover::before {
+    width: 100%;
+  }
+
+  .path-list li a:hover::after {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
   .path-cta {
     display: inline-flex;
     align-items: center;
@@ -793,6 +862,11 @@
       max-width: 100%;
     }
 
+    .path-list li a {
+      font-size: 14px;
+      padding: 14px 18px;
+    }
+
     .wa-float {
       bottom: 24px;
       right: 24px;
@@ -892,17 +966,20 @@
     </a>
 
     <!-- FORMAÇÕES -->
-    <a href="/formacoes-certificacoes" class="path-card">
+    <div class="path-card">
       <div class="path-number">02</div>
       <h2 class="path-title">Formações &<br>Certificações<br>Internacionais</h2>
-      <p class="path-desc">
-        Certificações reconhecidas internacionalmente em PNL, Hipnoterapia, Liderança e Perfis Comportamentais para formar especialistas e transformar carreiras.
-      </p>
-      <span class="path-cta">
+      <ul class="path-list">
+        <li><a href="https://crasto.com/pessoal/maestriaemlideranca/">Maestria em Liderança</a></li>
+        <li><a href="#">Maestria em Perfis Comportamentais</a></li>
+        <li><a href="#">Maestria em PNL</a></li>
+        <li><a href="#">Maestria em Hipnoterapia</a></li>
+      </ul>
+      <a href="/formacoes-certificacoes" class="path-cta" style="text-decoration: none;">
         Ver Formações
         <span class="cta-arrow"></span>
-      </span>
-    </a>
+      </a>
+    </div>
 
   </div>
 
