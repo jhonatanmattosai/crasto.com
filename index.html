@@ -2134,10 +2134,146 @@
             }
           }
 
+
           .crasto-nav-section,
           .crasto-ambient-wrap,
           .crasto-scripts {
             display: none !important
+          }
+
+          /* PATH LIST OVERRIDE (MATCHING REFERENCE) */
+          .path-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: var(--t3);
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+            transition: color .6s;
+          }
+
+          .path-list {
+            list-style: none !important;
+            padding: 0 !important;
+            margin-left: 0 !important;
+            margin-top: 1rem;
+            margin-bottom: 3rem;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+          }
+
+          .path-list li::before,
+          .path-list li::after,
+          .path-list li::marker {
+            display: none !important;
+            content: none !important;
+          }
+
+          .path-list li {
+            position: relative;
+            z-index: 2;
+            padding: 0 !important;
+            margin: 0 !important;
+          }
+
+          .path-list li a {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 24px;
+            background: rgba(201, 168, 76, 0.02);
+            border: 1px solid rgba(201, 168, 76, 0.1);
+            border-radius: 4px;
+            color: var(--t2);
+            text-decoration: none;
+            font-weight: 300;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+            transition: all .5s cubic-bezier(.23,1,.32,1);
+            position: relative;
+            overflow: hidden;
+          }
+
+          .path-list li a::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 0%; height: 100%;
+            background: linear-gradient(90deg, rgba(201, 168, 76, 0.1), transparent);
+            transition: width .6s cubic-bezier(.23,1,.32,1);
+            z-index: -1;
+          }
+
+          .path-list li a::after {
+            content: '→';
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            color: var(--gold);
+            opacity: 0;
+            transform: translateX(-15px);
+            transition: all .5s cubic-bezier(.23,1,.32,1);
+          }
+
+          .path-list li a:hover {
+            border-color: rgba(201, 168, 76, 0.4);
+            color: var(--t1);
+            padding-left: 32px;
+            background: rgba(201, 168, 76, 0.05);
+            box-shadow: 0 4px 20px rgba(201, 168, 76, 0.1);
+          }
+
+          .path-list li a:hover::before {
+            width: 100%;
+          }
+
+          .path-list li a:hover::after {
+            opacity: 1;
+            transform: translateX(0);
+          }
+
+          .path-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--t2);
+            transition: all .4s ease;
+            text-decoration: none !important;
+          }
+
+          .cta-arrow {
+            width: 24px;
+            height: 1px;
+            background: var(--gold);
+            position: relative;
+            transition: all .4s ease;
+          }
+
+          .cta-arrow::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            width: 6px;
+            height: 6px;
+            border-top: 1px solid var(--gold);
+            border-right: 1px solid var(--gold);
+            transform: translateY(-50%) rotate(45deg);
+          }
+
+          .pessoal-card:hover .path-cta {
+            color: var(--t1);
+            gap: 18px;
+          }
+
+          .pessoal-card:hover .cta-arrow {
+            width: 32px;
+            background: var(--t1);
           }
         </style>
         <style id="crasto-responsive-overrides">
@@ -2903,7 +3039,7 @@
                 <div
                   class="reveal elementor-element elementor-element-7105ae86 pessoal-card-name elementor-widget elementor-widget-heading"
                   data-e-type="widget" data-element_type="widget" data-id="7105ae86" data-widget_type="heading.default">
-                  <h3 class="elementor-heading-title elementor-size-default">Formações e Certificações</h3>
+                  <h3 class="elementor-heading-title elementor-size-default">Formações &<br>Certificações Internacionais</h3>
                 </div>
                 <div
                   class="reveal elementor-element elementor-element-90d471a pessoal-card-text elementor-widget elementor-widget-text-editor"
@@ -2917,17 +3053,15 @@
                   class="reveal elementor-element elementor-element-64db2577 pessoal-card-items elementor-widget elementor-widget-text-editor"
                   data-e-type="widget" data-element_type="widget" data-id="64db2577"
                   data-widget_type="text-editor.default">
-                  <ul style="list-style:none;padding:0;border-top:1px solid rgba(240,237,230,0.04);padding-top:0.8rem;">
-                    <li style="font-size:0.78rem;color:#8a8780;padding:0.25rem 0 0.25rem 1rem;position:relative;"><span
-                        style="position:absolute;left:0;color:rgba(201,168,76,0.4);">—</span> Maestria em Liderança |
-                      Maestria em Perfis DISC</li>
-                    <li style="font-size:0.78rem;color:#8a8780;padding:0.25rem 0 0.25rem 1rem;position:relative;"><span
-                        style="position:absolute;left:0;color:rgba(201,168,76,0.4);">—</span> NLP (“PNL”) Practitioner |
-                      NLP (“PNL”) Master Practitioner</li>
-                    <li style="font-size:0.78rem;color:#8a8780;padding:0.25rem 0 0.25rem 1rem;position:relative;"><span
-                        style="position:absolute;left:0;color:rgba(201,168,76,0.4);">—</span> Maestria em Hipnoterapia
-                      Clínica | Constelações Familiares e Empresariais</li>
-                  </ul>
+                  <div class="elementor-widget-container" style="padding: 0 !important; margin: 0 !important;">
+                    <ul class="path-list">
+                      <li><a href="https://crasto.com/pessoal/maestriaemlideranca/">Maestria em Liderança</a></li>
+                      <li><a href="#">Maestria em Perfis Comportamentais</a></li>
+                      <li><a href="#">Maestria em PNL</a></li>
+                      <li><a href="#">Maestria em Hipnoterapia</a></li>
+                      <li><a href="https://crasto.com/constelacoes-familiares/">Constelação Familiar</a></li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
