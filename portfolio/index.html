@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfólio de Serviços · Tabela de Valor Médio</title>
+<title>CRASTO · Tabela de Valores</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css?family=Google+Sans:300,400,500,700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Serif:opsz,wght@8..144,400;8..144,500;8..144,600;8..144,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
    DESIGN SYSTEM — Premium Portfolio
@@ -187,38 +187,32 @@ body::after {
 .nav-brand {
   display: flex;
   align-items: center;
+  gap: 0.75rem;
   text-decoration: none;
-  transition: opacity 0.3s var(--easing);
+  z-index: 10;
 }
-
-.nav-brand:hover { opacity: 0.85; }
 
 .nav-brand-img {
-  height: 44px;
-  display: flex;
-  align-items: center;
-  transition: filter 0.4s var(--easing);
-  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.2));
-}
-
-[data-theme="light"] .nav-brand-img {
-  filter: invert(1) brightness(0.15) drop-shadow(0 1px 2px rgba(0,0,0,0.15));
-}
-
-.nav-brand-img img {
-  height: 100%;
-  width: auto;
-  display: block;
-  max-width: 220px;
-  object-fit: contain;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: var(--gold);
+  text-transform: uppercase;
+  transition: all 0.4s var(--easing);
+  position: relative;
+  text-shadow: 0 0 20px var(--gold-glow);
 }
 
 .nav-brand:hover .nav-brand-img {
-  filter: drop-shadow(0 4px 16px var(--gold-glow));
+  color: var(--text-primary);
+  transform: scale(1.02);
+  text-shadow: 0 0 30px var(--gold-glow);
 }
 
-[data-theme="light"] .nav-brand:hover .nav-brand-img {
-  filter: invert(1) brightness(0.15) drop-shadow(0 4px 12px var(--gold-glow));
+[data-theme="light"] .nav-brand-img {
+  color: var(--accent-primary);
+  text-shadow: none;
 }
 
 .nav-menu {
@@ -1748,7 +1742,7 @@ section { position: relative; z-index: 2; }
 }
 
 .scenario-featured::before {
-  content: 'Mais comum';
+  content: 'Mais procurado';
   position: absolute;
   top: -8px;
   right: 16px;
