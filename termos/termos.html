@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Termos de Serviço | Crasto.com</title>
+<meta name="description" content="Termos de Serviço da Crasto.com — Inteligência Comportamental, Empresarial e Artificial. Aplicações, agentes de IA e integrações via APIs oficiais da Meta (WhatsApp Business e Instagram).">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0e1116;
+    --surface:#ffffff;
+    --ink:#1a1d23;
+    --ink-soft:#454a52;
+    --ink-mute:#6b7178;
+    --line:#e6e3da;
+    --gold:#C9A84C;
+    --gold-soft:#e9dcb0;
+    --gold-deep:#a8842f;
+    --dark:#0e1116;
+    --dark-2:#161b22;
+    --dark-line:#2a313b;
+    --max:880px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    background:#f3f1ea;
+    color:var(--ink);
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+    font-size:16px;
+  }
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
+
+  /* ===== HERO ===== */
+  .hero{
+    background:linear-gradient(180deg,#0e1116 0%,#13181f 100%);
+    color:#fff;
+    padding:64px 0 56px;
+    border-bottom:1px solid var(--dark-line);
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(900px 400px at 80% -10%,rgba(201,168,76,.12),transparent 60%);
+    pointer-events:none;
+  }
+  .brand{
+    font-family:'Playfair Display',serif;
+    font-size:1.45rem;letter-spacing:.42em;
+    color:#fff;font-weight:600;text-transform:uppercase;
+  }
+  .brand-sub{
+    color:var(--gold);font-size:.78rem;letter-spacing:.32em;
+    text-transform:uppercase;margin-top:8px;font-weight:500;
+  }
+  .doc-tag{
+    display:inline-block;margin-top:30px;font-size:.7rem;letter-spacing:.28em;
+    text-transform:uppercase;color:var(--gold-soft);
+    border:1px solid var(--dark-line);border-radius:999px;
+    padding:7px 16px;background:rgba(255,255,255,.02);
+  }
+  .hero h1{
+    font-family:'Playfair Display',serif;
+    font-size:clamp(2.1rem,5vw,3.1rem);
+    font-weight:700;line-height:1.12;margin-top:22px;color:#fff;
+  }
+  .hero .meta{
+    margin-top:18px;color:#aab2bd;font-size:.92rem;letter-spacing:.01em;
+    border-top:1px solid var(--dark-line);padding-top:18px;max-width:640px;
+  }
+  .hero .meta strong{color:var(--gold-soft);font-weight:600}
+
+  /* ===== INTRO ===== */
+  .intro{background:#f3f1ea;padding:48px 0 8px}
+  .lead{font-size:1.06rem;color:var(--ink-soft);max-width:780px}
+  .lead + .lead{margin-top:18px}
+  .rule{display:flex;justify-content:center;gap:14px;color:var(--gold);font-size:1.1rem;margin:38px 0 6px;opacity:.7}
+
+  /* ===== TOC ===== */
+  .toc{
+    background:var(--surface);border:1px solid var(--line);
+    border-radius:14px;padding:30px 34px;margin:14px 0 40px;
+    box-shadow:0 14px 40px rgba(20,20,20,.05);
+  }
+  .toc h2{
+    font-size:.72rem;letter-spacing:.26em;text-transform:uppercase;
+    color:var(--gold-deep);font-weight:700;margin-bottom:20px;
+  }
+  .toc ol{list-style:none;counter-reset:toc;columns:2;column-gap:40px}
+  .toc li{counter-increment:toc;margin-bottom:11px;break-inside:avoid;font-size:.93rem}
+  .toc li a{
+    color:var(--ink-soft);text-decoration:none;display:flex;gap:12px;
+    transition:color .18s;align-items:baseline;
+  }
+  .toc li a::before{
+    content:counter(toc,decimal-leading-zero);
+    color:var(--gold);font-weight:700;font-size:.78rem;
+    font-variant-numeric:tabular-nums;flex:0 0 auto;
+  }
+  .toc li a:hover{color:var(--gold-deep)}
+
+  /* ===== SECTIONS ===== */
+  .doc{background:var(--surface);border-radius:16px 16px 0 0;padding:18px 0 0}
+  section.block{
+    scroll-margin-top:24px;padding:38px 0;border-bottom:1px solid var(--line);
+  }
+  section.block:last-of-type{border-bottom:none}
+  .sec-head{display:flex;align-items:flex-start;gap:18px;margin-bottom:18px}
+  .sec-num{
+    flex:0 0 auto;font-family:'Playfair Display',serif;font-weight:700;
+    font-size:1.05rem;color:#fff;background:var(--ink);
+    width:42px;height:42px;border-radius:10px;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:inset 0 0 0 1px var(--gold-deep);
+  }
+  .sec-head h2{
+    font-family:'Playfair Display',serif;font-weight:600;
+    font-size:1.5rem;color:var(--ink);line-height:1.25;padding-top:5px;
+  }
+  .block h3{
+    font-size:1.02rem;font-weight:700;color:var(--ink);
+    margin:26px 0 10px;letter-spacing:.005em;
+  }
+  .block p{color:var(--ink-soft);margin-bottom:14px}
+  .block ul{list-style:none;margin:6px 0 16px}
+  .block ul li{
+    position:relative;padding-left:24px;margin-bottom:10px;color:var(--ink-soft);
+  }
+  .block ul li::before{
+    content:"";position:absolute;left:4px;top:11px;
+    width:7px;height:7px;border-radius:50%;
+    background:var(--gold);box-shadow:0 0 0 3px rgba(201,168,76,.18);
+  }
+  .block strong{color:var(--ink);font-weight:600}
+  a.inline{color:var(--gold-deep);font-weight:600;text-decoration:none;border-bottom:1px solid var(--gold-soft)}
+  a.inline:hover{border-bottom-color:var(--gold-deep)}
+
+  /* key-value rows */
+  .kv{border-top:1px solid var(--line);margin-top:8px}
+  .kv .row{display:flex;gap:24px;padding:13px 0;border-bottom:1px solid var(--line);align-items:baseline}
+  .kv .row:nth-child(even){background:#faf8f2;margin:0 -16px;padding-left:16px;padding-right:16px}
+  .kv .k{flex:0 0 210px;font-size:.78rem;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-mute);font-weight:600}
+  .kv .v{color:var(--ink);font-weight:500}
+
+  /* callout */
+  .callout{
+    background:linear-gradient(180deg,#fbf7ea,#f8f3e2);
+    border:1px solid var(--gold-soft);border-left:4px solid var(--gold);
+    border-radius:0 12px 12px 0;padding:20px 24px;margin:22px 0;
+  }
+  .callout p{margin:0;color:#5a4f33}
+  .callout strong{color:var(--gold-deep)}
+
+  /* enumerated rights cards */
+  .rights{display:grid;grid-template-columns:1fr;gap:0;border-top:1px solid var(--line);margin-top:10px}
+  .rights .item{display:flex;gap:18px;padding:16px 0;border-bottom:1px solid var(--line)}
+  .rights .rn{flex:0 0 34px;font-family:'Playfair Display',serif;color:var(--gold-deep);font-weight:700;font-size:1.05rem}
+  .rights .rc strong{display:block;color:var(--ink);margin-bottom:2px;font-weight:600}
+  .rights .rc span{color:var(--ink-soft);font-size:.94rem}
+
+  /* ===== FOOTER ===== */
+  .ft{background:linear-gradient(180deg,#13181f,#0e1116);color:#cbd2db;padding:54px 0 40px;text-align:center}
+  .ft .b{font-family:'Playfair Display',serif;font-size:1.3rem;letter-spacing:.4em;color:#fff;font-weight:600}
+  .ft .s{color:var(--gold);font-size:.74rem;letter-spacing:.3em;text-transform:uppercase;margin-top:8px}
+  .ft .m{font-style:italic;color:#9aa3ae;margin:22px auto 0;max-width:520px;font-size:.96rem}
+  .ft .legal{border-top:1px solid var(--dark-line);margin-top:30px;padding-top:24px;font-size:.82rem;color:#7c848e;line-height:1.9}
+  .ft a{color:var(--gold-soft);text-decoration:none}
+  .ft a:hover{text-decoration:underline}
+
+  @media(max-width:680px){
+    .wrap{padding:0 20px}
+    .toc{padding:24px}
+    .toc ol{columns:1}
+    .kv .k{flex-basis:140px;font-size:.72rem}
+    .sec-head h2{font-size:1.3rem}
+    .hero{padding:48px 0 42px}
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <div class="brand">CRASTO</div>
+    <div class="brand-sub">Inteligência que Evolui</div>
+    <span class="doc-tag">Documento Institucional</span>
+    <h1>Termos de Serviço</h1>
+    <p class="meta">Versão 1.0 · Vigente desde <strong>16 de junho de 2026</strong> · Aplicável aos serviços, aplicações e integrações da Crasto.com, incluindo as conexões realizadas por meio das APIs oficiais da Meta (WhatsApp Business e Instagram).</p>
+  </div>
+</header>
+
+<!-- INTRO -->
+<div class="intro">
+  <div class="wrap">
+    <p class="lead">Estes Termos de Serviço (“Termos”) regem o acesso e o uso do site, das aplicações, dos agentes de inteligência artificial e dos demais serviços disponibilizados pela Crasto.com — incluindo o aplicativo técnico de integração denominado <strong>api-aiagent-crasto</strong>, utilizado para conectar nossos canais de atendimento às plataformas da Meta.</p>
+    <p class="lead">Ao interagir com qualquer um desses canais, você declara ter lido, compreendido e aceitado integralmente as condições aqui descritas. Estes Termos devem ser lidos em conjunto com a nossa <a class="inline" href="https://crasto.com/politicas-de-privacidade/">Política de Privacidade</a>.</p>
+    <div class="rule"><span>·</span><span>·</span><span>·</span></div>
+  </div>
+</div>
+
+<!-- TOC -->
+<div class="wrap">
+  <nav class="toc">
+    <h2>Sumário</h2>
+    <ol>
+      <li><a href="#identificacao">Identificação do Prestador</a></li>
+      <li><a href="#aceitacao">Aceitação e Abrangência dos Termos</a></li>
+      <li><a href="#definicoes">Definições</a></li>
+      <li><a href="#servico">Descrição dos Serviços</a></li>
+      <li><a href="#meta">Integração com as Plataformas da Meta</a></li>
+      <li><a href="#elegibilidade">Elegibilidade e Cadastro</a></li>
+      <li><a href="#consentimento">Consentimento e Comunicação por Mensageria</a></li>
+      <li><a href="#uso">Uso Aceitável e Condutas Proibidas</a></li>
+      <li><a href="#ia">Agentes de IA e Conteúdo Automatizado</a></li>
+      <li><a href="#pi">Propriedade Intelectual</a></li>
+      <li><a href="#terceiros">Serviços de Terceiros</a></li>
+      <li><a href="#privacidade">Privacidade e Proteção de Dados</a></li>
+      <li><a href="#pagamentos">Pagamentos e Contratações</a></li>
+      <li><a href="#garantias">Isenção de Garantias</a></li>
+      <li><a href="#responsabilidade">Limitação de Responsabilidade</a></li>
+      <li><a href="#indenizacao">Indenização</a></li>
+      <li><a href="#suspensao">Suspensão e Encerramento</a></li>
+      <li><a href="#alteracoes">Alterações dos Termos</a></li>
+      <li><a href="#legislacao">Legislação Aplicável e Foro</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ol>
+  </nav>
+</div>
+
+<!-- DOCUMENT -->
+<main class="doc">
+<div class="wrap">
+
+  <section class="block" id="identificacao">
+    <div class="sec-head"><div class="sec-num">01</div><h2>Identificação do Prestador</h2></div>
+    <p>Os serviços regidos por estes Termos são prestados por:</p>
+    <div class="kv">
+      <div class="row"><div class="k">Razão Social</div><div class="v">Crasto.com Tecnologia e Neurociências LTDA.</div></div>
+      <div class="row"><div class="k">CNPJ</div><div class="v">22.053.341/0001-68</div></div>
+      <div class="row"><div class="k">Nome Fantasia</div><div class="v">Crasto.com</div></div>
+      <div class="row"><div class="k">Aplicativo Meta</div><div class="v">api-aiagent-crasto</div></div>
+      <div class="row"><div class="k">Sede</div><div class="v">São Paulo — SP, Brasil</div></div>
+      <div class="row"><div class="k">Site Oficial</div><div class="v">crasto.com</div></div>
+      <div class="row"><div class="k">E-mail Institucional</div><div class="v">crasto@crasto.com</div></div>
+    </div>
+    <p style="margin-top:16px">A Crasto opera de forma integrada em três pilares: <strong>Inteligência Comportamental</strong> (desenvolvimento humano e liderança), <strong>Inteligência Empresarial</strong> (consultoria estratégica) e <strong>Inteligência Artificial</strong> (agentes de IA e automação, operada sob a marca Crasto.AI). Estes Termos aplicam-se de forma unificada a todos esses pilares.</p>
+  </section>
+
+  <section class="block" id="aceitacao">
+    <div class="sec-head"><div class="sec-num">02</div><h2>Aceitação e Abrangência dos Termos</h2></div>
+    <p>Ao acessar o site, iniciar uma conversa por nossos canais digitais, interagir com nossos agentes de inteligência artificial ou contratar qualquer serviço, você concorda em ficar vinculado a estes Termos e à <a class="inline" href="https://crasto.com/politicas-de-privacidade/">Política de Privacidade</a>.</p>
+    <p>Caso você não concorde com qualquer disposição aqui prevista, deve abster-se de utilizar os serviços. Estes Termos aplicam-se a todos os pontos de contato com a Crasto, incluindo:</p>
+    <ul>
+      <li>Site institucional <strong>crasto.com</strong> e respectivas landing pages;</li>
+      <li>Atendimento via <strong>WhatsApp Business</strong>, incluindo agentes de IA e atendentes humanos;</li>
+      <li>Direct Message do <strong>Instagram</strong> e demais redes sociais operadas via API Oficial da Meta;</li>
+      <li>Programas de mentoria executiva, consultorias, formações e eventos;</li>
+      <li>Plataformas tecnológicas, portais de clientes e agentes inteligentes da Crasto.</li>
+    </ul>
+  </section>
+
+  <section class="block" id="definicoes">
+    <div class="sec-head"><div class="sec-num">03</div><h2>Definições</h2></div>
+    <div class="kv">
+      <div class="row"><div class="k">Crasto</div><div class="v">A pessoa jurídica identificada na Seção 01, prestadora dos serviços.</div></div>
+      <div class="row"><div class="k">Usuário</div><div class="v">Qualquer pessoa física ou jurídica que acesse, interaja ou contrate os serviços.</div></div>
+      <div class="row"><div class="k">Serviços</div><div class="v">O conjunto de soluções, aplicações, agentes, conteúdos e atendimentos disponibilizados pela Crasto.</div></div>
+      <div class="row"><div class="k">Aplicativo</div><div class="v">O app técnico “api-aiagent-crasto”, responsável pela integração com as APIs da Meta.</div></div>
+      <div class="row"><div class="k">Agentes de IA</div><div class="v">Sistemas conversacionais automatizados (ex.: Mariana, Léo, John) que apoiam triagem e atendimento.</div></div>
+      <div class="row"><div class="k">Plataformas Meta</div><div class="v">WhatsApp Business Platform, Instagram e demais serviços da Meta Platforms, Inc.</div></div>
+    </div>
+  </section>
+
+  <section class="block" id="servico">
+    <div class="sec-head"><div class="sec-num">04</div><h2>Descrição dos Serviços</h2></div>
+    <p>A Crasto disponibiliza serviços de desenvolvimento humano, consultoria empresarial e inteligência artificial aplicada, podendo incluir, entre outros:</p>
+    <ul>
+      <li>Mentorias executivas, formações e programas de liderança;</li>
+      <li>Consultoria estratégica e organizacional;</li>
+      <li>Implantação de agentes de IA, automações e integrações tecnológicas;</li>
+      <li>Atendimento conversacional automatizado e humano via WhatsApp e Instagram;</li>
+      <li>Conteúdos educacionais, institucionais e comerciais.</li>
+    </ul>
+    <p>O Aplicativo <strong>api-aiagent-crasto</strong> tem natureza técnica e finalidade específica: viabilizar o recebimento e o envio de mensagens entre o Usuário e a Crasto por meio das plataformas oficiais da Meta, integrando esses canais aos nossos sistemas de atendimento e aos agentes de IA. A Crasto pode, a seu critério e mediante aviso quando cabível, modificar, suspender ou descontinuar funcionalidades dos Serviços.</p>
+  </section>
+
+  <section class="block" id="meta">
+    <div class="sec-head"><div class="sec-num">05</div><h2>Integração com as Plataformas da Meta</h2></div>
+    <p>Os Serviços utilizam as APIs oficiais da Meta Platforms, Inc. para operar canais de comunicação no WhatsApp Business e no Instagram. Ao utilizar esses canais, o Usuário reconhece e concorda que:</p>
+    <ul>
+      <li>A comunicação ocorre por meio de infraestrutura da Meta, sujeita também aos termos e políticas próprios dessa plataforma, incluindo os <strong>Termos da Plataforma Meta</strong>, as políticas do <strong>WhatsApp Business</strong> e os <strong>Termos de Uso do Instagram</strong>;</li>
+      <li>A Crasto utiliza os dados acessados via APIs da Meta exclusivamente para responder, atender e dar seguimento às interações iniciadas pelo próprio Usuário, conforme as finalidades descritas em nossa <a class="inline" href="https://crasto.com/politicas-de-privacidade/">Política de Privacidade</a>;</li>
+      <li>A Crasto não compartilha, vende ou utiliza dados obtidos pelas plataformas da Meta para finalidades incompatíveis com as políticas da Meta ou com a legislação aplicável;</li>
+      <li>A Meta não é parte destes Termos e não possui qualquer responsabilidade sobre os Serviços prestados pela Crasto.</li>
+    </ul>
+    <div class="callout"><p><strong>Conformidade de plataforma.</strong> A Crasto compromete-se a operar suas integrações em conformidade com as políticas vigentes da Meta. Em caso de conflito entre estes Termos e as políticas obrigatórias da Meta aplicáveis ao uso das APIs, prevalecerão estas últimas no que diz respeito ao uso da plataforma.</p></div>
+  </section>
+
+  <section class="block" id="elegibilidade">
+    <div class="sec-head"><div class="sec-num">06</div><h2>Elegibilidade e Cadastro</h2></div>
+    <p>Os Serviços da Crasto destinam-se a executivos, profissionais e empresas. O Usuário declara ter <strong>18 anos ou mais</strong> e plena capacidade civil para aceitar estes Termos e contratar os Serviços. A Crasto não direciona seus serviços a menores de 18 anos e não coleta intencionalmente dados dessa faixa etária.</p>
+    <p>Quando houver cadastro ou fornecimento de informações, o Usuário compromete-se a prestar dados verdadeiros, exatos e atualizados, sendo responsável pela veracidade das informações fornecidas e pela guarda de eventuais credenciais de acesso.</p>
+  </section>
+
+  <section class="block" id="consentimento">
+    <div class="sec-head"><div class="sec-num">07</div><h2>Consentimento e Comunicação por Mensageria</h2></div>
+    <p>A comunicação por WhatsApp e Instagram ocorre, em regra, a partir de uma interação iniciada pelo próprio Usuário ou mediante seu consentimento prévio. Ao iniciar contato ou optar por receber mensagens, o Usuário autoriza a Crasto a responder e a dar seguimento ao atendimento por esses canais.</p>
+    <ul>
+      <li>A Crasto não envia mensagens não solicitadas (SPAM) e respeita as políticas de mensageria da Meta;</li>
+      <li>O Usuário pode, a qualquer momento, solicitar o encerramento das comunicações respondendo com pedido de descadastro, utilizando os comandos de cancelamento disponíveis ou contatando os canais oficiais;</li>
+      <li>O Usuário pode, a qualquer momento, solicitar atendimento humano em substituição ao agente de IA.</li>
+    </ul>
+  </section>
+
+  <section class="block" id="uso">
+    <div class="sec-head"><div class="sec-num">08</div><h2>Uso Aceitável e Condutas Proibidas</h2></div>
+    <p>Ao utilizar os Serviços, o Usuário compromete-se a agir de boa-fé e em conformidade com a lei. É expressamente vedado:</p>
+    <ul>
+      <li>Utilizar os Serviços para fins ilícitos, fraudulentos ou que violem direitos de terceiros;</li>
+      <li>Enviar conteúdo ofensivo, difamatório, discriminatório, obsceno ou que incite ódio ou violência;</li>
+      <li>Tentar obter acesso não autorizado a sistemas, contas ou dados da Crasto ou de terceiros;</li>
+      <li>Introduzir vírus, malware ou qualquer código malicioso;</li>
+      <li>Realizar engenharia reversa, copiar ou explorar indevidamente os Serviços ou a propriedade intelectual da Crasto;</li>
+      <li>Utilizar os canais de mensageria para envio de comunicações em massa não autorizadas ou para violar as políticas da Meta;</li>
+      <li>Coletar dados de outros usuários sem autorização.</li>
+    </ul>
+    <p>A violação destas regras poderá acarretar suspensão ou encerramento imediato do acesso aos Serviços, sem prejuízo das medidas legais cabíveis.</p>
+  </section>
+
+  <section class="block" id="ia">
+    <div class="sec-head"><div class="sec-num">09</div><h2>Agentes de IA e Conteúdo Automatizado</h2></div>
+    <p>Parte do atendimento é realizada por agentes de inteligência artificial que apoiam etapas iniciais de triagem, atendimento e direcionamento. O Usuário reconhece que:</p>
+    <ul>
+      <li>As respostas geradas por IA têm caráter informativo e de apoio, podendo conter imprecisões;</li>
+      <li>Decisões com efeito relevante são sempre tomadas ou revisadas por seres humanos;</li>
+      <li>O Usuário tem o direito de solicitar revisão humana de decisões automatizadas que afetem seus interesses, nos termos do art. 20 da LGPD;</li>
+      <li>Os agentes operam sobre modelos de provedores autorizados, sob cláusulas que asseguram confidencialidade.</li>
+    </ul>
+    <div class="callout"><p><strong>Princípio institucional Crasto.</strong> A inteligência artificial nunca substitui o ser humano em decisões críticas. Ela apoia, acelera e escala — mas a responsabilidade final, estratégica e ética permanece humana.</p></div>
+  </section>
+
+  <section class="block" id="pi">
+    <div class="sec-head"><div class="sec-num">10</div><h2>Propriedade Intelectual</h2></div>
+    <p>Todo o conteúdo disponibilizado pela Crasto — incluindo marcas, logotipos, textos, materiais, metodologias proprietárias (como o <strong>Método Evolution by Crasto™</strong> e o framework <strong>EVO-TALK®</strong>), software, layouts e demais elementos — é de titularidade exclusiva da Crasto ou de seus licenciadores, protegido pela legislação de propriedade intelectual.</p>
+    <p>É vedada a reprodução, distribuição, modificação ou utilização não autorizada de qualquer conteúdo sem o consentimento prévio e por escrito da Crasto. A aceitação destes Termos não transfere ao Usuário qualquer direito de propriedade intelectual.</p>
+  </section>
+
+  <section class="block" id="terceiros">
+    <div class="sec-head"><div class="sec-num">11</div><h2>Serviços de Terceiros</h2></div>
+    <p>Os Serviços podem se integrar a plataformas e ferramentas de terceiros, incluindo as plataformas da Meta (WhatsApp e Instagram), provedores de nuvem, provedores de modelos de IA, meios de pagamento e ferramentas de automação. O uso dessas plataformas pode estar sujeito a termos e políticas próprios, de responsabilidade dos respectivos fornecedores.</p>
+    <p>A Crasto não se responsabiliza por falhas, indisponibilidades ou condutas de plataformas de terceiros que estejam fora de seu controle razoável.</p>
+  </section>
+
+  <section class="block" id="privacidade">
+    <div class="sec-head"><div class="sec-num">12</div><h2>Privacidade e Proteção de Dados</h2></div>
+    <p>O tratamento de dados pessoais realizado pela Crasto é regido pela <a class="inline" href="https://crasto.com/politicas-de-privacidade/">Política de Privacidade</a>, elaborada em conformidade com a Lei Geral de Proteção de Dados Pessoais — <strong>LGPD (Lei nº 13.709/2018)</strong> e, quando aplicável, com princípios do GDPR e da CCPA.</p>
+    <p>Ao aceitar estes Termos, o Usuário declara ciência das práticas de coleta, uso, armazenamento, compartilhamento e proteção de dados descritas naquele documento, que é parte integrante e indissociável destes Termos.</p>
+  </section>
+
+  <section class="block" id="pagamentos">
+    <div class="sec-head"><div class="sec-num">13</div><h2>Pagamentos e Contratações</h2></div>
+    <p>Quando aplicável, a contratação de serviços pagos será formalizada por proposta, contrato ou instrumento específico, que prevalecerá quanto a preços, prazos, escopo e condições comerciais.</p>
+    <p>Os pagamentos são processados por meios e gateways autorizados, e a Crasto não armazena dados completos de cartão de crédito. Eventuais políticas de reembolso, cancelamento ou reagendamento observarão o instrumento contratual específico e a legislação aplicável.</p>
+  </section>
+
+  <section class="block" id="garantias">
+    <div class="sec-head"><div class="sec-num">14</div><h2>Isenção de Garantias</h2></div>
+    <p>Os Serviços são fornecidos “no estado em que se encontram” e “conforme disponibilidade”. A Crasto empenha-se em manter os Serviços disponíveis, seguros e funcionais, mas não garante operação ininterrupta, ausência total de erros ou que os Serviços atenderão a todas as expectativas específicas do Usuário.</p>
+    <p>Conteúdos educacionais, diagnósticos e orientações têm caráter informativo e de desenvolvimento, não constituindo, por si só, garantia de resultados específicos.</p>
+  </section>
+
+  <section class="block" id="responsabilidade">
+    <div class="sec-head"><div class="sec-num">15</div><h2>Limitação de Responsabilidade</h2></div>
+    <p>Na máxima extensão permitida pela legislação aplicável, a Crasto não será responsável por danos indiretos, lucros cessantes, perda de dados ou prejuízos decorrentes de:</p>
+    <ul>
+      <li>Uso indevido dos Serviços pelo Usuário;</li>
+      <li>Falhas, indisponibilidades ou condutas de plataformas de terceiros (incluindo as plataformas da Meta);</li>
+      <li>Decisões tomadas pelo Usuário com base em conteúdos informativos ou respostas de agentes de IA;</li>
+      <li>Eventos de força maior ou caso fortuito.</li>
+    </ul>
+    <p>Nada nestes Termos limita responsabilidades que não possam ser legalmente excluídas.</p>
+  </section>
+
+  <section class="block" id="indenizacao">
+    <div class="sec-head"><div class="sec-num">16</div><h2>Indenização</h2></div>
+    <p>O Usuário concorda em isentar e indenizar a Crasto, seus sócios, colaboradores e parceiros por quaisquer reclamações, perdas ou despesas (incluindo honorários advocatícios) decorrentes do uso indevido dos Serviços, da violação destes Termos ou da violação de direitos de terceiros ou da legislação aplicável.</p>
+  </section>
+
+  <section class="block" id="suspensao">
+    <div class="sec-head"><div class="sec-num">17</div><h2>Suspensão e Encerramento</h2></div>
+    <p>A Crasto pode suspender ou encerrar o acesso de qualquer Usuário aos Serviços, total ou parcialmente, em caso de violação destes Termos, de uso fraudulento ou ilícito, ou por exigência legal ou de plataforma de terceiros.</p>
+    <p>O Usuário pode, a qualquer momento, deixar de utilizar os Serviços e solicitar o encerramento de comunicações e o tratamento de seus dados conforme previsto na Política de Privacidade.</p>
+  </section>
+
+  <section class="block" id="alteracoes">
+    <div class="sec-head"><div class="sec-num">18</div><h2>Alterações dos Termos</h2></div>
+    <p>Estes Termos podem ser revisados periodicamente para refletir mudanças regulatórias, evolução tecnológica ou expansão da operação Crasto. A versão vigente estará sempre disponível em <strong>crasto.com/termos</strong>, com indicação da data de última atualização.</p>
+    <p>Alterações materiais serão comunicadas pelos canais habituais. O uso contínuo dos Serviços após a publicação de uma nova versão implica ciência e aceitação das alterações.</p>
+  </section>
+
+  <section class="block" id="legislacao">
+    <div class="sec-head"><div class="sec-num">19</div><h2>Legislação Aplicável e Foro</h2></div>
+    <p>Estes Termos são regidos pelas leis da República Federativa do Brasil. Fica eleito o foro da Comarca de <strong>São Paulo — SP</strong> para dirimir quaisquer controvérsias oriundas destes Termos, com renúncia a qualquer outro, por mais privilegiado que seja, ressalvada a competência de foros legalmente assegurados ao consumidor, quando aplicável.</p>
+    <p>Para titulares e operações localizados nos Estados Unidos, a partir da constituição da unidade Crasto.AI LLC, estes Termos poderão ser complementados por anexo específico.</p>
+  </section>
+
+  <section class="block" id="contato">
+    <div class="sec-head"><div class="sec-num">20</div><h2>Contato</h2></div>
+    <p>Para dúvidas, solicitações ou notificações relativas a estes Termos, utilize os canais abaixo:</p>
+    <div class="kv">
+      <div class="row"><div class="k">E-mail</div><div class="v">crasto@crasto.com</div></div>
+      <div class="row"><div class="k">WhatsApp</div><div class="v"><a class="inline" href="https://wa.me/5511981810002">+55 11 9 8181-0002</a></div></div>
+      <div class="row"><div class="k">Site</div><div class="v"><a class="inline" href="https://crasto.com">crasto.com</a></div></div>
+      <div class="row"><div class="k">Endereço</div><div class="v">São Paulo — SP, Brasil</div></div>
+      <div class="row"><div class="k">Razão Social</div><div class="v">Crasto.com Tecnologia e Neurociências LTDA. — CNPJ 22.053.341/0001-68</div></div>
+    </div>
+  </section>
+
+</div>
+</main>
+
+<!-- FOOTER -->
+<footer class="ft">
+  <div class="wrap">
+    <div class="b">CRASTO</div>
+    <div class="s">Inteligência que Evolui</div>
+    <p class="m">“Comportamento move. Estratégia guia. IA escala.”</p>
+    <div class="legal">
+      © 2015–2026 Crasto.com Tecnologia e Neurociências LTDA. — Todos os direitos reservados.<br>
+      CNPJ 22.053.341/0001-68 · São Paulo / Brasil<br>
+      Última atualização: 16 de junho de 2026 · Veja também a <a href="https://crasto.com/politicas-de-privacidade/">Política de Privacidade</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
